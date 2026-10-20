@@ -1,0 +1,35 @@
+ts,exchange,event,detail
+2026-10-20 17:10:28,bot,start,seconds=20400 interval=2.0
+2026-10-20 17:10:28,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-20 17:10:28,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-20 17:10:29,binance,ws_connected,wss://data-stream.binance.vision:443/ws/btcusdt@bookTicker
+2026-10-20 17:10:29,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-20 17:10:29,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-20 17:31:23,okx,ws_down,ConnectionClosedError
+2026-10-20 17:31:23,okx,ws_reconnect_1,backoff 2s
+2026-10-20 17:31:26,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-20 17:49:32,kraken,ws_down,ConnectionClosedError
+2026-10-20 17:49:32,kraken,ws_reconnect_1,backoff 2s
+2026-10-20 17:49:34,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-20 18:13:20,coinbase,ws_down,ConnectionClosedError
+2026-10-20 18:13:20,coinbase,ws_reconnect_1,backoff 2s
+2026-10-20 18:13:22,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-20 18:27:00,kraken,ws_down,ConnectionClosedError
+2026-10-20 18:27:00,kraken,ws_reconnect_1,backoff 2s
+2026-10-20 18:27:03,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-20 18:52:04,kraken,ws_down,ConnectionClosedOK
+2026-10-20 18:52:04,kraken,ws_reconnect_1,backoff 2s
+2026-10-20 18:52:07,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-20 19:08:57,okx,ws_down,ConnectionClosedError
+2026-10-20 19:08:57,okx,ws_reconnect_1,backoff 2s
+2026-10-20 19:08:59,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-20 19:13:13,kraken,ws_down,ConnectionClosedError
+2026-10-20 19:13:13,kraken,ws_reconnect_1,backoff 2s
+2026-10-20 19:13:16,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-20 20:29:20,kraken,ws_down,ConnectionClosedError
+2026-10-20 20:29:20,kraken,ws_reconnect_1,backoff 2s
+2026-10-20 20:29:22,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-20 21:31:49,kraken,ws_down,ConnectionClosedError
+2026-10-20 21:31:49,kraken,ws_reconnect_1,backoff 2s
+2026-10-20 21:31:52,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-20 22:50:32,bot,stop,polls=10200
