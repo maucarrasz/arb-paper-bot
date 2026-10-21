@@ -152,3 +152,10 @@ ts,exchange,event,detail
 2026-10-21 15:33:26,kraken,ws_reconnect_1,backoff 2s
 2026-10-21 15:33:29,kraken,ws_connected,wss://ws.kraken.com/v2
 2026-10-21 15:51:27,bot,stop,polls=10200
+2026-10-21 15:51:45,bot,start,seconds=20400 interval=2.0
+2026-10-21 15:51:46,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-21 15:51:46,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-21 15:51:46,binance,ws_connected,wss://data-stream.binance.vision:443/ws/btcusdt@bookTicker
+2026-10-21 15:51:46,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-21 15:51:48,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-21 21:31:49,bot,stop,polls=10200
