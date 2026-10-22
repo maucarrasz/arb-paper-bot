@@ -1,0 +1,30 @@
+name: mesa-trading
+on:
+  schedule:
+    - cron: "7 * * * *"
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: mesa24x7
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --quiet requests
+      - name: Correr mesa de trading paper (1 pasada)
+        run: python -m mesa.desk
+      - name: Guardar resultados en el repo
+        run: |
+          git config user.name "mesa-trading-bot[actions]"
+          git config user.email "actions@users.noreply.github.com"
+          git add mesa_state.json mesa_signals.csv mesa_trades.csv mesa_equity.csv 2>/dev/null || true
+          (git commit -m "mesa data $(date -u +'%Y-%m-%d %H:%M UTC')" || echo "sin cambios")
+          git pull --rebase --autostash || true
+          git push
