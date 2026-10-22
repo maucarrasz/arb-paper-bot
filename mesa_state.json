@@ -6,5 +6,8 @@
   "day": "2026-10-22",
   "day_start_equity": 10000.0,
   "day_pnl": 0.0,
-  "updated": "2026-10-22 21:03:14 UTC"
+  "guard_until": 0,
+  "peak_equity": null,
+  "mode": "v2",
+  "updated": "2026-10-22 21:55:10 UTC"
 }
