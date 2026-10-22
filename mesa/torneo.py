@@ -26,7 +26,7 @@ import json
 import os
 import time
 
-from . import data, smartmoney
+from . import data, news, smartmoney, variante_d
 from .reto100 import rsi, atr, UNIVERSE, FEE, SLIP
 
 START = 500.0
@@ -46,7 +46,7 @@ STATUS_JSON = "torneo_status.json"
 EQUITY_CSV = "torneo_equity.csv"
 TRADES_CSV = "torneo_trades.csv"
 
-VARIANTS = ["A_mr4h", "B_mr4h_sm", "C_smfollow"]
+VARIANTS = ["A_mr4h", "B_mr4h_sm", "C_smfollow", "D_msb11"]
 
 
 def now_iso():
@@ -272,14 +272,23 @@ def step(ts_ms):
             continue
         if newest > b.get("last_candle", 0):
             b["last_candle"] = newest
-            extra = smfollow_flip_exit(net) if v == "C_smfollow" else None
-            manage_exits(b, k4, ts_ms, extra_exit=extra)
+            if v == "D_msb11":
+                variante_d.manage_exits_d(b, k4, net)
+            else:
+                extra = smfollow_flip_exit(net) if v == "C_smfollow" else None
+                manage_exits(b, k4, ts_ms, extra_exit=extra)
             eq0 = equity_of(b, marks)
             if reg and eq0 >= DEATH:
                 if v in ("A_mr4h", "B_mr4h_sm"):
                     entries_mr(b, k4, net, use_sm=(v == "B_mr4h_sm"))
                 elif v == "C_smfollow":
                     entries_smfollow(b, k4, net, ts_ms)
+                elif v == "D_msb11":
+                    try:
+                        headlines = news.fetch_headlines()
+                    except Exception:
+                        headlines = []
+                    variante_d.entries_d(b, k4, net, headlines, reg)
         eq = equity_of(b, marks)
         b["peak"] = max(b.get("peak", START), eq)
         check_survival(b, eq, ts_ms)
