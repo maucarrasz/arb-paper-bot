@@ -171,8 +171,9 @@ def run():
         print(f"[desk] reto100 error: {e}")
     # Escenar archivos del reto para que el commit del workflow los incluya
     import subprocess
-    subprocess.run(["git", "add", "reto100_state.json", "reto100_equity.csv",
-                    "reto100_trades.csv"], capture_output=True)
+    for f in ("reto100_state.json", "reto100_equity.csv", "reto100_trades.csv"):
+        if os.path.exists(f):
+            subprocess.run(["git", "add", f], capture_output=True)
 
 
 if __name__ == "__main__":
