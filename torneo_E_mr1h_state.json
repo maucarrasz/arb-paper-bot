@@ -1,15 +1,27 @@
 {
   "variant": "E_mr1h",
-  "cash": 500.0,
-  "positions": [],
+  "cash": 349.774925,
+  "positions": [
+    {
+      "symbol": "TRXUSDT",
+      "qty": 457.3170731707317,
+      "entry_px": 0.328164,
+      "cost": 150.225075,
+      "stop": 0.32696036742826573,
+      "open_ms": 1792709999999,
+      "open_ts": "2026-10-22 23:57:42 UTC",
+      "time_stop_h": 24,
+      "rsi_out": 55
+    }
+  ],
   "status": "alive",
   "peak": 500.0,
-  "last_candle": 1792702800000,
+  "last_candle": 1792706400000,
   "trades": 0,
   "wins": 0,
   "losses": 0,
   "born": "2026-10-22 22:37:58 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-22 22:37:58 UTC"
+  "updated": "2026-10-22 23:57:42 UTC"
 }
