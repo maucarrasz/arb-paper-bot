@@ -152,9 +152,9 @@ def manage_exits_d(b, k4, net):
         exit_px, motive = None, None
         if c["low"] <= p["stop"]:
             exit_px, motive = p["stop"] * (1 - SLIP), "stop"
-        elif r is not None and r > RSI_OUT:
+        elif r is not None and r > p.get("rsi_out", RSI_OUT):
             exit_px, motive = c["close"] * (1 - SLIP), "rsi_salida"
-        elif c["close_time"] - p["open_ms"] > TIME_STOP_MS:
+        elif c["close_time"] - p["open_ms"] > p.get("time_stop_h", 96) * 3600 * 1000:
             exit_px, motive = c["close"] * (1 - SLIP), "tiempo"
         if exit_px is not None:
             b["positions"].remove(p)
@@ -163,7 +163,8 @@ def manage_exits_d(b, k4, net):
             print(f"[torneo:D_msb11] CIERRE {p['symbol']} ({motive}) pnl ${pnl:.2f}")
 
 
-def entries_d(b, k4, net, headlines, regimen_ok):
+def entries_d(b, k4, net, headlines, regimen_ok, prm=None):
+    prm = prm or {}
     for sym in UNIVERSE:
         if len(b["positions"]) >= MAX_OPEN:
             break
@@ -175,8 +176,12 @@ def entries_d(b, k4, net, headlines, regimen_ok):
         r = escaner(sym, cs)
         if r is None or r >= 40:
             continue
-        votos = [an_tecnico(sym, cs), an_macro(regimen_ok),
-                 an_onchain(sym, net), an_sentimiento(sym, headlines)]
+        votos = [an_tecnico(sym, cs), an_macro(regimen_ok)]
+        if prm.get("sm_analyst", True):
+            votos.append(an_onchain(sym, net))
+        else:
+            votos.append(an_tecnico(sym, cs[:-12] if len(cs) > 67 else cs))  # momentum reciente como 3er analista
+        votos.append(an_sentimiento(sym, headlines))
         ok, veredicto = validadores(votos)
         if not ok:
             print(f"[torneo:D_msb11] {sym} {veredicto[:110]}")
@@ -186,5 +191,5 @@ def entries_d(b, k4, net, headlines, regimen_ok):
         if not ok2 or not a:
             print(f"[torneo:D_msb11] {sym} VETO_RIESGO")
             continue
-        if _t().ag_ejecucion(b, sym, cs[-1]["close"], a, cs[-1]["close_time"]):
+        if _t().ag_ejecucion(b, sym, cs[-1]["close"], a, cs[-1]["close_time"], prm):
             b["positions"][-1]["contexto"] = veredicto

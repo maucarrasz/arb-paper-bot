@@ -46,7 +46,22 @@ STATUS_JSON = "torneo_status.json"
 EQUITY_CSV = "torneo_equity.csv"
 TRADES_CSV = "torneo_trades.csv"
 
-VARIANTS = ["A_mr4h", "B_mr4h_sm", "C_smfollow", "D_msb11"]
+# Tabla de variantes GEN1 (10): cada fila es UNA arquitectura con parametros
+# propios. mode: mr (mean reversion), smfollow (seguir smart money),
+# msb11 (mesa 11 agentes del reel). tf: timeframe de senal.
+PARAMS = {
+ "A_mr4h":      {"mode":"mr","tf":"4h","rsi_in":30,"rsi_out":55,"stop_atr":2.0,"risk":0.0075,"cap":0.30,"sm_veto":False,"time_stop_h":96},
+ "B_mr4h_sm":   {"mode":"mr","tf":"4h","rsi_in":30,"rsi_out":55,"stop_atr":2.0,"risk":0.0075,"cap":0.30,"sm_veto":True,"time_stop_h":96},
+ "C_smfollow":  {"mode":"smfollow","tf":"4h","rsi_in":30,"rsi_out":55,"stop_atr":2.0,"risk":0.0075,"cap":0.30,"sm_veto":False,"time_stop_h":96},
+ "D_msb11":    {"mode":"msb11","tf":"4h","rsi_in":30,"rsi_out":55,"stop_atr":2.0,"risk":0.0075,"cap":0.30,"sm_veto":False,"time_stop_h":96,"sm_analyst":True},
+ "E_mr1h":     {"mode":"mr","tf":"1h","rsi_in":25,"rsi_out":55,"stop_atr":2.0,"risk":0.0075,"cap":0.30,"sm_veto":False,"time_stop_h":24},
+ "F_mr4h_deep":{"mode":"mr","tf":"4h","rsi_in":25,"rsi_out":55,"stop_atr":3.0,"risk":0.0075,"cap":0.30,"sm_veto":False,"time_stop_h":120},
+ "G_msb11_nosm":{"mode":"msb11","tf":"4h","rsi_in":30,"rsi_out":55,"stop_atr":2.0,"risk":0.0075,"cap":0.30,"sm_veto":False,"time_stop_h":96,"sm_analyst":False},
+ "H_smfollow_mr":{"mode":"smfollow","tf":"4h","rsi_in":40,"rsi_out":55,"stop_atr":2.0,"risk":0.0075,"cap":0.30,"sm_veto":False,"time_stop_h":96,"need_dip":True},
+ "I_mr4h_aggro":{"mode":"mr","tf":"4h","rsi_in":30,"rsi_out":55,"stop_atr":2.0,"risk":0.02,"cap":0.50,"sm_veto":False,"time_stop_h":96},
+ "J_msb11_1h": {"mode":"msb11","tf":"1h","rsi_in":30,"rsi_out":55,"stop_atr":2.0,"risk":0.0075,"cap":0.30,"sm_veto":False,"time_stop_h":48,"sm_analyst":True},
+}
+VARIANTS = list(PARAMS)
 
 
 def now_iso():
@@ -95,11 +110,11 @@ def regime_ok(ts_ms):
 
 
 # ---------- agentes (cada uno UNA cosa) ----------
-def ag_escaner_mr(sym, cs):
+def ag_escaner_mr(sym, cs, rsi_in=RSI_IN):
     """Escaner MR: rsi de la ultima vela cerrada < umbral."""
     closes = [x["close"] for x in cs]
     r = rsi(closes, 14)
-    return r is not None and r < RSI_IN
+    return r is not None and r < rsi_in
 
 
 def ag_analista_atr(cs):
@@ -113,15 +128,17 @@ def ag_esceptico_sm(sym, net):
     return net.get(coin, 0.0) >= 0.0
 
 
-def ag_riesgo(eq, a, px):
+def ag_riesgo(eq, a, px, risk=RISK_PCT, cap=NOTIONAL_CAP, stop_atr=STOP_ATR):
     """Riesgo: qty por riesgo fijo con tope de notional."""
-    qty = min(RISK_PCT * eq / (STOP_ATR * a), NOTIONAL_CAP * eq / px)
+    qty = min(risk * eq / (stop_atr * a), cap * eq / px)
     return qty if qty * px >= MIN_NOTIONAL else None
 
 
-def ag_ejecucion(b, sym, px, a, candle_ms):
+def ag_ejecucion(b, sym, px, a, candle_ms, p=None):
     """Ejecucion simulada: fill con slippage + fee."""
-    qty = ag_riesgo(equity_of(b, {}), a, px)
+    p = p or {}
+    qty = ag_riesgo(equity_of(b, {}), a, px, risk=p.get("risk", RISK_PCT),
+                    cap=p.get("cap", NOTIONAL_CAP), stop_atr=p.get("stop_atr", STOP_ATR))
     if qty is None:
         return False
     fill = px * (1 + SLIP)
@@ -130,8 +147,10 @@ def ag_ejecucion(b, sym, px, a, candle_ms):
         return False
     b["cash"] -= cost
     b["positions"].append({"symbol": sym, "qty": qty, "entry_px": fill,
-                           "cost": cost, "stop": fill - STOP_ATR * a,
-                           "open_ms": candle_ms, "open_ts": now_iso()})
+                           "cost": cost, "stop": fill - p.get("stop_atr", STOP_ATR) * a,
+                           "open_ms": candle_ms, "open_ts": now_iso(),
+                           "time_stop_h": p.get("time_stop_h", 96),
+                           "rsi_out": p.get("rsi_out", RSI_OUT)})
     print(f"[torneo:{b['variant']}] ABRIR {sym} @ {fill:.2f} notional ${qty*fill:.2f}")
     return True
 
@@ -154,9 +173,9 @@ def manage_exits(b, k4, ts_ms, extra_exit=None):
             exit_px, motive = p["stop"] * (1 - SLIP), "stop"
         elif extra_exit and extra_exit(p, r, c):
             exit_px, motive = c["close"] * (1 - SLIP), extra_exit(p, r, c)
-        elif r is not None and r > RSI_OUT and b["variant"] != "C_smfollow":
+        elif r is not None and r > p.get("rsi_out", RSI_OUT) and not b["variant"].startswith("C_"):
             exit_px, motive = c["close"] * (1 - SLIP), "rsi_salida"
-        elif c["close_time"] - p["open_ms"] > TIME_STOP_MS:
+        elif c["close_time"] - p["open_ms"] > p.get("time_stop_h", 96) * 3600 * 1000:
             exit_px, motive = c["close"] * (1 - SLIP), "tiempo"
         if exit_px is not None:
             b["positions"].remove(p)
@@ -164,29 +183,29 @@ def manage_exits(b, k4, ts_ms, extra_exit=None):
             print(f"[torneo:{b['variant']}] CIERRE {p['symbol']} ({motive}) pnl ${pnl:.2f}")
 
 
-def entries_mr(b, k4, net, use_sm):
+def entries_mr(b, kx, net, p):
     if len(b["positions"]) >= MAX_OPEN:
         return
     for sym in UNIVERSE:
         if len(b["positions"]) >= MAX_OPEN:
             break
-        if any(p["symbol"] == sym for p in b["positions"]):
+        if any(p_["symbol"] == sym for p_ in b["positions"]):
             continue
-        cs = k4.get(sym)
+        cs = kx.get(sym)
         if not cs or len(cs) < 31:
             continue
-        if not ag_escaner_mr(sym, cs):          # escaner
+        if not ag_escaner_mr(sym, cs, p["rsi_in"]):     # escaner
             continue
-        if use_sm and not ag_esceptico_sm(sym, net):  # esceptico smart money
+        if p.get("sm_veto") and not ag_esceptico_sm(sym, net):  # esceptico smart money
             print(f"[torneo:{b['variant']}] {sym} VETO_SM (top10 net short)")
             continue
         a = ag_analista_atr(cs)                  # analista
         if not a:
             continue
-        ag_ejecucion(b, sym, cs[-1]["close"], a, cs[-1]["close_time"])  # riesgo+ejecucion
+        ag_ejecucion(b, sym, cs[-1]["close"], a, cs[-1]["close_time"], p)  # riesgo+ejecucion
 
 
-def entries_smfollow(b, k4, net, ts_ms):
+def entries_smfollow(b, kx, net, p):
     if len(b["positions"]) >= MAX_OPEN:
         return
     cands = sorted(((c, u) for c, u in net.items() if u > 0 and f"{c}USDT" in UNIVERSE),
@@ -195,16 +214,21 @@ def entries_smfollow(b, k4, net, ts_ms):
         if len(b["positions"]) >= MAX_OPEN:
             break
         sym = f"{coin}USDT"
-        if any(p["symbol"] == sym for p in b["positions"]):
+        if any(p_["symbol"] == sym for p_ in b["positions"]):
             continue
-        cs = k4.get(sym)
+        cs = kx.get(sym)
         if not cs or len(cs) < 31:
             continue
+        if p.get("need_dip"):
+            closes = [x["close"] for x in cs]
+            r = rsi(closes, 14)
+            if r is None or r >= p["rsi_in"]:
+                continue
         a = ag_analista_atr(cs)
         if not a:
             continue
         print(f"[torneo:{b['variant']}] smart money net long {coin}: ${usd:,.0f}")
-        ag_ejecucion(b, sym, cs[-1]["close"], a, cs[-1]["close_time"])
+        ag_ejecucion(b, sym, cs[-1]["close"], a, cs[-1]["close_time"], p)
 
 
 def smfollow_flip_exit(net):
@@ -255,7 +279,18 @@ def step(ts_ms):
             print(f"[torneo] {sym}: error de datos: {e}")
     if not k4.get("BTCUSDT"):
         return
+    hay_1h = any(PARAMS[v]["tf"] == "1h" and load_book(v)["status"] == "alive"
+                 for v in VARIANTS)
+    k1 = {}
+    if hay_1h:
+        for sym in UNIVERSE:
+            try:
+                ks = data.fetch_klines(sym, "1h", 220)
+                k1[sym] = [c for c in ks if c["close_time"] < ts_ms]
+            except Exception as e:
+                print(f"[torneo] {sym} 1h: error de datos: {e}")
     newest = k4["BTCUSDT"][-1]["open_time"]
+    newest1 = k1["BTCUSDT"][-1]["open_time"] if k1.get("BTCUSDT") else 0
     try:
         reg = regime_ok(ts_ms)
     except Exception as e:
@@ -270,25 +305,33 @@ def step(ts_ms):
                          "reason": b.get("reason"), "trades": b["trades"]}
             save_book(b)
             continue
-        if newest > b.get("last_candle", 0):
-            b["last_candle"] = newest
-            if v == "D_msb11":
-                variante_d.manage_exits_d(b, k4, net)
+        p = PARAMS[v]
+        kx = k1 if p["tf"] == "1h" else k4
+        newest_v = newest1 if p["tf"] == "1h" else newest
+        if not kx.get("BTCUSDT"):
+            status[v] = {"equity": round(equity_of(b, marks), 2), "status": b["status"],
+                         "reason": "sin datos 1h", "trades": b["trades"]}
+            save_book(b)
+            continue
+        if newest_v > b.get("last_candle", 0):
+            b["last_candle"] = newest_v
+            if p["mode"] == "msb11":
+                variante_d.manage_exits_d(b, kx, net)
             else:
-                extra = smfollow_flip_exit(net) if v == "C_smfollow" else None
-                manage_exits(b, k4, ts_ms, extra_exit=extra)
+                extra = smfollow_flip_exit(net) if p["mode"] == "smfollow" else None
+                manage_exits(b, kx, ts_ms, extra_exit=extra)
             eq0 = equity_of(b, marks)
             if reg and eq0 >= DEATH:
-                if v in ("A_mr4h", "B_mr4h_sm"):
-                    entries_mr(b, k4, net, use_sm=(v == "B_mr4h_sm"))
-                elif v == "C_smfollow":
-                    entries_smfollow(b, k4, net, ts_ms)
-                elif v == "D_msb11":
+                if p["mode"] == "mr":
+                    entries_mr(b, kx, net, p)
+                elif p["mode"] == "smfollow":
+                    entries_smfollow(b, kx, net, p)
+                elif p["mode"] == "msb11":
                     try:
                         headlines = news.fetch_headlines()
                     except Exception:
                         headlines = []
-                    variante_d.entries_d(b, k4, net, headlines, reg)
+                    variante_d.entries_d(b, kx, net, headlines, reg, p)
         eq = equity_of(b, marks)
         b["peak"] = max(b.get("peak", START), eq)
         check_survival(b, eq, ts_ms)
