@@ -138,3 +138,57 @@ fuera en mercados bajistas (por eso en OOS perdio menos que el mercado: BTC
 -5.8%, ETH -13.5%, SOL -12.5% en la misma ventana). Sigue siendo un sistema
 paper para aprender; no hay promesa de rentabilidad. v2 queda como modo activo
 (`MODE = "v2"` en mesa/config.py); v1 sigue disponible con `--mode v1`.
+
+## Reto $100 -> $1000 (22-oct-2026, noche): seleccion evolutiva en paper
+
+Pedido de Mauricio: objetivo declarado $100 -> $1000 en paper, con regla
+"que sea rentable, si no muere el bot", modelando a los mejores sistemas
+publicados. Sin promesas: los numeros de abajo son los medidos.
+
+### Torneo de estrategias (backtest walk-forward, 590 dias, 12 pares USDT)
+
+Costos reales en todos: 0.10% comision + 0.05% deslizamiento por lado.
+IS = hasta 2026-04-25 (409d), OOS = despues (179d). Sin optimizar sobre OOS.
+
+| Estrategia | Inspirada en | IS | OOS | Veredicto |
+|---|---|---|---|---|
+| ROT: rotacion momentum cross-sectional (top-2, 20d, filtro BTC>SMA200d) | literatura momentum crypto (SSRN 4322637, Grayscale) | -6.7% | -3.1% (38 trades) | ELIMINADA |
+| BRK: breakout Donchian 20h + regimen + Chandelier | tendencia clasica / Freqtrade | -62.0% | -37.7% (474 trades) | ELIMINADA (sobre-opera, fees) |
+| **MR: mean reversion RSI(14) 4h < 30, salida RSI>55 o stop 2xATR, filtro BTC>SMA200d** | mean reversion en rangos | -4.3% | **+4.6% (18 trades, Sharpe 1.98, DD 1.7%)** | **SUPERVIVIENTE** |
+
+Variantes de MR probadas (disciplina: mismas reglas, solo umbrales):
+(30/55/2.0) +4.6% OOS - la base; (25/55/2.0) +0.8%; (30/60/2.5) +2.6%;
+(35/55/2.0) +3.5%. Todas negativas en IS. La evidencia de MR es DEBIL:
+18 trades fuera de muestra, IS negativo, parametros fragiles.
+
+Nota de honestidad tecnica: la primera version de ROT marcaba +84% OOS y
+era un bug de lookahead (rebalancear antes de ganar el retorno del dia).
+Corregido, desaparecio. Lo mismo se audito en MR/BRK (solo velas cerradas,
+regimen del dia completado anterior).
+
+### Probabilidad real del 10x (Monte Carlo, bootstrap de retornos diarios OOS de MR)
+
+5000 simulaciones de 365 dias, $100 iniciales, funding 0.03%/dia sobre
+notional apalancado, ruina = equity < $10 o -85% desde el pico:
+
+| Apalancamiento | P(llegar a $1000) | P(ruina) | Mediana a 1 ano |
+|---|---|---|---|
+| 1x | 0.0% | 0.0% | $98 |
+| 3x | 0.0% | 0.0% | $94 |
+| 5x | 0.0% | 0.0% | $89 |
+| 10x | 0.0% | 0.08% | $76 |
+
+**Veredicto: con un edge real y honesto, el 10x en ~1 ano no sale (0% en las
+5000 simulaciones a cualquier apalancamiento).** MR rinde ~+4.6% por 180d
+OOS (~9%/ano si se sostiene); subir apalancamiento solo aumenta el costo de
+funding y la varianza. El reto queda como objetivo de largo plazo, no como
+expectativa.
+
+### Libro paper en vivo: `mesa/reto100.py`
+
+Corre dentro del workflow horario, libro independiente de $100 simulados
+con la estrategia superviviente (MR-4h). Reglas de supervivencia
+(seleccion evolutiva): equity < $50 = el libro MUERE y sera reemplazado
+por una variante; equity >= $1000 = reto cumplido. Estado en
+`reto100_state.json`, historial en `reto100_equity.csv` y
+`reto100_trades.csv` (commiteados cada hora por el workflow).

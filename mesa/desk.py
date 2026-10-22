@@ -8,7 +8,7 @@ import json
 import os
 import time
 
-from . import agents, config, data, engine, news
+from . import agents, config, data, engine, news, reto100
 
 STATE = "mesa_state.json"
 SIGNALS_CSV = "mesa_signals.csv"
@@ -163,6 +163,16 @@ def run():
                 "open_positions": len(book.positions), "day_pnl": round(book.day_pnl, 2)})
     save_state(book)
     print(f"[desk] equity ${eq:.2f} | cash ${book.cash:.2f} | abiertas {len(book.positions)} | pnl dia ${book.day_pnl:.2f}")
+
+    # 5) Reto $100 -> $1000 (libro paper independiente, superviviente MR-4h)
+    try:
+        reto100.step(ts_ms)
+    except Exception as e:
+        print(f"[desk] reto100 error: {e}")
+    # Escenar archivos del reto para que el commit del workflow los incluya
+    import subprocess
+    subprocess.run(["git", "add", "reto100_state.json", "reto100_equity.csv",
+                    "reto100_trades.csv"], capture_output=True)
 
 
 if __name__ == "__main__":
