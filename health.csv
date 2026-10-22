@@ -169,3 +169,34 @@ ts,exchange,event,detail
 2026-10-21 21:37:20,kraken,ws_reconnect_1,backoff 2s
 2026-10-21 21:37:24,kraken,ws_connected,wss://ws.kraken.com/v2
 2026-10-22 03:12:07,bot,stop,polls=10200
+2026-10-22 03:12:40,bot,start,seconds=20400 interval=2.0
+2026-10-22 03:12:40,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-22 03:12:40,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-22 03:12:40,binance,ws_connected,wss://data-stream.binance.vision:443/ws/btcusdt@bookTicker
+2026-10-22 03:12:41,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-22 03:12:41,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-22 04:24:50,kraken,ws_down,ConnectionClosedError
+2026-10-22 04:24:50,kraken,ws_reconnect_1,backoff 2s
+2026-10-22 04:24:53,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-22 04:27:54,okx,ws_down,ConnectionClosedError
+2026-10-22 04:27:54,okx,ws_reconnect_1,backoff 2s
+2026-10-22 04:27:56,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-22 04:49:03,kraken,ws_down,ConnectionClosedError
+2026-10-22 04:49:03,kraken,ws_reconnect_1,backoff 2s
+2026-10-22 04:49:06,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-22 06:15:26,kraken,ws_down,ConnectionClosedError
+2026-10-22 06:15:26,kraken,ws_reconnect_1,backoff 2s
+2026-10-22 06:15:29,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-22 06:36:31,kraken,ws_down,ConnectionClosedError
+2026-10-22 06:36:31,kraken,ws_reconnect_1,backoff 2s
+2026-10-22 06:36:34,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-22 07:18:53,kraken,ws_down,ConnectionClosedError
+2026-10-22 07:18:53,kraken,ws_reconnect_1,backoff 2s
+2026-10-22 07:18:56,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-22 07:25:55,coinbase,ws_down,ConnectionClosedError
+2026-10-22 07:25:55,coinbase,ws_reconnect_1,backoff 2s
+2026-10-22 07:25:57,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-22 07:39:35,okx,ws_down,ConnectionClosedError
+2026-10-22 07:39:35,okx,ws_reconnect_1,backoff 2s
+2026-10-22 07:39:38,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-22 08:52:44,bot,stop,polls=10200
