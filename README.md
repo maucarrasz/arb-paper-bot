@@ -139,9 +139,9 @@ fuera en mercados bajistas (por eso en OOS perdio menos que el mercado: BTC
 paper para aprender; no hay promesa de rentabilidad. v2 queda como modo activo
 (`MODE = "v2"` en mesa/config.py); v1 sigue disponible con `--mode v1`.
 
-## Reto $100 -> $1000 (22-oct-2026, noche): seleccion evolutiva en paper
+## Reto $100 -> $500 (meta ajustada 22-oct 22:21 UTC): seleccion evolutiva en paper
 
-Pedido de Mauricio: objetivo declarado $100 -> $1000 en paper, con regla
+Pedido de Mauricio: objetivo declarado $100 -> $500 en paper (ajustado desde $1000 el 22-oct tras ver el Monte Carlo), con regla
 "que sea rentable, si no muere el bot", modelando a los mejores sistemas
 publicados. Sin promesas: los numeros de abajo son los medidos.
 
@@ -169,16 +169,17 @@ regimen del dia completado anterior).
 ### Probabilidad real del 10x (Monte Carlo, bootstrap de retornos diarios OOS de MR)
 
 5000 simulaciones de 365 dias, $100 iniciales, funding 0.03%/dia sobre
-notional apalancado, ruina = equity < $10 o -85% desde el pico:
+notional apalancado, ruina = equity < $10 o -85% desde el pico (meta $500;
+con la meta original $1000 los resultados eran iguales: 0% en todos):
 
-| Apalancamiento | P(llegar a $1000) | P(ruina) | Mediana a 1 ano |
+| Apalancamiento | P(llegar a $500) | P(ruina) | Mediana a 1 ano |
 |---|---|---|---|
 | 1x | 0.0% | 0.0% | $98 |
 | 3x | 0.0% | 0.0% | $94 |
 | 5x | 0.0% | 0.0% | $89 |
 | 10x | 0.0% | 0.08% | $76 |
 
-**Veredicto: con un edge real y honesto, el 10x en ~1 ano no sale (0% en las
+**Veredicto: con un edge real y honesto, el 10x original en ~1 ano no sale (0% en las
 5000 simulaciones a cualquier apalancamiento).** MR rinde ~+4.6% por 180d
 OOS (~9%/ano si se sostiene); subir apalancamiento solo aumenta el costo de
 funding y la varianza. El reto queda como objetivo de largo plazo, no como
@@ -189,6 +190,6 @@ expectativa.
 Corre dentro del workflow horario, libro independiente de $100 simulados
 con la estrategia superviviente (MR-4h). Reglas de supervivencia
 (seleccion evolutiva): equity < $50 = el libro MUERE y sera reemplazado
-por una variante; equity >= $1000 = reto cumplido. Estado en
+por una variante; equity >= $500 = reto cumplido. Estado en
 `reto100_state.json`, historial en `reto100_equity.csv` y
 `reto100_trades.csv` (commiteados cada hora por el workflow).

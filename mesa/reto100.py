@@ -1,4 +1,4 @@
-"""Reto $100 -> $1000 (paper): libro paralelo con seleccion evolutiva.
+"""Reto $100 -> $500 (paper): libro paralelo con seleccion evolutiva.
 
 Sobreviviente actual de la investigacion walk-forward (ver README seccion
 "Reto 100"): Mean Reversion 4h.
@@ -10,7 +10,7 @@ Sobreviviente actual de la investigacion walk-forward (ver README seccion
   - Costos: 0.10% comision + 0.05% deslizamiento por lado.
 Reglas de supervivencia (seleccion evolutiva en paper):
   - equity < $50  -> el libro MUERE (se detiene; se reemplaza por variante).
-  - equity >= $1000 -> reto cumplido (objetivo declarado, no promesa).
+  - equity >= $500 -> reto cumplido (objetivo declarado, no promesa).
 Backtest honesto (590d, IS hasta 2026-04-25, OOS despues): IS -4.3%,
 OOS +4.6% (18 trades, Sharpe 1.98, DD 1.7%). Muestra pequena: evidencia
 debil, por eso corre solo en paper y puede morir.
@@ -41,7 +41,7 @@ TIME_STOP_MS = 96 * 3600 * 1000
 MIN_NOTIONAL = 5.0
 START = 100.0
 DEATH = 50.0
-TARGET = 1000.0
+TARGET = 500.0
 
 
 def now_iso():
