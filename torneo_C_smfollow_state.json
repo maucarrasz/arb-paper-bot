@@ -1,0 +1,34 @@
+{
+  "variant": "C_smfollow",
+  "cash": 264.24011998881093,
+  "positions": [
+    {
+      "symbol": "TRXUSDT",
+      "qty": 456.8991775814804,
+      "entry_px": 0.32846414999999995,
+      "cost": 150.22507499999998,
+      "stop": 0.3260530841609804,
+      "open_ms": 1792699199999,
+      "open_ts": "2026-10-22 22:28:59 UTC"
+    },
+    {
+      "symbol": "ADAUSDT",
+      "qty": 402.1028829066332,
+      "entry_px": 0.2125062,
+      "cost": 85.5348050111891,
+      "stop": 0.20318302775512337,
+      "open_ms": 1792699199999,
+      "open_ts": "2026-10-22 22:28:59 UTC"
+    }
+  ],
+  "status": "alive",
+  "peak": 500.0,
+  "last_candle": 1792684800000,
+  "trades": 0,
+  "wins": 0,
+  "losses": 0,
+  "born": "2026-10-22 22:28:59 UTC",
+  "died": null,
+  "reason": null,
+  "updated": "2026-10-22 22:28:59 UTC"
+}

@@ -1,0 +1,30 @@
+{
+  "ts": "2026-10-22 22:28:52 UTC",
+  "generation": 1,
+  "start": 500.0,
+  "target": 1000.0,
+  "death": 250.0,
+  "variants": {
+    "A_mr4h": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "trades": 0,
+      "open": 0
+    },
+    "B_mr4h_sm": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "trades": 0,
+      "open": 0
+    },
+    "C_smfollow": {
+      "equity": 499.65,
+      "status": "alive",
+      "reason": null,
+      "trades": 0,
+      "open": 2
+    }
+  }
+}
