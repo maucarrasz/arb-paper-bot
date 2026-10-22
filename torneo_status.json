@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-22 22:28:52 UTC",
+  "ts": "2026-10-22 22:34:30 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -25,6 +25,13 @@
       "reason": null,
       "trades": 0,
       "open": 2
+    },
+    "D_msb11": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "trades": 0,
+      "open": 0
     }
   }
 }
