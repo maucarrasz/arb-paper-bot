@@ -26,6 +26,8 @@ def load_state():
         return book
     d = json.load(open(STATE))
     book.cash = d["cash"]
+    book.guard_until = d.get("guard_until", 0)
+    book.peak_equity = d.get("peak_equity")
     book.positions = [engine.Position.from_dict(p) for p in d["positions"]]
     book.consec_losses = d.get("consec_losses", {})
     book.cooldown_until = d.get("cooldown_until", {})
@@ -44,6 +46,9 @@ def save_state(book):
         "day": book.day,
         "day_start_equity": book.day_start_equity,
         "day_pnl": book.day_pnl,
+        "guard_until": getattr(book, "guard_until", 0),
+        "peak_equity": getattr(book, "peak_equity", None),
+        "mode": config.MODE,
         "updated": now_iso(),
     }, open(STATE, "w"), indent=2)
 
@@ -92,7 +97,8 @@ def run():
             ks = data.fetch_klines(sym)
             closed = [c for c in ks if c["close_time"] < ts_ms]
             klines[sym] = closed
-            klines4[sym] = data.resample(closed, 4)
+            ks4 = data.fetch_klines(sym, "4h", 260)
+            klines4[sym] = [c for c in ks4 if c["close_time"] < ts_ms]
             marks[sym] = closed[-1]["close"]
         except Exception as e:
             print(f"[desk] {sym}: error de datos: {e}")
@@ -127,9 +133,10 @@ def run():
         if not sig.candidate:
             continue
         sig = agents.analyze(sig, cs, klines4[sym])
+        guard = book.guard_active(ts_ms, marks)
         sig = agents.skeptical(sig, news.context(sym, headlines),
                                [p.symbol for p in book.positions],
-                               book.cooldown_active(sym, ts_ms),
+                               book.cooldown_active(sym, ts_ms) or guard,
                                book.daily_cap_hit())
         if sig.skeptic_decision == "PASAR":
             log_signal(now_iso(), sig, "VETO")

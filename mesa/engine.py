@@ -18,17 +18,22 @@ class Position:
         self.target = target
         self.reasons = reasons
         self.fees = entry_px * qty * config.FEE
+        self.atr = (entry_px - stop) / config.STOP_ATR   # ATR al entrar (Chandelier)
+        self.max_high = entry_px                          # max high desde entrada
 
     def to_dict(self):
         return dict(symbol=self.symbol, entry_time=self.entry_time,
                     entry_px=self.entry_px, qty=self.qty, stop=self.stop,
-                    target=self.target, reasons=self.reasons, fees=self.fees)
+                    target=self.target, reasons=self.reasons, fees=self.fees,
+                    atr=self.atr, max_high=self.max_high)
 
     @staticmethod
     def from_dict(d):
         p = Position(d["symbol"], d["entry_time"], d["entry_px"], d["qty"],
                      d["stop"], d["target"], d.get("reasons", ""))
         p.fees = d.get("fees", p.fees)
+        p.atr = d.get("atr", p.atr)
+        p.max_high = d.get("max_high", p.entry_px)
         return p
 
 
@@ -43,17 +48,27 @@ def open_position(symbol, ref_px, qty, stop, target, ts, reasons):
 
 
 def check_exit(pos, candle, closes_1h, ts_now):
-    """Devuelve (exit_px, motivo) o (None, None). Conservador: stop antes que objetivo."""
-    if candle["low"] <= pos.stop:
-        return pos.stop * (1 - config.SLIPPAGE), "stop"
-    if candle["high"] >= pos.target:
-        return pos.target, "objetivo"
+    """Devuelve (exit_px, motivo) o (None, None). Conservador: stop antes que objetivo.
+    v2: stop trailing Chandelier (max_high - 2.5*ATR, nunca baja), sin objetivo fijo."""
+    v2 = getattr(config, "MODE", "v1") == "v2"
+    if v2:
+        pos.max_high = max(pos.max_high, candle["high"])
+        trailing = max(pos.stop, pos.max_high - config.CHANDELIER_ATR * pos.atr)
+        if candle["low"] <= trailing:
+            motive = "stop" if trailing <= pos.stop + 1e-12 else "chandelier"
+            return trailing * (1 - config.SLIPPAGE), motive
+    else:
+        if candle["low"] <= pos.stop:
+            return pos.stop * (1 - config.SLIPPAGE), "stop"
+        if candle["high"] >= pos.target:
+            return pos.target, "objetivo"
     if config.TREND_EXIT and len(closes_1h) >= config.EMA_SLOW + 1:
         e20, e50 = data.ema(closes_1h, config.EMA_FAST), data.ema(closes_1h, config.EMA_SLOW)
         if e20 and e50 and e20 < e50:
             return candle["close"] * (1 - config.SLIPPAGE), "ruptura de tendencia"
-    if ts_now - pos.entry_time >= config.TIME_STOP_H * 3600 * 1000:
-        return candle["close"] * (1 - config.SLIPPAGE), "tiempo (72h)"
+    tstop = config.TIME_STOP_H_V2 if v2 else config.TIME_STOP_H
+    if ts_now - pos.entry_time >= tstop * 3600 * 1000:
+        return candle["close"] * (1 - config.SLIPPAGE), f"tiempo ({tstop}h)"
     return None, None
 
 
@@ -114,3 +129,38 @@ class Book:
                 self.consec_losses[trade["symbol"]] = 0
         else:
             self.consec_losses[trade["symbol"]] = 0
+        if getattr(config, "MODE", "v1") == "v2":
+            # CooldownPeriod: 2h sin re-entrar al simbolo tras cualquier cierre
+            self.cooldown_until[trade["symbol"]] = max(
+                self.cooldown_until.get(trade["symbol"], 0),
+                ts_ms + config.COOLDOWN_AFTER_CLOSE_H * 3600 * 1000)
+            # StoplossGuard global: >=N stops en 24h = pausa global
+            h24 = ts_ms - config.SL_GUARD_LOOKBACK_H * 3600 * 1000
+            stops = [t for t in self.closed
+                     if t["close_ts"] >= h24 and t["exit_reason"].startswith("stop")]
+            if len(stops) >= config.SL_GUARD_TRADES:
+                self.guard_until = max(getattr(self, "guard_until", 0),
+                                       ts_ms + config.SL_GUARD_STOP_H * 3600 * 1000)
+            # LowProfitPairs: ultimas N ops del simbolo sumando < X% = bloqueo 72h
+            ts = [t for t in self.closed if t["symbol"] == trade["symbol"]][-config.LOWPROFIT_TRADES:]
+            if len(ts) >= config.LOWPROFIT_TRADES and sum(t["pnl_pct"] for t in ts) < config.LOWPROFIT_PCT:
+                self.cooldown_until[trade["symbol"]] = max(
+                    self.cooldown_until.get(trade["symbol"], 0),
+                    ts_ms + config.LOWPROFIT_STOP_H * 3600 * 1000)
+
+    def guard_active(self, ts_ms, marks=None):
+        """MaxDrawdown + StoplossGuard globales (v2)."""
+        if getattr(config, "MODE", "v1") != "v2":
+            return False
+        if ts_ms < getattr(self, "guard_until", 0):
+            return True
+        peak = getattr(self, "peak_equity", None)
+        eq = self.equity(marks)
+        if peak is None or eq > peak:
+            self.peak_equity = eq
+            peak = eq
+        if peak > 0 and (peak - eq) / peak > config.DD_MAX:
+            self.guard_until = ts_ms + config.DD_STOP_H * 3600 * 1000
+            self.peak_equity = eq  # reinicia el pico tras disparar la pausa
+            return True
+        return False

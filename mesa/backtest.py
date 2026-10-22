@@ -10,14 +10,18 @@ import time
 from . import agents, config, data, engine
 
 
-def run(days=180, verbose=False):
+def run(days=180, verbose=False, end_ms=None):
     hist = {}
+    hist4 = {}
     for sym in config.UNIVERSE:
-        hist[sym] = data.fetch_history(sym, "1h", days)
-        print(f"{sym}: {len(hist[sym])} velas 1h descargadas", flush=True)
+        hist[sym] = data.fetch_history(sym, "1h", days, end_ms=end_ms)
+        hist4[sym] = data.fetch_history(sym, "4h", days + 20, end_ms=end_ms)
+        print(f"{sym}: {len(hist[sym])} velas 1h + {len(hist4[sym])} velas 4h descargadas", flush=True)
     # linea de tiempo comun e indices moviles (ventana creciente por simbolo)
     times = [c["open_time"] for c in hist[config.UNIVERSE[0]]]
     idx = {s: 0 for s in config.UNIVERSE}
+    idx4 = {s: 0 for s in config.UNIVERSE}
+    win4 = {}
     book = engine.Book()
     signals_log = []
     warmup = 60  # velas para indicadores
@@ -39,6 +43,12 @@ def run(days=180, verbose=False):
                 continue
             win[sym] = h[:j + 1]
             marks[sym] = h[j]["close"]
+            h4 = hist4[sym]
+            j4 = idx4[sym]
+            while j4 + 1 < len(h4) and h4[j4 + 1]["close_time"] <= t:
+                j4 += 1
+            idx4[sym] = j4
+            win4[sym] = h4[:j4 + 1]
         book.roll_day(t, marks)
 
         # 1) gestionar posiciones abiertas con la vela que cierra en t
@@ -68,11 +78,14 @@ def run(days=180, verbose=False):
             sig = agents.scan(sym, cs)
             if not sig.candidate:
                 continue
-            c4 = data.resample(cs, 4)
+            c4 = win4.get(sym, [])
+            if len(c4) < 55:
+                continue
             sig = agents.analyze(sig, cs, c4)
+            guard = book.guard_active(t, marks)
             sig = agents.skeptical(
                 sig, news_ctx, [p.symbol for p in book.positions],
-                book.cooldown_active(sym, t), book.daily_cap_hit())
+                book.cooldown_active(sym, t) or guard, book.daily_cap_hit())
             if sig.skeptic_decision == "PASAR":
                 signals_log.append(_sig_row(t, sig, "VETO"))
                 continue
@@ -155,10 +168,19 @@ def compute_stats(book, final_eq, hist, days):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=180)
+    ap.add_argument("--mode", choices=["v1", "v2"], default=config.MODE)
+    ap.add_argument("--to", default=None, help="fecha fin YYYY-MM-DD (UTC); defecto: ahora")
     ap.add_argument("--out", default="mesa_backtest_results.json")
     ap.add_argument("--trades-out", default="mesa_backtest_trades.csv")
     args = ap.parse_args()
-    stats, signals, trades = run(days=args.days)
+    config.MODE = args.mode
+    end_ms = None
+    if args.to:
+        import datetime
+        end_ms = int(datetime.datetime.strptime(args.to, "%Y-%m-%d").replace(
+            tzinfo=datetime.timezone.utc).timestamp() * 1000)
+    stats, signals, trades = run(days=args.days, end_ms=end_ms)
+    stats["mode"] = args.mode
     stats["salidas"] = {}
     for t in trades:
         stats["salidas"][t["exit_reason"]] = stats["salidas"].get(t["exit_reason"], 0) + 1

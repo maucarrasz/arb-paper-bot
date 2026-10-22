@@ -1,0 +1,27 @@
+{
+  "dias": 185,
+  "periodo": "2025-10-22 a 2026-04-25",
+  "equity_inicial": 10000.0,
+  "equity_final": 9559.67,
+  "retorno_pct": -4.4,
+  "buy_hold_pct": {
+    "BTCUSDT": -28.48,
+    "ETHUSDT": -40.2,
+    "SOLUSDT": -53.54
+  },
+  "trades": 33,
+  "ganados": 8,
+  "perdidos": 25,
+  "winrate_pct": 24.2,
+  "avg_win_usd": 34.1,
+  "avg_loss_usd": -28.53,
+  "max_drawdown_pct": 4.65,
+  "fees_total_usd": 161.12,
+  "senales_abiertas": 33,
+  "salidas": {
+    "chandelier": 21,
+    "stop": 12
+  },
+  "mode": "v2",
+  "nota": "Backtest sin veto de noticias (sin historico RSS gratis). Fills conservadores: stop antes que objetivo si la vela toca ambos, slippage 0.05% + fee 0.10% por lado."
+}

@@ -97,3 +97,44 @@ pip install requests
 python -m mesa.desk            # una pasada en vivo (paper)
 python -m mesa.backtest --days 180
 ```
+
+## Mesa v2 (22-oct-2026, noche): remodelada siguiendo los mejores bots open source
+
+Pedido de Mauricio: "investiga a fondo los mejores bots y modelalos usando esta
+infraestructura". Investigados: Freqtrade, TradingAgents (arXiv:2412.20138),
+Hummingbot, Jesse, NautilusTrader, y literatura de trend following (LeBeau,
+regla SMA200, walk-forward). Que se modelo de quien:
+
+1. **Filtro de regimen SMA200 en 4h** (regla de los 200 periodos, trend filter
+   clasico): si el cierre 4h esta bajo su SMA200, la mesa no compra. En mercado
+   bajista estructural la mesa se sienta a esperar.
+2. **Salida Chandelier (Chuck LeBeau)**: se elimina el objetivo fijo; stop
+   trailing = maximo high desde entrada - 2.5xATR, nunca baja. Corta perdedores
+   igual (1.5xATR inicial) pero deja correr ganadores. Tiempo maximo 96h.
+3. **Protecciones estilo Freqtrade** (docs.freqtrade.io/en/2024.1/includes/protections):
+   - CooldownPeriod: 2h sin re-entrar al mismo activo tras cerrar.
+   - StoplossGuard global: >=3 stops en 24h = pausa global 4h.
+   - MaxDrawdown: drawdown de equity > 10% = pausa 48h.
+   - LowProfitPairs: ultimas 5 ops de un activo sumando < -2% = bloqueo 72h.
+4. **Debate Toro vs Oso (TradingAgents, Tauric Research)**: el esceptico ahora
+   argumenta: lista puntos a favor (volumen, momentum, tendencia, regimen,
+   noticias+) y en contra (RSI alto, movimiento extendido, noticias-,
+   volatilidad). Solo COMPRA si toros > osos y al menos 3 argumentos a favor;
+   todo queda registrado en mesa_signals.csv. TradingAgents usa LLMs; aqui el
+   debate es determinista (gratis, reproducible, sin API de pago).
+5. **Validacion walk-forward honesta**: params fijados a priori de las fuentes
+   (no optimizados). Ventana IS (dentro de muestra) = 2025-10-22 a 2026-04-25;
+   OOS (fuera de muestra) = 2026-04-25 a 2026-10-22. Resultados:
+
+| Ventana | v1 (original) | v2 (remodelada) |
+|---|---|---|
+| IS 185d | -3.2% (72 trades, WR 41.7%, DD 5.1%) | -4.4% (33 trades, WR 24.2%, DD 4.7%) |
+| OOS 180d | -2.5% (66 trades, WR 39.4%, DD 4.2%, fees $324) | **-1.7%** (36 trades, WR 33.3%, DD 2.5%, fees $180) |
+
+Lectura honesta: **ninguna version gana dinero**. v2 opera la mitad, paga la
+mitad de comisiones, tiene menor drawdown en ambas ventanas y es mejor fuera de
+muestra (-1.7% vs -2.5%); peor dentro de muestra. El filtro de regimen la deja
+fuera en mercados bajistas (por eso en OOS perdio menos que el mercado: BTC
+-5.8%, ETH -13.5%, SOL -12.5% en la misma ventana). Sigue siendo un sistema
+paper para aprender; no hay promesa de rentabilidad. v2 queda como modo activo
+(`MODE = "v2"` en mesa/config.py); v1 sigue disponible con `--mode v1`.

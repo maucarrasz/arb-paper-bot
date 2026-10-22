@@ -28,10 +28,10 @@ def fetch_klines(symbol, interval=config.INTERVAL, limit=config.KLINES_LIMIT,
     return out
 
 
-def fetch_history(symbol, interval, days):
+def fetch_history(symbol, interval, days, end_ms=None):
     """Descarga historico paginado (1000 velas por llamada) para backtest."""
     ms = 24 * 3600 * 1000
-    end = int(time.time() * 1000)
+    end = end_ms if end_ms is not None else int(time.time() * 1000)
     start = end - days * ms
     out = []
     cursor = start

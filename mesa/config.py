@@ -44,3 +44,28 @@ FEE = 0.001                 # 0.10% taker por lado (Binance spot estandar)
 SLIPPAGE = 0.0005           # 0.05% por lado (supuesto)
 TIME_STOP_H = 72            # cierre por tiempo a las 72h si no toco stop/objetivo
 TREND_EXIT = True           # salida discrecional si EMA20 < EMA50 en 1h
+
+# ==================== MESA v2 (22-oct, modelado de bots lideres) ====================
+# Fuentes documentadas en README: Freqtrade (protecciones), TradingAgents
+# (debate bull/bear multiagente), Chandelier Exit de Chuck LeBeau (trailing ATR),
+# regla de regimen SMA200 (trend filter clasico), validacion walk-forward IS/OOS.
+MODE = "v2"                  # "v1" = comportamiento original, "v2" = remodelado
+
+# Regimen (regla 200): solo long si cierre 4h > SMA200 en 4h Y EMA20>EMA50 en 4h
+REGIME_SMA = 200
+
+# Chandelier Exit (LeBeau): stop trailing = max_high_desde_entrada - CHANDELIER_ATR*ATR
+# Reemplaza el objetivo fijo: dejar correr ganadores, cortar perdedores.
+CHANDELIER_ATR = 2.5
+TIME_STOP_H_V2 = 96          # v2 deja correr hasta 96h si no toca trailing/ruptura
+
+# Protecciones estilo Freqtrade (docs.freqtrade.io protections)
+COOLDOWN_AFTER_CLOSE_H = 2   # CooldownPeriod: 2h sin re-entrar al mismo simbolo tras cerrar
+SL_GUARD_LOOKBACK_H = 24     # StoplossGuard global...
+SL_GUARD_TRADES = 3          # ...>=3 stops en 24h...
+SL_GUARD_STOP_H = 4          # ...= pausa global de 4h
+DD_MAX = 0.10                # MaxDrawdown: DD de equity > 10%...
+DD_STOP_H = 48               # ...= pausa global de 48h
+LOWPROFIT_TRADES = 5         # LowProfitPairs: ultimas 5 ops de un simbolo...
+LOWPROFIT_PCT = -2.0         # ...sumando < -2%...
+LOWPROFIT_STOP_H = 72        # ...= bloqueo de ese simbolo 72h

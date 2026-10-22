@@ -16,6 +16,7 @@ class Signal:
     atr_pct: float = 0.0
     trend_1h: bool = False
     trend_4h: bool = False
+    regime_ok: bool = True
     news_score: int = 0
     news_label: str = "-"
     entry: float = 0.0
@@ -62,11 +63,19 @@ def analyze(sig, candles, candles_4h):
     f20, f50 = data.ema(c4, config.EMA_FAST), data.ema(c4, config.EMA_SLOW)
     sig.trend_1h = bool(e20 and e50 and e20 > e50)
     sig.trend_4h = bool(f20 and f50 and f20 > f50)
+    if getattr(config, "MODE", "v1") == "v2":
+        # Regimen (regla SMA200 en 4h): mercado estructuralmente alcista o no opera
+        sma200 = data.sma(c4, getattr(config, "REGIME_SMA", 200))
+        sig.regime_ok = bool(sma200 and c4[-1] > sma200)
+    else:
+        sig.regime_ok = True
     ok = True
     if not sig.trend_1h:
         ok = False; sig.analyst_reasons.append("sin tendencia 1h (EMA20<=EMA50)")
     if not sig.trend_4h:
         ok = False; sig.analyst_reasons.append("sin tendencia 4h")
+    if getattr(config, "MODE", "v1") == "v2" and not sig.regime_ok:
+        ok = False; sig.analyst_reasons.append("regimen bajista (cierre 4h < SMA200)")
     if sig.rsi > config.RSI_LONG_MAX:
         ok = False; sig.analyst_reasons.append(f"RSI {sig.rsi:.0f} sobreextendido")
     if sig.atr_pct > config.ATR_PCT_MAX:
@@ -75,15 +84,24 @@ def analyze(sig, candles, candles_4h):
         ok = False; sig.analyst_reasons.append("ATR nulo")
     sig.entry = px
     sig.stop = px - config.STOP_ATR * sig.atr
-    sig.target = px + config.TARGET_ATR * sig.atr
-    sig.rr = (sig.target - px) / (px - sig.stop) if px > sig.stop else 0.0
-    if sig.rr < config.MIN_RR - 1e-9:  # epsilon: 2.25/1.5 puede dar 1.4999... en float
-        ok = False; sig.analyst_reasons.append(f"R:R {sig.rr:.2f} < {config.MIN_RR}")
+    if getattr(config, "MODE", "v1") == "v2":
+        sig.target = 0.0  # sin objetivo fijo: Chandelier trailing deja correr ganadores
+        sig.rr = 99.0
+    else:
+        sig.target = px + config.TARGET_ATR * sig.atr
+        sig.rr = (sig.target - px) / (px - sig.stop) if px > sig.stop else 0.0
+        if sig.rr < config.MIN_RR - 1e-9:  # epsilon: 2.25/1.5 puede dar 1.4999... en float
+            ok = False; sig.analyst_reasons.append(f"R:R {sig.rr:.2f} < {config.MIN_RR}")
     sig.analyst_ok = ok
     if ok:
-        sig.analyst_reasons.append(
-            f"plan: entrada {px:.2f}, stop {sig.stop:.2f} (-{config.STOP_ATR}*ATR), "
-            f"objetivo {sig.target:.2f} (+{config.TARGET_ATR}*ATR), R:R {sig.rr:.2f}")
+        if getattr(config, "MODE", "v1") == "v2":
+            sig.analyst_reasons.append(
+                f"plan: entrada {px:.2f}, stop {sig.stop:.2f} (-{config.STOP_ATR}*ATR), "
+                f"salida por Chandelier {config.CHANDELIER_ATR}*ATR trailing")
+        else:
+            sig.analyst_reasons.append(
+                f"plan: entrada {px:.2f}, stop {sig.stop:.2f} (-{config.STOP_ATR}*ATR), "
+                f"objetivo {sig.target:.2f} (+{config.TARGET_ATR}*ATR), R:R {sig.rr:.2f}")
     return sig
 
 
@@ -105,6 +123,29 @@ def skeptical(sig, news_ctx, open_symbols, cooldown_active, daily_cap_hit):
     if abs(sig.ret_3h) > 0.08:
         veto.append(f"movimiento {sig.ret_3h*100:.1f}% ya muy extendido (perseguir = mal precio)")
     sig.skeptic_reasons = veto
+    if getattr(config, "MODE", "v1") == "v2":
+        # Debate Bull vs Bear (TradingAgents): puntajes deterministas registrados
+        bull, bear = [], []
+        if sig.vol_ratio >= config.VOL_RATIO_MIN: bull.append(f"volumen {sig.vol_ratio:.1f}x")
+        if sig.ret_3h >= config.RET_3H_MIN: bull.append(f"momentum {sig.ret_3h*100:.1f}%/3h")
+        if sig.trend_1h and sig.trend_4h: bull.append("tendencia 1h+4h al alza")
+        if sig.regime_ok: bull.append("regimen SMA200 alcista")
+        if sig.news_score > 0: bull.append(f"noticias +{sig.news_score}")
+        if sig.rsi > 65: bear.append(f"RSI {sig.rsi:.0f} alto")
+        if abs(sig.ret_3h) > 0.04: bear.append(f"movimiento {sig.ret_3h*100:.1f}% extendido")
+        if sig.news_score < 0: bear.append(f"noticias {sig.news_score}")
+        if sig.atr_pct > 0.025: bear.append(f"volatilidad {sig.atr_pct*100:.1f}% elevada")
+        sig.skeptic_reasons = veto + [
+            f"TORO[{len(bull)}]: " + (", ".join(bull) or "sin argumentos"),
+            f"OSO[{len(bear)}]: " + (", ".join(bear) or "sin argumentos")]
+        if veto:
+            sig.skeptic_decision = "PASAR"
+        elif len(bull) > len(bear) and len(bull) >= 3:
+            sig.skeptic_decision = "COMPRAR"
+        else:
+            sig.skeptic_decision = "PASAR"
+            sig.skeptic_reasons.append(f"debate sin conviccion (toro {len(bull)} vs oso {len(bear)})")
+        return sig
     if veto:
         sig.skeptic_decision = "PASAR"
     elif sig.vol_ratio >= 3.0 and sig.trend_4h:
