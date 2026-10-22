@@ -1,0 +1,35 @@
+{
+  "processed_trades": 0,
+  "funded": {},
+  "started": null,
+  "positions": {
+    "A_mr4h": {},
+    "B_mr4h_sm": {},
+    "C_smfollow": {
+      "TRXUSDT:1792699199999": [
+        "TRXUSDT",
+        456.8991775814804
+      ],
+      "ADAUSDT:1792699199999": [
+        "ADAUSDT",
+        402.1028829066332
+      ]
+    },
+    "D_msb11": {},
+    "E_mr1h": {},
+    "F_mr4h_deep": {},
+    "G_msb11_nosm": {},
+    "H_smfollow_mr": {
+      "TRXUSDT:1792699199999": [
+        "TRXUSDT",
+        456.8991775814804
+      ],
+      "ADAUSDT:1792699199999": [
+        "ADAUSDT",
+        402.1028829066332
+      ]
+    },
+    "I_mr4h_aggro": {},
+    "J_msb11_1h": {}
+  }
+}

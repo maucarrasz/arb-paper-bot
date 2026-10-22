@@ -1,0 +1,78 @@
+{
+  "updated": "2026-10-22 22:58:50 UTC",
+  "venue": "dydx_v4_testnet",
+  "live": false,
+  "wallet": null,
+  "variants": {
+    "A_mr4h": {
+      "subaccount": 0,
+      "equity_real": null,
+      "equity_paper": 500.0,
+      "divergence_usd": null,
+      "mode": "mr"
+    },
+    "B_mr4h_sm": {
+      "subaccount": 1,
+      "equity_real": null,
+      "equity_paper": 500.0,
+      "divergence_usd": null,
+      "mode": "mr"
+    },
+    "C_smfollow": {
+      "subaccount": 2,
+      "equity_real": null,
+      "equity_paper": 499.65,
+      "divergence_usd": null,
+      "mode": "smfollow"
+    },
+    "D_msb11": {
+      "subaccount": 3,
+      "equity_real": null,
+      "equity_paper": 500.0,
+      "divergence_usd": null,
+      "mode": "msb11"
+    },
+    "E_mr1h": {
+      "subaccount": 4,
+      "equity_real": null,
+      "equity_paper": 500.0,
+      "divergence_usd": null,
+      "mode": "mr"
+    },
+    "F_mr4h_deep": {
+      "subaccount": 5,
+      "equity_real": null,
+      "equity_paper": 500.0,
+      "divergence_usd": null,
+      "mode": "mr"
+    },
+    "G_msb11_nosm": {
+      "subaccount": 6,
+      "equity_real": null,
+      "equity_paper": 500.0,
+      "divergence_usd": null,
+      "mode": "msb11"
+    },
+    "H_smfollow_mr": {
+      "subaccount": 7,
+      "equity_real": null,
+      "equity_paper": 499.65,
+      "divergence_usd": null,
+      "mode": "smfollow"
+    },
+    "I_mr4h_aggro": {
+      "subaccount": 8,
+      "equity_real": null,
+      "equity_paper": 500.0,
+      "divergence_usd": null,
+      "mode": "mr"
+    },
+    "J_msb11_1h": {
+      "subaccount": 9,
+      "equity_real": null,
+      "equity_paper": 500.0,
+      "divergence_usd": null,
+      "mode": "msb11"
+    }
+  }
+}
