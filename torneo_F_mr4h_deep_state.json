@@ -1,0 +1,15 @@
+{
+  "variant": "F_mr4h_deep",
+  "cash": 500.0,
+  "positions": [],
+  "status": "alive",
+  "peak": 500.0,
+  "last_candle": 1792684800000,
+  "trades": 0,
+  "wins": 0,
+  "losses": 0,
+  "born": "2026-10-22 22:37:58 UTC",
+  "died": null,
+  "reason": null,
+  "updated": "2026-10-22 22:37:58 UTC"
+}

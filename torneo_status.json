@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-22 22:34:30 UTC",
+  "ts": "2026-10-22 22:37:49 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -27,6 +27,48 @@
       "open": 2
     },
     "D_msb11": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "trades": 0,
+      "open": 0
+    },
+    "E_mr1h": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "trades": 0,
+      "open": 0
+    },
+    "F_mr4h_deep": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "trades": 0,
+      "open": 0
+    },
+    "G_msb11_nosm": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "trades": 0,
+      "open": 0
+    },
+    "H_smfollow_mr": {
+      "equity": 499.65,
+      "status": "alive",
+      "reason": null,
+      "trades": 0,
+      "open": 2
+    },
+    "I_mr4h_aggro": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "trades": 0,
+      "open": 0
+    },
+    "J_msb11_1h": {
       "equity": 500.0,
       "status": "alive",
       "reason": null,
