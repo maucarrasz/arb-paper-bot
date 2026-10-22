@@ -8,7 +8,7 @@ import json
 import os
 import time
 
-from . import agents, config, data, engine, news, reto100
+from . import agents, config, data, engine, news, reto100, torneo
 
 STATE = "mesa_state.json"
 SIGNALS_CSV = "mesa_signals.csv"
@@ -169,10 +169,18 @@ def run():
         reto100.step(ts_ms)
     except Exception as e:
         print(f"[desk] reto100 error: {e}")
-    # Escenar archivos del reto para que el commit del workflow los incluya
+    # 6) Torneo evolutivo de variantes (paper USD 500 c/u, meta USD 1000)
+    try:
+        torneo.step(ts_ms)
+    except Exception as e:
+        print(f"[desk] torneo error: {e}")
+    # Escenar archivos del reto/torneo para que el commit del workflow los incluya
+    import glob
     import subprocess
-    for f in ("reto100_state.json", "reto100_equity.csv", "reto100_trades.csv"):
-        if os.path.exists(f):
+    patrones = ("reto100_*.json", "reto100_*.csv", "torneo_*.json",
+                "torneo_*.csv", "smartmoney_*.csv")
+    for pat in patrones:
+        for f in glob.glob(pat):
             subprocess.run(["git", "add", f], capture_output=True)
 
 
