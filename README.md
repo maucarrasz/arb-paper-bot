@@ -208,6 +208,20 @@ vivas. La evaluacion es prospectiva desde la primera apuesta registrada
 (moonbet_trades.csv). Si una regla cambia despues, se documenta como GEN2.x con
 fecha y motivo, y la comparacion se reinicia desde ese cambio.
 
+**ENMIENDA GEN2.1 / GEN1.1 (2026-10-23 14:28 UTC, 09:28 Lima)**: Mauricio por
+WhatsApp: "7 dias de torneo, los que no apuestan mueren, si no es rentable
+muere". Reemplaza la regla de 30 dias en AMBOS torneos (GEN1 torneo.py y GEN2
+moonbet.py). Criterio aplicado: evaluacion por libro desde su propio `born` +
+7 dias exactos; al cumplirse, muere la variante sin actividad alguna
+(GEN1: trades+posiciones abiertas = 0; GEN2: apuestas cerradas+abiertas = 0)
+o con equity <= $500 ("no rentable"; con el fee de apertura del 1% un apostador
+no queda jamas en $500.00 exactos, asi que en la practica el '=' solo alcanza
+a las que nunca apostaron). Muerte por equity < $250 y objetivo >= $1000 sin
+cambios. Ventanas exactas: GEN1 (born 2026-10-22 22:28:59 UTC) muerte evaluable
+desde 2026-10-29 22:28:59 UTC (29-oct 17:28 Lima); GEN2 (born 2026-10-23
+00:22:30 UTC) desde 2026-10-30 00:22:30 UTC (29-oct 19:22 Lima). Sin reset de
+estados ni historial; la comparacion entre variantes sigue prospectiva.
+
 Mecanica verificada (help.moon.com): apuesta abierta up/down, wager = perdida
 maxima, liquidacion (bust) al moverse 1/leverage en contra, cierre por senal.
 Fees: 1% apertura sobre wager + performance MINIMO documentado 10% del beneficio
