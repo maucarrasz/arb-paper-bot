@@ -222,6 +222,58 @@ desde 2026-10-29 22:28:59 UTC (29-oct 17:28 Lima); GEN2 (born 2026-10-23
 00:22:30 UTC) desde 2026-10-30 00:22:30 UTC (29-oct 19:22 Lima). Sin reset de
 estados ni historial; la comparacion entre variantes sigue prospectiva.
 
+**ENMIENDA GEN2.2 / GEN1.2 (2026-10-23 ~15:00 UTC, 10:00 Lima)**: Mauricio por
+WhatsApp (23-oct): "La muerte es inactividad por horas no al final", "No se,
+modela a los mejores y maximo de perdida tmb" (delega el criterio) y "Si uno
+muere lo reemplaza automaticamente nueva arquitectura de bots con aprendizaje
+de sus errores". Cambios (mesa/evolucion.py, aplicados a AMBOS torneos):
+
+1. **Muerte por inactividad por horas** (reemplaza la clausula "sin apostar al
+   dia 7" de GEN1.1/GEN2.1, que nunca llego a disparar): muere la variante sin
+   actividad (aperturas/cierres; posiciones ABIERTAS cuentan como actividad)
+   durante mas horas que la ventana de su familia de senal. Ventana = 2x el gap
+   p90 MEDIDO de cada familia sobre 45 dias de klines publicas de Binance
+   (data-api.binance.vision, 12 pares, medido 23-oct): mr RSI<30 4h 16h,
+   mr RSI<25 4h 16h, mr_down RSI>70 48h, mr_down RSI>75 12h, momo 32h,
+   breakout 40h, mr 1h 28h, smart-money 48h (no medible en backfill,
+   provisional). Modelo de referencia: antes/blinds del poker (la inaccion
+   cuesta; pokerology.com/poker/strategy/ante/). Dato honesto: los gaps
+   maximos medidos de las familias RSI 4h (252-520h) superan el torneo entero,
+   asi que esas arquitecturas tenderan a morir y el relevo migrara hacia
+   senales de mayor cadencia. Es la presion evolutiva pedida, no un bug.
+2. **Maxima perdida (modelo FTMO, ftmo.com/en/trading-objectives/)**: perdida
+   total 10% del capital inicial -> piso sube de $250 a **$450**; y NUEVO
+   limite diario: muere si equity < equity de apertura del dia UTC - $15
+   (3% del inicial). Efecto conocido: U10 (wager 5% = $25) muere con una sola
+   apuesta perdedora (supera el limite diario); es la disciplina FTMO
+   aplicada verbatim, el sizing 5% resulta incompatible por diseno.
+3. **Ventana fija de 7 dias compartida**: todos los libros (originales y
+   relevos) se evaluan al mismo cierre: GEN1 2026-10-29 22:28:59 UTC, GEN2
+   2026-10-30 00:22:30 UTC. Al cierre muere quien no tenga actividad o no
+   supere $500 netos. El torneo NO se vuelve infinito por los relevos.
+4. **Relevo automatico con hipotesis** (tope 20 por torneo, sin relevo en las
+   ultimas 12h): al morir, la hija (generacion+1) nace de una escalera FIJA de
+   mutaciones segun el diagnostico estructural: inactividad -> mayor cadencia
+   (RSI 25->30->40->1h; momo 1.5->1.0->0.5%; breakout 20->10->5; smart-money
+   -> momentum), perdida -> mitad de riesgo (wager/leverage o risk). Anti-
+   overfitting: la escalera es fija, no ajustada a trades individuales; con
+   1-3 apuestas no hay aprendizaje estadistico que afirmar y las hipotesis se
+   registran como estructurales. Toda hija pasa validacion de limites/riesgo
+   (lev 1-100, wager 0.5%-5%, wager minimo $1, umbrales coherentes) antes de
+   competir; si no pasa, el relevo queda bloqueado y registrado. Historial
+   preservado: libros muertos intactos, log en torneo_deaths.csv /
+   moonbet_deaths.csv y registro de relevos en torneo_spawned.json /
+   moonbet_spawned.json. Suite de 75 pruebas de condiciones limite en verde
+   antes del despliegue.
+
+Consecuencia inmediata esperada al activarse (hora del primer tick): mueren
+por inactividad las variantes que llevan >16h sin actividad desde su born:
+GEN1 A/B/F/I (mr 4h, born 22-oct 22:28 UTC) y GEN2 U9 (mr_down>75, 12h) de
+inmediato; GEN2 U1/U2/U8 a las 16:22 UTC; las demas segun su ventana. Cada
+muerte engendra su relevo con hipotesis en el mismo tick. El protocolo de
+ganador se adapta a la ventana de 7 dias: comparacion al cierre con pnl neto
+bajo ambos escenarios de fee; "sin edge" si ninguna es positiva en pesimista.
+
 Mecanica verificada (help.moon.com): apuesta abierta up/down, wager = perdida
 maxima, liquidacion (bust) al moverse 1/leverage en contra, cierre por senal.
 Fees: 1% apertura sobre wager + performance MINIMO documentado 10% del beneficio
