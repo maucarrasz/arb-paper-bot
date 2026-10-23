@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-23 09:55:47 UTC",
+  "ts": "2026-10-23 12:44:37 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -34,14 +34,14 @@
       "open": 0
     },
     "U4_momo_up_10x": {
-      "equity": 499.71,
+      "equity": 498.38,
       "status": "alive",
       "reason": null,
       "bets": 0,
       "open": 2
     },
     "U5_sm_10x": {
-      "equity": 499.55,
+      "equity": 499.62,
       "status": "alive",
       "reason": null,
       "bets": 0,
@@ -55,7 +55,7 @@
       "open": 0
     },
     "U7_brk_up_50x": {
-      "equity": 500.41,
+      "equity": 498.56,
       "status": "alive",
       "reason": null,
       "bets": 0,
@@ -76,7 +76,7 @@
       "open": 0
     },
     "U10_sm_3x_big": {
-      "equity": 499.31,
+      "equity": 499.36,
       "status": "alive",
       "reason": null,
       "bets": 0,
