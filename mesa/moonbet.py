@@ -326,6 +326,7 @@ def step(ts_ms):
                 w.writerow(["ts", "variant", "equity", "status"])
             w.writerow([ts, v, round(eq, 2), b["status"]])
     lineages = evo.lineage_report(ORIGINAL_VARIANTS, spawned, status)
+    incidente = evo.incident_report(status)
     json.dump({"ts": ts, "generation": 2, "mechanics": "moon-style leveraged up/down bets",
                "fees": {"open": OPEN_FEE, "perf_optimista_min_documentado": PERF_FEE_OPT,
                         "perf_pesimista_sensibilidad": PERF_FEE_PESS},
@@ -337,6 +338,7 @@ def step(ts_ms):
                           "relevo": "escalera fija con hipotesis (NO aprendizaje automatico); tope 20; sin relevo <12h al cierre",
                           "time_stop_apuesta_h": BET_MAX_AGE_H},
                "lineages": lineages,
+               "incidente_aisladas": incidente,
                "nota": "Simulacion propia con fees optimistas; NO replica exacta de Moon. Moon.com descartado por ToS (Peru/US).",
                "variants": status},
               open(STATUS_JSON, "w"), indent=2)
