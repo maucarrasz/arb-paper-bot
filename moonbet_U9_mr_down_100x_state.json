@@ -2,7 +2,7 @@
   "variant": "U9_mr_down_100x",
   "cash": 500.0,
   "bets": [],
-  "status": "dead",
+  "status": "alive",
   "peak": 500.0,
   "last_candle": 1792742400000,
   "bets_n": 0,
@@ -10,12 +10,13 @@
   "losses": 0,
   "busts": 0,
   "born": "2026-10-23 00:22:30 UTC",
-  "died": "2026-10-23 14:48:19 UTC",
-  "reason": "inactividad: 14.4h sin actividad ni posiciones abiertas (ventana familia mrdn25_4h: 12h = 2x p90 medido)",
+  "died": null,
+  "reason": null,
   "updated": "2026-10-23 14:54:31 UTC",
   "generation": 2,
   "day_open": {
     "date": "2026-10-23",
     "eq": 500.0
-  }
+  },
+  "nota": "muerte 23-oct 14:48 UTC INVALIDADA: ventanas de inactividad pre-recalibracion (error de medicion p90 sin dedup por par). Restaurada 2026-10-23 14:55:00 UTC con snapshot exacto del tick ($500, 0 posiciones, 0 operaciones). Reloj de inactividad sigue desde born, sin reinicio."
 }
