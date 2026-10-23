@@ -185,11 +185,18 @@ def _cadence_ladder(tourney, q):
         sig = q.get("sig")
         if sig in ("mr_up", "mr_down"):
             if q.get("rsi_in", 30) < 30:
-                q["rsi_in"] = 30
-                h = "umbral RSI mas frecuente (25->30)"
+                old_ri, q["rsi_in"] = q.get("rsi_in", 30), 30
             elif q.get("rsi_in", 30) < 40:
-                q["rsi_in"] = 40
-                h = "umbral RSI mas frecuente (30->40)"
+                old_ri, q["rsi_in"] = q.get("rsi_in", 30), 40
+            else:
+                old_ri = None
+            if old_ri is not None:
+                if sig == "mr_up":
+                    h = (f"umbral RSI mas frecuente (rsi_in {old_ri}->{q['rsi_in']}): "
+                         f"entra en RSI<{old_ri} -> RSI<{q['rsi_in']}")
+                else:
+                    h = (f"umbral RSI mas frecuente (rsi_in {old_ri}->{q['rsi_in']}): "
+                         f"entra en RSI>{100-old_ri} -> RSI>{100-q['rsi_in']}")
             elif q.get("tf") == "4h":
                 q["tf"], q["rsi_in"] = "1h", 30
                 h = "timeframe 4h->1h con RSI 30"
