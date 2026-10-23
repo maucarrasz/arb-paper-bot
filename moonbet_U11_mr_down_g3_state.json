@@ -2,7 +2,7 @@
   "variant": "U11_mr_down_g3",
   "cash": 500.0,
   "bets": [],
-  "status": "alive",
+  "status": "aislada",
   "peak": 500.0,
   "last_candle": 1792742400000,
   "bets_n": 0,
@@ -11,7 +11,7 @@
   "busts": 0,
   "born": "2026-10-23 14:54:31 UTC",
   "died": null,
-  "reason": null,
+  "reason": "relevo AISLADO 2026-10-23 14:55:00 UTC: nacio de muerte invalidada por error de regla; fuera de competencia hasta decision de main (comparabilidad)",
   "generation": 3,
   "day_open": {
     "date": "2026-10-23",
