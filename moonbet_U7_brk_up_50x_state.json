@@ -1,10 +1,21 @@
 {
   "variant": "U7_brk_up_50x",
-  "cash": 500.0,
-  "bets": [],
+  "cash": 494.95,
+  "bets": [
+    {
+      "symbol": "DOTUSDT",
+      "dir": 1,
+      "wager": 5.0,
+      "lev": 50,
+      "entry_px": 1.1835915,
+      "bust_px": 1.1599196699999998,
+      "open_ms": 1792727999999,
+      "open_ts": "2026-10-23 04:33:12 UTC"
+    }
+  ],
   "status": "alive",
   "peak": 500.0,
-  "last_candle": 1792699200000,
+  "last_candle": 1792713600000,
   "bets_n": 0,
   "wins": 0,
   "losses": 0,
@@ -12,5 +23,5 @@
   "born": "2026-10-23 00:22:30 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-23 00:22:30 UTC"
+  "updated": "2026-10-23 04:33:12 UTC"
 }

@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-22 23:57:34 UTC",
+  "ts": "2026-10-23 04:32:54 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -20,7 +20,7 @@
       "open": 0
     },
     "C_smfollow": {
-      "equity": 499.65,
+      "equity": 501.64,
       "status": "alive",
       "reason": null,
       "trades": 0,
@@ -34,7 +34,7 @@
       "open": 0
     },
     "E_mr1h": {
-      "equity": 499.91,
+      "equity": 500.42,
       "status": "alive",
       "reason": null,
       "trades": 0,
@@ -55,7 +55,7 @@
       "open": 0
     },
     "H_smfollow_mr": {
-      "equity": 499.65,
+      "equity": 501.64,
       "status": "alive",
       "reason": null,
       "trades": 0,
