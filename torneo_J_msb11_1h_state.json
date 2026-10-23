@@ -4,12 +4,17 @@
   "positions": [],
   "status": "alive",
   "peak": 500.0,
-  "last_candle": 1792753200000,
+  "last_candle": 1792760400000,
   "trades": 0,
   "wins": 0,
   "losses": 0,
   "born": "2026-10-22 22:37:58 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-23 12:44:37 UTC"
+  "updated": "2026-10-23 14:48:09 UTC",
+  "generation": 1,
+  "day_open": {
+    "date": "2026-10-23",
+    "eq": 500.0
+  }
 }

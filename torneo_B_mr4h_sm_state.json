@@ -2,14 +2,19 @@
   "variant": "B_mr4h_sm",
   "cash": 500.0,
   "positions": [],
-  "status": "alive",
+  "status": "dead",
   "peak": 500.0,
   "last_candle": 1792742400000,
   "trades": 0,
   "wins": 0,
   "losses": 0,
   "born": "2026-10-22 22:28:59 UTC",
-  "died": null,
-  "reason": null,
-  "updated": "2026-10-23 12:44:37 UTC"
+  "died": "2026-10-23 14:48:09 UTC",
+  "reason": "inactividad: 16.3h sin actividad ni posiciones abiertas (ventana familia mr30_4h: 16h = 2x p90 medido)",
+  "updated": "2026-10-23 14:48:09 UTC",
+  "generation": 1,
+  "day_open": {
+    "date": "2026-10-23",
+    "eq": 500.0
+  }
 }

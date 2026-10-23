@@ -1,0 +1,70 @@
+{
+  "K_mr_g2": {
+    "params": {
+      "mode": "mr",
+      "tf": "4h",
+      "rsi_in": 40,
+      "rsi_out": 55,
+      "stop_atr": 2.0,
+      "risk": 0.0075,
+      "cap": 0.3,
+      "sm_veto": false,
+      "time_stop_h": 96
+    },
+    "parent": "A_mr4h",
+    "generation": 2,
+    "hypothesis": "mayor cadencia: RSI entrada 30->40",
+    "born": "2026-10-23 14:48:09 UTC"
+  },
+  "L_mr_g2": {
+    "params": {
+      "mode": "mr",
+      "tf": "4h",
+      "rsi_in": 40,
+      "rsi_out": 55,
+      "stop_atr": 2.0,
+      "risk": 0.0075,
+      "cap": 0.3,
+      "sm_veto": true,
+      "time_stop_h": 96
+    },
+    "parent": "B_mr4h_sm",
+    "generation": 2,
+    "hypothesis": "mayor cadencia: RSI entrada 30->40",
+    "born": "2026-10-23 14:48:09 UTC"
+  },
+  "M_mr_g2": {
+    "params": {
+      "mode": "mr",
+      "tf": "4h",
+      "rsi_in": 30,
+      "rsi_out": 55,
+      "stop_atr": 3.0,
+      "risk": 0.0075,
+      "cap": 0.3,
+      "sm_veto": false,
+      "time_stop_h": 120
+    },
+    "parent": "F_mr4h_deep",
+    "generation": 2,
+    "hypothesis": "mayor cadencia: RSI entrada 25->30",
+    "born": "2026-10-23 14:48:09 UTC"
+  },
+  "N_mr_g2": {
+    "params": {
+      "mode": "mr",
+      "tf": "4h",
+      "rsi_in": 40,
+      "rsi_out": 55,
+      "stop_atr": 2.0,
+      "risk": 0.02,
+      "cap": 0.5,
+      "sm_veto": false,
+      "time_stop_h": 96
+    },
+    "parent": "I_mr4h_aggro",
+    "generation": 2,
+    "hypothesis": "mayor cadencia: RSI entrada 30->40",
+    "born": "2026-10-23 14:48:09 UTC"
+  }
+}

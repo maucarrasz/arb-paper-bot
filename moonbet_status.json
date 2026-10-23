@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-23 12:44:37 UTC",
+  "ts": "2026-10-23 14:48:09 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -9,7 +9,22 @@
   },
   "start": 500.0,
   "target": 1000.0,
-  "death": 250.0,
+  "rules": {
+    "perdida_total": "10% inicial ($450, modelo FTMO)",
+    "perdida_diaria": "3% inicial vs apertura del dia UTC ($15, modelo FTMO)",
+    "inactividad_h_por_familia": {
+      "mr30_4h": 16,
+      "mr25_4h": 16,
+      "mrdn30_4h": 48,
+      "mrdn25_4h": 12,
+      "momo_4h": 32,
+      "brk_4h": 40,
+      "mr25_1h": 28,
+      "sm": 48
+    },
+    "cierre_torneo": "2026-10-30 00:22:30 UTC",
+    "relevo": "automatico con hipotesis registrada; tope 20; sin relevo <12h al cierre"
+  },
   "nota": "Simulacion propia con fees optimistas; NO replica exacta de Moon. Moon.com descartado por ToS (Peru/US).",
   "variants": {
     "U1_mr_up_5x": {
@@ -70,8 +85,8 @@
     },
     "U9_mr_down_100x": {
       "equity": 500.0,
-      "status": "alive",
-      "reason": null,
+      "status": "dead",
+      "reason": "inactividad: 14.4h sin actividad ni posiciones abiertas (ventana familia mrdn25_4h: 12h = 2x p90 medido)",
       "bets": 0,
       "open": 0
     },

@@ -11,5 +11,10 @@
   "born": "2026-10-22 22:34:37 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-23 12:44:37 UTC"
+  "updated": "2026-10-23 14:48:09 UTC",
+  "generation": 1,
+  "day_open": {
+    "date": "2026-10-23",
+    "eq": 500.0
+  }
 }
