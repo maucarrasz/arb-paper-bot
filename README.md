@@ -288,7 +288,18 @@ A/B/F/I y GEN2 U9; nacieron los relevos K_mr_g2 (RSI40), L_mr_g2 (RSI40+veto
 sm), M_mr_g2 (RSI30, stop 3xATR), N_mr_g2 (RSI40, risk 2%) y U11_mr_down_g3
 (RSI>70, x100). Sin reset: las muertes quedan; las ventanas corregidas (64h+)
 aplican desde entonces a todos los libros. Suite: 86/86 pruebas limite en
-verde. El protocolo de ganador se adapta a la ventana de 7 dias: comparacion
+verde.
+
+INCIDENTE 23-oct (correccion honesta): el primer tick (14:48 UTC) ejecuto las
+muertes de A/B/F/I y U9 con las ventanas INICIALES (16h/12h), calculadas con
+la medicion erronea (sin dedup por par). Esas muertes quedaron INVALIDADAS:
+padres restaurados a alive con su snapshot exacto del tick ($500, 0
+posiciones, 0 operaciones; el reloj de inactividad sigue desde born, sin
+reinicio) y las hijas K/L/M/N/U11 AISLADAS (fuera de competencia hasta
+decision por comparabilidad). Nada se borro: los logs *_deaths.csv conservan
+las filas originales y las filas de correccion (kind=muerte_invalidada).
+Las ventanas corregidas (64/88/56/16/32/32/28/48h) aplican desde el push v2
+(23-oct ~15:53 UTC). El protocolo de ganador se adapta a la ventana de 7 dias: comparacion
 al cierre con pnl neto bajo ambos escenarios de fee y por linaje; "sin edge"
 si ninguna es positiva en pesimista.
 
