@@ -42,6 +42,7 @@ PERF_FEE_OPT = 0.10      # minimo documentado = escenario optimista
 PERF_FEE_PESS = 0.30     # sensibilidad pesimista (no documentada: prudencia)
 SLIP = 0.0005
 MAX_OPEN = 2
+BET_MAX_AGE_H = 96  # una apuesta abierta >96h se cierra por tiempo: las abiertas no inmunizan
 
 STATUS_JSON = "moonbet_status.json"
 SPAWNED_JSON = "moonbet_spawned.json"
@@ -65,6 +66,7 @@ PARAMS = {
  "U10_sm_3x_big":   {"sig":"sm","lev":3,"wager_pct":0.05,"tf":"4h"},
 }
 VARIANTS = list(PARAMS)
+ORIGINAL_VARIANTS = list(PARAMS)  # raices de linaje (nunca incluye relevos)
 
 
 def now_iso():
@@ -141,6 +143,13 @@ def manage_bets(b, kx):
             close_bet(b, bet, bet["bust_px"], "bust")
             evo.touch(b, c["close_time"])
             print(f"[moonbet:{b['variant']}] BUST {bet['symbol']} wager ${bet['wager']:.2f}")
+            continue
+        if c["close_time"] - bet["open_ms"] > BET_MAX_AGE_H * 3600_000:
+            b["bets"].remove(bet)
+            px = c["close"] * (1 - SLIP) if bet["dir"] > 0 else c["close"] * (1 + SLIP)
+            net = close_bet(b, bet, px, "tiempo")
+            evo.touch(b, c["close_time"])
+            print(f"[moonbet:{b['variant']}] CIERRE {bet['symbol']} (tiempo {BET_MAX_AGE_H}h) net ${net:.2f}")
             continue
         closes = [x["close"] for x in cs]
         r = rsi(closes, 14)
@@ -253,7 +262,7 @@ def check_survival(b, eq, ts_ms, marks):
                                 ts_ms, evo.ms_of(CLOSE_ISO), set(PARAMS))
     if rep and rep.get("blocked"):
         print(f"[moonbet:{b['variant']}] relevo bloqueado: {rep['blocked']}")
-    evo.log_death("moonbet", b, kind, rep)
+    evo.log_death("moonbet", b, kind, rep, eq)
 
 
 def step(ts_ms):
@@ -316,6 +325,7 @@ def step(ts_ms):
             if new:
                 w.writerow(["ts", "variant", "equity", "status"])
             w.writerow([ts, v, round(eq, 2), b["status"]])
+    lineages = evo.lineage_report(ORIGINAL_VARIANTS, spawned, status)
     json.dump({"ts": ts, "generation": 2, "mechanics": "moon-style leveraged up/down bets",
                "fees": {"open": OPEN_FEE, "perf_optimista_min_documentado": PERF_FEE_OPT,
                         "perf_pesimista_sensibilidad": PERF_FEE_PESS},
@@ -324,7 +334,9 @@ def step(ts_ms):
                           "perdida_diaria": "3% inicial vs apertura del dia UTC ($15, modelo FTMO)",
                           "inactividad_h_por_familia": evo.INACTIVITY_H,
                           "cierre_torneo": CLOSE_ISO,
-                          "relevo": "automatico con hipotesis registrada; tope 20; sin relevo <12h al cierre"},
+                          "relevo": "escalera fija con hipotesis (NO aprendizaje automatico); tope 20; sin relevo <12h al cierre",
+                          "time_stop_apuesta_h": BET_MAX_AGE_H},
+               "lineages": lineages,
                "nota": "Simulacion propia con fees optimistas; NO replica exacta de Moon. Moon.com descartado por ToS (Peru/US).",
                "variants": status},
               open(STATUS_JSON, "w"), indent=2)
