@@ -14,7 +14,7 @@
       "rsi_out": 55
     }
   ],
-  "status": "alive",
+  "status": "aislada",
   "peak": 500.0,
   "last_candle": 1792742400000,
   "trades": 0,
@@ -22,7 +22,7 @@
   "losses": 0,
   "born": "2026-10-23 14:54:24 UTC",
   "died": null,
-  "reason": null,
+  "reason": "relevo AISLADO 2026-10-23 14:55:00 UTC: nacio de muerte invalidada por error de regla; fuera de competencia hasta decision de main (comparabilidad)",
   "generation": 2,
   "last_active_ms": 1792756799999,
   "day_open": {
