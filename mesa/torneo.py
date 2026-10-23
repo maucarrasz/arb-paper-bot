@@ -373,6 +373,7 @@ def step(ts_ms):
                 w.writerow(["ts", "variant", "equity", "status"])
             w.writerow([ts, v, round(eq, 2), b["status"]])
     lineages = evo.lineage_report(ORIGINAL_VARIANTS, spawned, status)
+    incidente = evo.incident_report(status)
     json.dump({"ts": ts, "generation": 1, "start": START, "target": TARGET,
                "rules": {"perdida_total": "10% inicial ($450, modelo FTMO)",
                           "perdida_diaria": "3% inicial vs apertura del dia UTC ($15, modelo FTMO)",
@@ -380,6 +381,7 @@ def step(ts_ms):
                           "cierre_torneo": CLOSE_ISO,
                           "relevo": "escalera fija con hipotesis (NO aprendizaje automatico); tope 20; sin relevo <12h al cierre"},
                "lineages": lineages,
+               "incidente_aisladas": incidente,
                "variants": status},
               open(STATUS_JSON, "w"), indent=2)
 
