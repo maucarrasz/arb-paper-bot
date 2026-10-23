@@ -2,7 +2,7 @@
   "variant": "L_mr_g2",
   "cash": 500.0,
   "positions": [],
-  "status": "alive",
+  "status": "aislada",
   "peak": 500.0,
   "last_candle": 1792742400000,
   "trades": 0,
@@ -10,7 +10,7 @@
   "losses": 0,
   "born": "2026-10-23 14:54:24 UTC",
   "died": null,
-  "reason": null,
+  "reason": "relevo AISLADO 2026-10-23 14:55:00 UTC: nacio de muerte invalidada por error de regla; fuera de competencia hasta decision de main (comparabilidad)",
   "generation": 2,
   "day_open": {
     "date": "2026-10-23",
