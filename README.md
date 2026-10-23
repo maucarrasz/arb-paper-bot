@@ -193,3 +193,29 @@ con la estrategia superviviente (MR-4h). Reglas de supervivencia
 por una variante; equity >= $500 = reto cumplido. Estado en
 `reto100_state.json`, historial en `reto100_equity.csv` y
 `reto100_trades.csv` (commiteados cada hora por el workflow).
+
+## Torneo GEN2 - apuestas up/down apalancadas (paper, estilo Moon)
+
+Pedido de Mauricio (22-oct-2026 19:20 Lima): arquitecturas de bots para apuestas
+de subida/bajada con dinero ficticio; que quede la mejor. Moon.com NO se usa
+(ToS 3.2 prohibe Peru y United States). Esto es simulacion propia con datos de
+mercado publicos.
+
+**Reglas CONGELADAS: 2026-10-23 00:22 UTC** (mesa/moonbet.py, commit 7b85889).
+El diseno uso solo documentacion publica de Moon y disciplina de velas cerradas;
+NINGUN dato posterior a la congelacion se usara para cambiar reglas de variantes
+vivas. La evaluacion es prospectiva desde la primera apuesta registrada
+(moonbet_trades.csv). Si una regla cambia despues, se documenta como GEN2.x con
+fecha y motivo, y la comparacion se reinicia desde ese cambio.
+
+Mecanica verificada (help.moon.com): apuesta abierta up/down, wager = perdida
+maxima, liquidacion (bust) al moverse 1/leverage en contra, cierre por senal.
+Fees: 1% apertura sobre wager + performance MINIMO documentado 10% del beneficio
+(escenario OPTIMISTA explicito; sensibilidad 30% registrada por trade). Esto NO
+es replica exacta del payout de Moon: sus fills y slippage no son observables.
+
+Protocolo de ganador (no basta llegar primero a USD 1000): se compara despues de
+>= 30 apuestas cerradas por variante o >= 14 dias, lo que ocurra despues, con
+pnl neto bajo AMBOS escenarios de fee; si ninguna es positiva en el escenario
+pesimista, el resultado honesto es "sin edge" y se reporta asi. Llegar a la meta
+dispara aviso inmediato pero NO declaracion de ganador.
