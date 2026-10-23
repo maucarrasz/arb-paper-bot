@@ -28,11 +28,15 @@ import time
 
 from . import data, news, smartmoney, variante_d
 from .reto100 import rsi, atr, UNIVERSE, FEE, SLIP
+from . import evolucion as evo
 
 START = 500.0
 TARGET = 1000.0
-DEATH = 250.0
-MAX_DAYS_TOURNEY = 7  # regla usuario 23-oct 09:28 Lima: "7 dias de torneo, los que no apuestan mueren, si no es rentable muere" (reemplaza 30d)
+# Ventana fija del torneo: born GEN1 (2026-10-22 22:28:59 UTC) + 7 dias.
+# Los relevos comparten este cierre (el torneo NO se vuelve infinito).
+CLOSE_ISO = "2026-10-29 22:28:59 UTC"
+# Muerte por inactividad-horas + perdida diaria/total (FTMO) + relevo
+# automatico con hipotesis: mesa/evolucion.py (reglas usuario 23-oct).
 RISK_PCT = 0.0075
 NOTIONAL_CAP = 0.30
 MAX_OPEN = 2
@@ -43,6 +47,7 @@ MIN_NOTIONAL = 5.0
 BORN_DAY = "2026-10-22"
 
 STATUS_JSON = "torneo_status.json"
+SPAWNED_JSON = "torneo_spawned.json"
 EQUITY_CSV = "torneo_equity.csv"
 TRADES_CSV = "torneo_trades.csv"
 
@@ -74,7 +79,8 @@ def load_book(v):
         return json.load(open(path))
     return {"variant": v, "cash": START, "positions": [], "status": "alive",
             "peak": START, "last_candle": 0, "trades": 0, "wins": 0,
-            "losses": 0, "born": now_iso(), "died": None, "reason": None}
+            "losses": 0, "born": now_iso(), "died": None, "reason": None,
+            "generation": 1}
 
 
 def save_book(b):
@@ -151,6 +157,7 @@ def ag_ejecucion(b, sym, px, a, candle_ms, p=None):
                            "open_ms": candle_ms, "open_ts": now_iso(),
                            "time_stop_h": p.get("time_stop_h", 96),
                            "rsi_out": p.get("rsi_out", RSI_OUT)})
+    evo.touch(b, candle_ms)
     print(f"[torneo:{b['variant']}] ABRIR {sym} @ {fill:.2f} notional ${qty*fill:.2f}")
     return True
 
@@ -180,6 +187,7 @@ def manage_exits(b, k4, ts_ms, extra_exit=None):
         if exit_px is not None:
             b["positions"].remove(p)
             pnl = log_trade(b, p, exit_px, motive if isinstance(motive, str) else "senal")
+            evo.touch(b, c["close_time"])
             print(f"[torneo:{b['variant']}] CIERRE {p['symbol']} ({motive}) pnl ${pnl:.2f}")
 
 
@@ -240,33 +248,46 @@ def smfollow_flip_exit(net):
     return f
 
 
-def check_survival(b, eq, ts_ms):
+def merge_spawned(spawned=None):
+    """Mezcla los relevos registrados sobre PARAMS (idempotente)."""
+    spawned = spawned if spawned is not None else evo.load_spawned("torneo")
+    for name, entry in spawned.items():
+        if name not in PARAMS:
+            PARAMS[name] = entry["params"]
+    VARIANTS[:] = list(PARAMS)
+    return spawned
+
+
+def check_survival(b, eq, ts_ms, marks):
     if b["status"] != "alive":
         return
-    if eq < DEATH:
-        for p in list(b["positions"]):
-            b["positions"].remove(p)
-            log_trade(b, p, p["entry_px"], "muerte")
-        b.update(status="dead", died=now_iso(),
-                 reason=f"equity ${eq:.2f} < ${DEATH} (eliminada)")
-        print(f"[torneo:{b['variant']}] MUERTE: {b['reason']}")
-    elif eq >= TARGET:
+    evo.rollover_day(b, eq, ts_ms)
+    if eq >= TARGET:
         b.update(status="objetivo", died=now_iso(),
                  reason=f"reto cumplido: equity ${eq:.2f} >= ${TARGET}")
         print(f"[torneo:{b['variant']}] OBJETIVO: {b['reason']}")
-    else:
-        born = (b.get("born") or (BORN_DAY + " 00:00:00 UTC"))[:19]
-        days = (ts_ms - time.mktime(time.strptime(born, "%Y-%m-%d %H:%M:%S")) * 1000) / 86400000
-        activity = b.get("trades", 0) + len(b.get("positions", []))
-        if days >= MAX_DAYS_TOURNEY and (activity == 0 or eq <= START):
-            why = "sin apostar" if activity == 0 else f"no rentable (eq ${eq:.2f} <= ${START})"
-            b.update(status="dead", died=now_iso(),
-                     reason=f"{MAX_DAYS_TOURNEY}d torneo: {why}")
-            print(f"[torneo:{b['variant']}] MUERTE: {b['reason']}")
+        return
+    fam = evo.family_torneo(PARAMS[b["variant"]])
+    hit = evo.death_reason(b, eq, ts_ms, fam, len(b["positions"]),
+                           evo.ms_of(CLOSE_ISO), START)
+    if hit is None:
+        return
+    kind, text = hit
+    for p in list(b["positions"]):
+        b["positions"].remove(p)
+        log_trade(b, p, marks.get(p["symbol"], p["entry_px"]) * (1 - SLIP), "muerte")
+    b.update(status="dead", died=now_iso(), reason=text)
+    print(f"[torneo:{b['variant']}] MUERTE: {text}")
+    rep = evo.spawn_replacement("torneo", b, PARAMS[b["variant"]], kind,
+                                ts_ms, evo.ms_of(CLOSE_ISO), set(PARAMS))
+    if rep and rep.get("blocked"):
+        print(f"[torneo:{b['variant']}] relevo bloqueado: {rep['blocked']}")
+    evo.log_death("torneo", b, kind, rep)
 
 
 def step(ts_ms):
     ts = now_iso()
+    spawned = merge_spawned()
     try:
         net = smartmoney.snapshot()
         smartmoney.log_snapshot(ts, net)
@@ -303,6 +324,7 @@ def step(ts_ms):
     status = {}
     for v in VARIANTS:
         b = load_book(v)
+        b["generation"] = spawned.get(v, {}).get("generation", b.get("generation", 1))
         if b["status"] != "alive":
             status[v] = {"equity": round(equity_of(b, marks), 2), "status": b["status"],
                          "reason": b.get("reason"), "trades": b["trades"]}
@@ -324,7 +346,7 @@ def step(ts_ms):
                 extra = smfollow_flip_exit(net) if p["mode"] == "smfollow" else None
                 manage_exits(b, kx, ts_ms, extra_exit=extra)
             eq0 = equity_of(b, marks)
-            if reg and eq0 >= DEATH:
+            if reg and eq0 >= evo.floor(START):
                 if p["mode"] == "mr":
                     entries_mr(b, kx, net, p)
                 elif p["mode"] == "smfollow":
@@ -337,7 +359,7 @@ def step(ts_ms):
                     variante_d.entries_d(b, kx, net, headlines, reg, p)
         eq = equity_of(b, marks)
         b["peak"] = max(b.get("peak", START), eq)
-        check_survival(b, eq, ts_ms)
+        check_survival(b, eq, ts_ms, marks)
         status[v] = {"equity": round(eq, 2), "status": b["status"],
                      "reason": b.get("reason"), "trades": b["trades"],
                      "open": len(b["positions"])}
@@ -350,7 +372,12 @@ def step(ts_ms):
                 w.writerow(["ts", "variant", "equity", "status"])
             w.writerow([ts, v, round(eq, 2), b["status"]])
     json.dump({"ts": ts, "generation": 1, "start": START, "target": TARGET,
-               "death": DEATH, "variants": status},
+               "rules": {"perdida_total": "10% inicial ($450, modelo FTMO)",
+                          "perdida_diaria": "3% inicial vs apertura del dia UTC ($15, modelo FTMO)",
+                          "inactividad_h_por_familia": evo.INACTIVITY_H,
+                          "cierre_torneo": CLOSE_ISO,
+                          "relevo": "automatico con hipotesis registrada; tope 20; sin relevo <12h al cierre"},
+               "variants": status},
               open(STATUS_JSON, "w"), indent=2)
 
 
