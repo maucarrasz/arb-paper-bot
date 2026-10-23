@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-23 14:54:16 UTC",
+  "ts": "2026-10-23 14:56:50 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -118,15 +118,17 @@
   "variants": {
     "A_mr4h": {
       "equity": 500.0,
-      "status": "dead",
-      "reason": "inactividad: 16.3h sin actividad ni posiciones abiertas (ventana familia mr30_4h: 16h = 2x p90 medido)",
-      "trades": 0
+      "status": "alive",
+      "reason": null,
+      "trades": 0,
+      "open": 0
     },
     "B_mr4h_sm": {
       "equity": 500.0,
-      "status": "dead",
-      "reason": "inactividad: 16.3h sin actividad ni posiciones abiertas (ventana familia mr30_4h: 16h = 2x p90 medido)",
-      "trades": 0
+      "status": "alive",
+      "reason": null,
+      "trades": 0,
+      "open": 0
     },
     "C_smfollow": {
       "equity": 502.46,
@@ -151,9 +153,10 @@
     },
     "F_mr4h_deep": {
       "equity": 500.0,
-      "status": "dead",
-      "reason": "inactividad: 16.2h sin actividad ni posiciones abiertas (ventana familia mr25_4h: 16h = 2x p90 medido)",
-      "trades": 0
+      "status": "alive",
+      "reason": null,
+      "trades": 0,
+      "open": 0
     },
     "G_msb11_nosm": {
       "equity": 500.0,
@@ -171,9 +174,10 @@
     },
     "I_mr4h_aggro": {
       "equity": 500.0,
-      "status": "dead",
-      "reason": "inactividad: 16.2h sin actividad ni posiciones abiertas (ventana familia mr30_4h: 16h = 2x p90 medido)",
-      "trades": 0
+      "status": "alive",
+      "reason": null,
+      "trades": 0,
+      "open": 0
     },
     "J_msb11_1h": {
       "equity": 500.0,
@@ -184,31 +188,27 @@
     },
     "K_mr_g2": {
       "equity": 499.87,
-      "status": "alive",
-      "reason": null,
-      "trades": 0,
-      "open": 1
+      "status": "aislada",
+      "reason": "relevo AISLADO 2026-10-23 14:55:00 UTC: nacio de muerte invalidada por error de regla; fuera de competencia hasta decision de main (comparabilidad)",
+      "trades": 0
     },
     "L_mr_g2": {
       "equity": 500.0,
-      "status": "alive",
-      "reason": null,
-      "trades": 0,
-      "open": 0
+      "status": "aislada",
+      "reason": "relevo AISLADO 2026-10-23 14:55:00 UTC: nacio de muerte invalidada por error de regla; fuera de competencia hasta decision de main (comparabilidad)",
+      "trades": 0
     },
     "M_mr_g2": {
       "equity": 500.0,
-      "status": "alive",
-      "reason": null,
-      "trades": 0,
-      "open": 0
+      "status": "aislada",
+      "reason": "relevo AISLADO 2026-10-23 14:55:00 UTC: nacio de muerte invalidada por error de regla; fuera de competencia hasta decision de main (comparabilidad)",
+      "trades": 0
     },
     "N_mr_g2": {
       "equity": 499.65,
-      "status": "alive",
-      "reason": null,
-      "trades": 0,
-      "open": 1
+      "status": "aislada",
+      "reason": "relevo AISLADO 2026-10-23 14:55:00 UTC: nacio de muerte invalidada por error de regla; fuera de competencia hasta decision de main (comparabilidad)",
+      "trades": 0
     }
   }
 }

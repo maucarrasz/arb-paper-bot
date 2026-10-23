@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-23 14:54:24 UTC",
+  "ts": "2026-10-23 14:57:00 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -179,9 +179,10 @@
     },
     "U9_mr_down_100x": {
       "equity": 500.0,
-      "status": "dead",
-      "reason": "inactividad: 14.4h sin actividad ni posiciones abiertas (ventana familia mrdn25_4h: 12h = 2x p90 medido)",
-      "bets": 0
+      "status": "alive",
+      "reason": null,
+      "bets": 0,
+      "open": 0
     },
     "U10_sm_3x_big": {
       "equity": 499.36,
@@ -192,10 +193,9 @@
     },
     "U11_mr_down_g3": {
       "equity": 500.0,
-      "status": "alive",
-      "reason": null,
-      "bets": 0,
-      "open": 0
+      "status": "aislada",
+      "reason": "relevo AISLADO 2026-10-23 14:55:00 UTC: nacio de muerte invalidada por error de regla; fuera de competencia hasta decision de main (comparabilidad)",
+      "bets": 0
     }
   }
 }
