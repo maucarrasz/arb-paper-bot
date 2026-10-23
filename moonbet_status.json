@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-23 14:57:00 UTC",
+  "ts": "2026-10-23 15:00:54 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -101,12 +101,11 @@
     },
     "U9_mr_down_100x": {
       "miembros": [
-        "U9_mr_down_100x",
-        "U11_mr_down_g3"
+        "U9_mr_down_100x"
       ],
-      "capital_inyectado": 1000.0,
-      "equity_total": 1000.0,
-      "capital_repuesto": 500.0,
+      "capital_inyectado": 500.0,
+      "equity_total": 500.0,
+      "capital_repuesto": 0.0,
       "pnl": 0.0
     },
     "U10_sm_3x_big": {
@@ -117,6 +116,13 @@
       "equity_total": 499.36,
       "capital_repuesto": 0.0,
       "pnl": -0.64
+    }
+  },
+  "incidente_aisladas": {
+    "U11_mr_down_g3": {
+      "equity": 500.0,
+      "pnl_aislado": 0.0,
+      "capital_repuesto": 500.0
     }
   },
   "nota": "Simulacion propia con fees optimistas; NO replica exacta de Moon. Moon.com descartado por ToS (Peru/US).",

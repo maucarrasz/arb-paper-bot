@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-23 14:56:50 UTC",
+  "ts": "2026-10-23 15:00:45 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -22,22 +22,20 @@
   "lineages": {
     "A_mr4h": {
       "miembros": [
-        "A_mr4h",
-        "K_mr_g2"
+        "A_mr4h"
       ],
-      "capital_inyectado": 1000.0,
-      "equity_total": 999.87,
-      "capital_repuesto": 500.0,
-      "pnl": -0.13
+      "capital_inyectado": 500.0,
+      "equity_total": 500.0,
+      "capital_repuesto": 0.0,
+      "pnl": 0.0
     },
     "B_mr4h_sm": {
       "miembros": [
-        "B_mr4h_sm",
-        "L_mr_g2"
+        "B_mr4h_sm"
       ],
-      "capital_inyectado": 1000.0,
-      "equity_total": 1000.0,
-      "capital_repuesto": 500.0,
+      "capital_inyectado": 500.0,
+      "equity_total": 500.0,
+      "capital_repuesto": 0.0,
       "pnl": 0.0
     },
     "C_smfollow": {
@@ -69,12 +67,11 @@
     },
     "F_mr4h_deep": {
       "miembros": [
-        "F_mr4h_deep",
-        "M_mr_g2"
+        "F_mr4h_deep"
       ],
-      "capital_inyectado": 1000.0,
-      "equity_total": 1000.0,
-      "capital_repuesto": 500.0,
+      "capital_inyectado": 500.0,
+      "equity_total": 500.0,
+      "capital_repuesto": 0.0,
       "pnl": 0.0
     },
     "G_msb11_nosm": {
@@ -97,13 +94,12 @@
     },
     "I_mr4h_aggro": {
       "miembros": [
-        "I_mr4h_aggro",
-        "N_mr_g2"
+        "I_mr4h_aggro"
       ],
-      "capital_inyectado": 1000.0,
-      "equity_total": 999.65,
-      "capital_repuesto": 500.0,
-      "pnl": -0.35
+      "capital_inyectado": 500.0,
+      "equity_total": 500.0,
+      "capital_repuesto": 0.0,
+      "pnl": 0.0
     },
     "J_msb11_1h": {
       "miembros": [
@@ -113,6 +109,28 @@
       "equity_total": 500.0,
       "capital_repuesto": 0.0,
       "pnl": 0.0
+    }
+  },
+  "incidente_aisladas": {
+    "K_mr_g2": {
+      "equity": 498.98,
+      "pnl_aislado": -1.02,
+      "capital_repuesto": 500.0
+    },
+    "L_mr_g2": {
+      "equity": 500.0,
+      "pnl_aislado": 0.0,
+      "capital_repuesto": 500.0
+    },
+    "M_mr_g2": {
+      "equity": 500.0,
+      "pnl_aislado": 0.0,
+      "capital_repuesto": 500.0
+    },
+    "N_mr_g2": {
+      "equity": 497.29,
+      "pnl_aislado": -2.71,
+      "capital_repuesto": 500.0
     }
   },
   "variants": {
@@ -187,7 +205,7 @@
       "open": 0
     },
     "K_mr_g2": {
-      "equity": 499.87,
+      "equity": 498.98,
       "status": "aislada",
       "reason": "relevo AISLADO 2026-10-23 14:55:00 UTC: nacio de muerte invalidada por error de regla; fuera de competencia hasta decision de main (comparabilidad)",
       "trades": 0
@@ -205,7 +223,7 @@
       "trades": 0
     },
     "N_mr_g2": {
-      "equity": 499.65,
+      "equity": 497.29,
       "status": "aislada",
       "reason": "relevo AISLADO 2026-10-23 14:55:00 UTC: nacio de muerte invalidada por error de regla; fuera de competencia hasta decision de main (comparabilidad)",
       "trades": 0
