@@ -1,0 +1,16 @@
+{
+  "variant": "U8_mr_up_100x",
+  "cash": 500.0,
+  "bets": [],
+  "status": "alive",
+  "peak": 500.0,
+  "last_candle": 1792699200000,
+  "bets_n": 0,
+  "wins": 0,
+  "losses": 0,
+  "busts": 0,
+  "born": "2026-10-23 00:22:30 UTC",
+  "died": null,
+  "reason": null,
+  "updated": "2026-10-23 00:22:30 UTC"
+}

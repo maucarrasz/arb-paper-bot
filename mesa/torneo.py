@@ -352,4 +352,7 @@ def step(ts_ms):
 
 
 if __name__ == "__main__":
-    step(int(time.time() * 1000))
+    _ts = int(time.time() * 1000)
+    step(_ts)
+    from . import moonbet
+    moonbet.step(_ts)

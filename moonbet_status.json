@@ -1,0 +1,86 @@
+{
+  "ts": "2026-10-23 00:22:22 UTC",
+  "generation": 2,
+  "mechanics": "moon-style leveraged up/down bets",
+  "fees": {
+    "open": 0.01,
+    "perf_optimista_min_documentado": 0.1,
+    "perf_pesimista_sensibilidad": 0.3
+  },
+  "start": 500.0,
+  "target": 1000.0,
+  "death": 250.0,
+  "nota": "Simulacion propia con fees optimistas; NO replica exacta de Moon. Moon.com descartado por ToS (Peru/US).",
+  "variants": {
+    "U1_mr_up_5x": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "bets": 0,
+      "open": 0
+    },
+    "U2_mr_up_25x": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "bets": 0,
+      "open": 0
+    },
+    "U3_mr_down_25x": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "bets": 0,
+      "open": 0
+    },
+    "U4_momo_up_10x": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "bets": 0,
+      "open": 0
+    },
+    "U5_sm_10x": {
+      "equity": 499.7,
+      "status": "alive",
+      "reason": null,
+      "bets": 0,
+      "open": 2
+    },
+    "U6_mr_up_10x_1h": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "bets": 0,
+      "open": 0
+    },
+    "U7_brk_up_50x": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "bets": 0,
+      "open": 0
+    },
+    "U8_mr_up_100x": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "bets": 0,
+      "open": 0
+    },
+    "U9_mr_down_100x": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "bets": 0,
+      "open": 0
+    },
+    "U10_sm_3x_big": {
+      "equity": 499.43,
+      "status": "alive",
+      "reason": null,
+      "bets": 0,
+      "open": 2
+    }
+  }
+}
