@@ -1,19 +1,7 @@
 {
   "variant": "K_mr_g2",
-  "cash": 413.60191705184025,
-  "positions": [
-    {
-      "symbol": "AVAXUSDT",
-      "qty": 9.373969016467838,
-      "entry_px": 9.207601499999999,
-      "cost": 86.39808294815975,
-      "stop": 8.807557506531262,
-      "open_ms": 1792756799999,
-      "open_ts": "2026-10-23 14:54:24 UTC",
-      "time_stop_h": 96,
-      "rsi_out": 55
-    }
-  ],
+  "cash": 498.9830411566802,
+  "positions": [],
   "status": "aislada",
   "peak": 500.0,
   "last_candle": 1792742400000,
@@ -29,5 +17,6 @@
     "date": "2026-10-23",
     "eq": 499.87
   },
-  "updated": "2026-10-23 14:57:00 UTC"
+  "updated": "2026-10-23 14:57:00 UTC",
+  "nota_cierre_aislamiento": "2026-10-23 15:00:00 UTC: posicion AVAXUSDT qty 9.3740 cerrada al mark 9.117439 (fee 0.001); pnl $-1.0170. Cierre contable por aislamiento, FUERA del resultado competitivo."
 }
