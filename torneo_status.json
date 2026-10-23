@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-23 08:42:18 UTC",
+  "ts": "2026-10-23 09:55:38 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -34,11 +34,11 @@
       "open": 0
     },
     "E_mr1h": {
-      "equity": 500.64,
+      "equity": 500.51,
       "status": "alive",
       "reason": null,
-      "trades": 0,
-      "open": 1
+      "trades": 1,
+      "open": 0
     },
     "F_mr4h_deep": {
       "equity": 500.0,
