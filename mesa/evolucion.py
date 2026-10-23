@@ -8,11 +8,13 @@ Cadena del usuario verificada en su canal (WhatsApp, 23-oct, hora Lima):
          con aprendizaje de sus errores"
 
 Benchmark aplicado (fuentes verificables):
-- FTMO, Trading Objectives (ftmo.com/en/trading-objectives/): Maximum Daily
-  Loss = 3% del capital inicial (limite = equity de apertura del dia - 3% *
-  inicial, recalculado a diario; aqui dia UTC en vez de CE(S)T) y Maximum
-  Loss = 10% trailing del capital inicial. Se aplica casi verbatim; la meta
-  sigue siendo la del usuario (2x = $1000), mas dura que el 10% de FTMO.
+- FTMO, Trading Objectives (ftmo.com/en/trading-objectives/): verificado
+  23-oct. FTMO tiene 3 programas con reglas DISTINTAS: 1-Step (diario 3%,
+  total 10% trailing end-of-day), 2-Step (diario 5%, total 10% ESTATICO),
+  Instant (diario 3%, total 10% trailing intraday). Lo implementado es un
+  HIBRIDO declarado, no verbatim de ningun programa: diario 3% (del 1-Step)
+  + total 10% ESTATICO (del 2-Step; el trailing NO se implementa: subiria el
+  piso cuando la equity crece).
 - Poker, antes/blinds (pokerology.com/poker/strategy/ante/): la inaccion
   drena fichas cada orbita. Adaptacion propia: en vez de drenar equity, la
   inactividad por horas mata la arquitectura (pedido explicito del usuario).
@@ -48,9 +50,21 @@ DAILY_LOSS_PCT = 0.03   # FTMO Maximum Daily Loss (3% del capital inicial)
 MIN_HOURS_TO_SPAWN = 12
 MAX_SPAWNED = 20
 
+# Ventanas recalibradas 23-oct 15:00 UTC tras auditoria de main: la primera
+# medicion contaba re-disparos del mismo par como oportunidad nueva y
+# subestimaba los gaps. Version corregida: gap entre EVENTOS NUEVOS (par que
+# dispara sin haber disparado en la vela inmediatamente anterior), agregados
+# sobre el universo de 12 pares, 270 velas 4h (~45 dias) y 720 velas 1h
+# (~30 dias), data-api.binance.vision, 23-oct-2026.
 INACTIVITY_H = {
-    "mr30_4h": 16, "mr25_4h": 16, "mrdn30_4h": 48, "mrdn25_4h": 12,
-    "momo_4h": 32, "brk_4h": 40, "mr25_1h": 28, "sm": 48,
+    "mr30_4h": 64,   # p90 dedup 32h
+    "mr25_4h": 88,   # p90 dedup 44h
+    "mrdn30_4h": 56, # p90 dedup 28h
+    "mrdn25_4h": 16, # p90 dedup 8h
+    "momo_4h": 32,   # p90 dedup 16h
+    "brk_4h": 32,    # p90 dedup 16h
+    "mr25_1h": 28,   # p90 dedup 14h
+    "sm": 48,        # no medible en backfill: provisional
 }
 
 SPAWNED_JSON = {"moonbet": "moonbet_spawned.json", "torneo": "torneo_spawned.json"}
@@ -272,6 +286,11 @@ def validate(tourney, q):
                 return False, f"wager_pct {wp} fuera de [0.005,0.05]"
             if wp * 500 < 1.0:
                 return False, "wager minimo $1 no alcanzable con equity $500"
+            # una sola apuesta perdida no puede romper el limite diario 3%
+            cost1 = wp * 500 * 1.01  # wager + fee de apertura 1%
+            if cost1 > daily_amount(500):
+                return False, (f"wager {wp*100:.2f}% = ${cost1:.2f} con fee: una sola "
+                               f"perdedora supera el limite diario 3% (${daily_amount(500):.0f})")
             if sig in ("mr_up", "mr_down"):
                 ri, ro = q.get("rsi_in"), q.get("rsi_out", 55)
                 if ri is None or not 5 <= ri <= 45:
@@ -354,12 +373,13 @@ def spawn_replacement(tourney, b, parent_params, kind, ts_ms, close_ms, taken_na
     return {"name": name, **entry}
 
 
-def log_death(tourney, b, kind, rep):
+def log_death(tourney, b, kind, rep, eq_final=None):
     """Apéndice al log de muertes (CSV, matchea el glob de commit torneo_*.csv /
     moonbet_*.csv del workflow)."""
     path = DEATHS_CSV[tourney]
     new = not os.path.exists(path)
     stats = {k: b.get(k) for k in ("trades", "bets_n", "wins", "losses", "busts", "peak")}
+    stats["eq_final"] = round(eq_final, 2) if eq_final is not None else None
     rep = rep or {}
     with open(path, "a", newline="") as f:
         w = csv.writer(f)
@@ -371,3 +391,37 @@ def log_death(tourney, b, kind, rep):
                     rep.get("name"), rep.get("hypothesis"),
                     json.dumps(rep.get("params"), ensure_ascii=False) if rep.get("params") else "",
                     rep.get("blocked", "")])
+
+
+def lineage_report(roots, spawned, status_map):
+    """Capital virtual inyectado y PnL por linaje (raiz + relevos).
+
+    Cada relevo repone $500 virtuales: una ganadora reseteada a $500 NO es
+    comparable con un padre que perdio. Aqui se contabiliza el coste total
+    por linaje y su PnL agregado.
+    """
+    parent_of = {n: e.get("parent") for n, e in spawned.items()}
+
+    def root_of(n):
+        seen = set()
+        while n in parent_of and parent_of[n] and n not in seen:
+            seen.add(n)
+            n = parent_of[n]
+        return n
+
+    out = {}
+    for name in list(roots) + list(spawned):
+        r = root_of(name)
+        d = out.setdefault(r, {"miembros": [], "capital_inyectado": 0.0,
+                               "equity_total": 0.0})
+        d["miembros"].append(name)
+        d["capital_inyectado"] += 500.0
+        eq = (status_map.get(name) or {}).get("equity")
+        if eq is not None:
+            d["equity_total"] += eq
+    for r, d in out.items():
+        d["capital_repuesto"] = d["capital_inyectado"] - 500.0
+        d["equity_total"] = round(d["equity_total"], 2)
+        d["pnl"] = round(d["equity_total"] - d["capital_inyectado"], 2)
+        d["capital_inyectado"] = round(d["capital_inyectado"], 2)
+    return out
