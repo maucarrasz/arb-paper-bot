@@ -67,6 +67,7 @@ PARAMS = {
  "J_msb11_1h": {"mode":"msb11","tf":"1h","rsi_in":30,"rsi_out":55,"stop_atr":2.0,"risk":0.0075,"cap":0.30,"sm_veto":False,"time_stop_h":48,"sm_analyst":True},
 }
 VARIANTS = list(PARAMS)
+ORIGINAL_VARIANTS = list(PARAMS)  # raices de linaje (nunca incluye relevos)
 
 
 def now_iso():
@@ -282,7 +283,7 @@ def check_survival(b, eq, ts_ms, marks):
                                 ts_ms, evo.ms_of(CLOSE_ISO), set(PARAMS))
     if rep and rep.get("blocked"):
         print(f"[torneo:{b['variant']}] relevo bloqueado: {rep['blocked']}")
-    evo.log_death("torneo", b, kind, rep)
+    evo.log_death("torneo", b, kind, rep, eq)
 
 
 def step(ts_ms):
@@ -371,12 +372,14 @@ def step(ts_ms):
             if new:
                 w.writerow(["ts", "variant", "equity", "status"])
             w.writerow([ts, v, round(eq, 2), b["status"]])
+    lineages = evo.lineage_report(ORIGINAL_VARIANTS, spawned, status)
     json.dump({"ts": ts, "generation": 1, "start": START, "target": TARGET,
                "rules": {"perdida_total": "10% inicial ($450, modelo FTMO)",
                           "perdida_diaria": "3% inicial vs apertura del dia UTC ($15, modelo FTMO)",
                           "inactividad_h_por_familia": evo.INACTIVITY_H,
                           "cierre_torneo": CLOSE_ISO,
-                          "relevo": "automatico con hipotesis registrada; tope 20; sin relevo <12h al cierre"},
+                          "relevo": "escalera fija con hipotesis (NO aprendizaje automatico); tope 20; sin relevo <12h al cierre"},
+               "lineages": lineages,
                "variants": status},
               open(STATUS_JSON, "w"), indent=2)
 
