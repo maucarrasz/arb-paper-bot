@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-23 16:46:45 UTC",
+  "ts": "2026-10-23 18:47:41 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -101,11 +101,12 @@
     },
     "U9_mr_down_100x": {
       "miembros": [
-        "U9_mr_down_100x"
+        "U9_mr_down_100x",
+        "U12_mr_down_g3"
       ],
-      "capital_inyectado": 500.0,
-      "equity_total": 500.0,
-      "capital_repuesto": 0.0,
+      "capital_inyectado": 1000.0,
+      "equity_total": 1000.0,
+      "capital_repuesto": 500.0,
       "pnl": 0.0
     },
     "U10_sm_3x_big": {
@@ -187,8 +188,7 @@
       "equity": 500.0,
       "status": "dead",
       "reason": "inactividad: 16.4h sin actividad ni posiciones abiertas (ventana familia mrdn25_4h: 16h = 2x p90 medido)",
-      "bets": 0,
-      "open": 0
+      "bets": 0
     },
     "U10_sm_3x_big": {
       "equity": 499.05,
@@ -202,6 +202,13 @@
       "status": "aislada",
       "reason": "relevo AISLADO 2026-10-23 14:55:00 UTC: nacio de muerte invalidada por error de regla; fuera de competencia hasta decision de main (comparabilidad)",
       "bets": 0
+    },
+    "U12_mr_down_g3": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "bets": 0,
+      "open": 0
     }
   }
 }

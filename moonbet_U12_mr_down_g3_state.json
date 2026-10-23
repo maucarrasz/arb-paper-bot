@@ -1,0 +1,21 @@
+{
+  "variant": "U12_mr_down_g3",
+  "cash": 500.0,
+  "bets": [],
+  "status": "alive",
+  "peak": 500.0,
+  "last_candle": 1792756800000,
+  "bets_n": 0,
+  "wins": 0,
+  "losses": 0,
+  "busts": 0,
+  "born": "2026-10-23 18:47:49 UTC",
+  "died": null,
+  "reason": null,
+  "generation": 3,
+  "day_open": {
+    "date": "2026-10-23",
+    "eq": 500.0
+  },
+  "updated": "2026-10-23 18:47:49 UTC"
+}
