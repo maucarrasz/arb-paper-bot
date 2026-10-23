@@ -411,6 +411,9 @@ def lineage_report(roots, spawned, status_map):
 
     out = {}
     for name in list(roots) + list(spawned):
+        st = (status_map.get(name) or {}).get("status")
+        if st == "aislada":
+            continue  # hijas invalidadas: no suman capital ni retorno competitivo
         r = root_of(name)
         d = out.setdefault(r, {"miembros": [], "capital_inyectado": 0.0,
                                "equity_total": 0.0})
@@ -424,4 +427,17 @@ def lineage_report(roots, spawned, status_map):
         d["equity_total"] = round(d["equity_total"], 2)
         d["pnl"] = round(d["equity_total"] - d["capital_inyectado"], 2)
         d["capital_inyectado"] = round(d["capital_inyectado"], 2)
+    return out
+
+
+def incident_report(status_map):
+    """Contabilidad APARTE del incidente: variantes aisladas, su capital
+    repuesto y su PnL fuera del resultado competitivo."""
+    out = {}
+    for n, sm in status_map.items():
+        if sm.get("status") == "aislada":
+            eq = sm.get("equity")
+            out[n] = {"equity": eq,
+                      "pnl_aislado": round(eq - 500.0, 2) if eq is not None else None,
+                      "capital_repuesto": 500.0}
     return out
