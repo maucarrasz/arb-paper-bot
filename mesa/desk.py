@@ -8,7 +8,7 @@ import json
 import os
 import time
 
-from . import agents, config, data, engine, news, reto100, torneo
+from . import agents, config, data, engine, moonbet, news, reto100, torneo
 
 STATE = "mesa_state.json"
 SIGNALS_CSV = "mesa_signals.csv"
@@ -174,11 +174,17 @@ def run():
         torneo.step(ts_ms)
     except Exception as e:
         print(f"[desk] torneo error: {e}")
+    # 7) Torneo GEN2: apuestas up/down apalancadas estilo Moon (paper)
+    try:
+        moonbet.step(ts_ms)
+    except Exception as e:
+        print(f"[desk] moonbet error: {e}")
     # Escenar archivos del reto/torneo para que el commit del workflow los incluya
     import glob
     import subprocess
     patrones = ("reto100_*.json", "reto100_*.csv", "torneo_*.json",
-                "torneo_*.csv", "smartmoney_*.csv")
+                "torneo_*.csv", "smartmoney_*.csv",
+                "moonbet_*.json", "moonbet_*.csv")
     for pat in patrones:
         for f in glob.glob(pat):
             subprocess.run(["git", "add", f], capture_output=True)
