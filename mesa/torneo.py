@@ -32,7 +32,7 @@ from .reto100 import rsi, atr, UNIVERSE, FEE, SLIP
 START = 500.0
 TARGET = 1000.0
 DEATH = 250.0
-MAX_DAYS_UNPROFITABLE = 30
+MAX_DAYS_TOURNEY = 7  # regla usuario 23-oct 09:28 Lima: "7 dias de torneo, los que no apuestan mueren, si no es rentable muere" (reemplaza 30d)
 RISK_PCT = 0.0075
 NOTIONAL_CAP = 0.30
 MAX_OPEN = 2
@@ -255,10 +255,13 @@ def check_survival(b, eq, ts_ms):
                  reason=f"reto cumplido: equity ${eq:.2f} >= ${TARGET}")
         print(f"[torneo:{b['variant']}] OBJETIVO: {b['reason']}")
     else:
-        days = (ts_ms - time.mktime(time.strptime(BORN_DAY, "%Y-%m-%d")) * 1000) / 86400000
-        if days >= MAX_DAYS_UNPROFITABLE and eq < START:
+        born = (b.get("born") or (BORN_DAY + " 00:00:00 UTC"))[:19]
+        days = (ts_ms - time.mktime(time.strptime(born, "%Y-%m-%d %H:%M:%S")) * 1000) / 86400000
+        activity = b.get("trades", 0) + len(b.get("positions", []))
+        if days >= MAX_DAYS_TOURNEY and (activity == 0 or eq <= START):
+            why = "sin apostar" if activity == 0 else f"no rentable (eq ${eq:.2f} <= ${START})"
             b.update(status="dead", died=now_iso(),
-                     reason=f"{MAX_DAYS_UNPROFITABLE}d sin ser rentable (${eq:.2f} < ${START})")
+                     reason=f"{MAX_DAYS_TOURNEY}d torneo: {why}")
             print(f"[torneo:{b['variant']}] MUERTE: {b['reason']}")
 
 
