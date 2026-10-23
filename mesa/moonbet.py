@@ -27,12 +27,16 @@ import time
 
 from . import data, smartmoney
 from .reto100 import rsi, atr, UNIVERSE
+from . import evolucion as evo
 
 START = 500.0
 TARGET = 1000.0
-DEATH = 250.0
 BORN_DAY = "2026-10-22"
-MAX_DAYS_TOURNEY = 7  # regla usuario 23-oct 09:28 Lima: "7 dias de torneo, los que no apuestan mueren, si no es rentable muere" (reemplaza 30d)
+# Ventana fija del torneo: born GEN2 (2026-10-23 00:22:30 UTC) + 7 dias.
+# Los relevos comparten este cierre (el torneo NO se vuelve infinito).
+CLOSE_ISO = "2026-10-30 00:22:30 UTC"
+# Muerte por inactividad-horas + perdida diaria/total (FTMO) + relevo
+# automatico con hipotesis: mesa/evolucion.py (reglas usuario 23-oct).
 OPEN_FEE = 0.01          # 1% sobre wager (verificado)
 PERF_FEE_OPT = 0.10      # minimo documentado = escenario optimista
 PERF_FEE_PESS = 0.30     # sensibilidad pesimista (no documentada: prudencia)
@@ -40,6 +44,7 @@ SLIP = 0.0005
 MAX_OPEN = 2
 
 STATUS_JSON = "moonbet_status.json"
+SPAWNED_JSON = "moonbet_spawned.json"
 EQUITY_CSV = "moonbet_equity.csv"
 TRADES_CSV = "moonbet_trades.csv"
 
@@ -73,7 +78,7 @@ def load_book(v):
     return {"variant": v, "cash": START, "bets": [], "status": "alive",
             "peak": START, "last_candle": 0, "bets_n": 0, "wins": 0,
             "losses": 0, "busts": 0, "born": now_iso(), "died": None,
-            "reason": None}
+            "reason": None, "generation": 2}
 
 
 def save_book(b):
@@ -134,6 +139,7 @@ def manage_bets(b, kx):
         if busted:
             b["bets"].remove(bet)
             close_bet(b, bet, bet["bust_px"], "bust")
+            evo.touch(b, c["close_time"])
             print(f"[moonbet:{b['variant']}] BUST {bet['symbol']} wager ${bet['wager']:.2f}")
             continue
         closes = [x["close"] for x in cs]
@@ -151,6 +157,7 @@ def manage_bets(b, kx):
         if exit_px is not None:
             b["bets"].remove(bet)
             net = close_bet(b, bet, exit_px, motive)
+            evo.touch(b, c["close_time"])
             print(f"[moonbet:{b['variant']}] CIERRE {bet['symbol']} ({motive}) net ${net:.2f}")
 
 
@@ -167,6 +174,7 @@ def open_bet(b, sym, direction, px, candle_ms):
     b["bets"].append({"symbol": sym, "dir": direction, "wager": round(wager, 2),
                       "lev": p["lev"], "entry_px": entry, "bust_px": bust,
                       "open_ms": candle_ms, "open_ts": now_iso()})
+    evo.touch(b, candle_ms)
     print(f"[moonbet:{b['variant']}] ABRIR {'UP' if direction>0 else 'DOWN'} {sym} "
           f"wager ${wager:.2f} x{p['lev']} @ {entry:.2f} bust {bust:.2f}")
     return True
@@ -209,32 +217,48 @@ def entries(b, kx, net, reg):
                 open_bet(b, sym, -1, cs[-1]["close"], cs[-1]["close_time"])
 
 
-def check_survival(b, eq, ts_ms):
+def merge_spawned(spawned=None):
+    """Mezcla los relevos registrados sobre PARAMS (idempotente)."""
+    spawned = spawned if spawned is not None else evo.load_spawned("moonbet")
+    for name, entry in spawned.items():
+        if name not in PARAMS:
+            PARAMS[name] = entry["params"]
+    VARIANTS[:] = list(PARAMS)
+    return spawned
+
+
+def check_survival(b, eq, ts_ms, marks):
     if b["status"] != "alive":
         return
-    if eq < DEATH:
-        for bet in list(b["bets"]):
-            b["bets"].remove(bet)
-            close_bet(b, bet, bet["bust_px"], "muerte")
-        b.update(status="dead", died=now_iso(),
-                 reason=f"equity ${eq:.2f} < ${DEATH}")
-        print(f"[moonbet:{b['variant']}] MUERTE: {b['reason']}")
-    elif eq >= TARGET:
+    evo.rollover_day(b, eq, ts_ms)
+    if eq >= TARGET:
         b.update(status="objetivo", died=now_iso(),
                  reason=f"reto cumplido: equity ${eq:.2f} >= ${TARGET}")
         print(f"[moonbet:{b['variant']}] OBJETIVO: {b['reason']}")
-    else:
-        born = (b.get("born") or (BORN_DAY + " 00:00:00 UTC"))[:19]
-        days = (ts_ms - time.mktime(time.strptime(born, "%Y-%m-%d %H:%M:%S")) * 1000) / 86400000
-        activity = b.get("bets_n", 0) + len(b.get("bets", []))
-        if days >= MAX_DAYS_TOURNEY and (activity == 0 or eq <= START):
-            why = "sin apostar" if activity == 0 else f"no rentable (eq ${eq:.2f} <= ${START})"
-            b.update(status="dead", died=now_iso(),
-                     reason=f"{MAX_DAYS_TOURNEY}d torneo: {why}")
+        return
+    fam = evo.family_moonbet(PARAMS[b["variant"]])
+    hit = evo.death_reason(b, eq, ts_ms, fam, len(b["bets"]),
+                           evo.ms_of(CLOSE_ISO), START)
+    if hit is None:
+        return
+    kind, text = hit
+    for bet in list(b["bets"]):
+        b["bets"].remove(bet)
+        px = marks.get(bet["symbol"], bet["entry_px"])
+        px = px * (1 - SLIP) if bet["dir"] > 0 else px * (1 + SLIP)
+        close_bet(b, bet, px, "muerte")
+    b.update(status="dead", died=now_iso(), reason=text)
+    print(f"[moonbet:{b['variant']}] MUERTE: {text}")
+    rep = evo.spawn_replacement("moonbet", b, PARAMS[b["variant"]], kind,
+                                ts_ms, evo.ms_of(CLOSE_ISO), set(PARAMS))
+    if rep and rep.get("blocked"):
+        print(f"[moonbet:{b['variant']}] relevo bloqueado: {rep['blocked']}")
+    evo.log_death("moonbet", b, kind, rep)
 
 
 def step(ts_ms):
     ts = now_iso()
+    spawned = merge_spawned()
     try:
         net = smartmoney.snapshot()
     except Exception as e:
@@ -264,6 +288,7 @@ def step(ts_ms):
     status = {}
     for v in VARIANTS:
         b = load_book(v)
+        b["generation"] = spawned.get(v, {}).get("generation", b.get("generation", 2))
         if b["status"] != "alive":
             status[v] = {"equity": round(equity_of(b, marks), 2), "status": b["status"],
                          "reason": b.get("reason"), "bets": b["bets_n"]}
@@ -275,11 +300,11 @@ def step(ts_ms):
         if newest > b.get("last_candle", 0):
             b["last_candle"] = newest
             manage_bets(b, kx)
-            if equity_of(b, marks) >= DEATH:
+            if equity_of(b, marks) >= evo.floor(START):
                 entries(b, kx, net, reg)
         eq = equity_of(b, marks)
         b["peak"] = max(b.get("peak", START), eq)
-        check_survival(b, eq, ts_ms)
+        check_survival(b, eq, ts_ms, marks)
         status[v] = {"equity": round(eq, 2), "status": b["status"],
                      "reason": b.get("reason"), "bets": b["bets_n"],
                      "open": len(b["bets"])}
@@ -294,7 +319,12 @@ def step(ts_ms):
     json.dump({"ts": ts, "generation": 2, "mechanics": "moon-style leveraged up/down bets",
                "fees": {"open": OPEN_FEE, "perf_optimista_min_documentado": PERF_FEE_OPT,
                         "perf_pesimista_sensibilidad": PERF_FEE_PESS},
-               "start": START, "target": TARGET, "death": DEATH,
+               "start": START, "target": TARGET,
+               "rules": {"perdida_total": "10% inicial ($450, modelo FTMO)",
+                          "perdida_diaria": "3% inicial vs apertura del dia UTC ($15, modelo FTMO)",
+                          "inactividad_h_por_familia": evo.INACTIVITY_H,
+                          "cierre_torneo": CLOSE_ISO,
+                          "relevo": "automatico con hipotesis registrada; tope 20; sin relevo <12h al cierre"},
                "nota": "Simulacion propia con fees optimistas; NO replica exacta de Moon. Moon.com descartado por ToS (Peru/US).",
                "variants": status},
               open(STATUS_JSON, "w"), indent=2)
