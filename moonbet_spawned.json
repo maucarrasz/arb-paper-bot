@@ -12,5 +12,19 @@
     "generation": 3,
     "hypothesis": "mayor cadencia: umbral RSI mas frecuente (25->30)",
     "born": "2026-10-23 14:48:19 UTC"
+  },
+  "U12_mr_down_g3": {
+    "params": {
+      "sig": "mr_down",
+      "rsi_in": 30,
+      "rsi_out": 55,
+      "lev": 100,
+      "wager_pct": 0.01,
+      "tf": "4h"
+    },
+    "parent": "U9_mr_down_100x",
+    "generation": 3,
+    "hypothesis": "mayor cadencia: umbral RSI mas frecuente (25->30)",
+    "born": "2026-10-23 16:46:52 UTC"
   }
 }

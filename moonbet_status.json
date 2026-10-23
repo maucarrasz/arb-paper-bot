@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-23 15:00:54 UTC",
+  "ts": "2026-10-23 16:46:45 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -59,18 +59,18 @@
         "U4_momo_up_10x"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 498.38,
+      "equity_total": 493.8,
       "capital_repuesto": 0.0,
-      "pnl": -1.62
+      "pnl": -6.2
     },
     "U5_sm_10x": {
       "miembros": [
         "U5_sm_10x"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 499.62,
+      "equity_total": 499.2,
       "capital_repuesto": 0.0,
-      "pnl": -0.38
+      "pnl": -0.8
     },
     "U6_mr_up_10x_1h": {
       "miembros": [
@@ -86,9 +86,9 @@
         "U7_brk_up_50x"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 498.56,
+      "equity_total": 494.95,
       "capital_repuesto": 0.0,
-      "pnl": -1.44
+      "pnl": -5.05
     },
     "U8_mr_up_100x": {
       "miembros": [
@@ -113,9 +113,9 @@
         "U10_sm_3x_big"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 499.36,
+      "equity_total": 499.05,
       "capital_repuesto": 0.0,
-      "pnl": -0.64
+      "pnl": -0.95
     }
   },
   "incidente_aisladas": {
@@ -149,14 +149,14 @@
       "open": 0
     },
     "U4_momo_up_10x": {
-      "equity": 498.38,
+      "equity": 493.8,
       "status": "alive",
       "reason": null,
-      "bets": 0,
-      "open": 2
+      "bets": 2,
+      "open": 0
     },
     "U5_sm_10x": {
-      "equity": 499.62,
+      "equity": 499.2,
       "status": "alive",
       "reason": null,
       "bets": 0,
@@ -170,11 +170,11 @@
       "open": 0
     },
     "U7_brk_up_50x": {
-      "equity": 498.56,
+      "equity": 494.95,
       "status": "alive",
       "reason": null,
-      "bets": 0,
-      "open": 1
+      "bets": 1,
+      "open": 0
     },
     "U8_mr_up_100x": {
       "equity": 500.0,
@@ -185,13 +185,13 @@
     },
     "U9_mr_down_100x": {
       "equity": 500.0,
-      "status": "alive",
-      "reason": null,
+      "status": "dead",
+      "reason": "inactividad: 16.4h sin actividad ni posiciones abiertas (ventana familia mrdn25_4h: 16h = 2x p90 medido)",
       "bets": 0,
       "open": 0
     },
     "U10_sm_3x_big": {
-      "equity": 499.36,
+      "equity": 499.05,
       "status": "alive",
       "reason": null,
       "bets": 0,

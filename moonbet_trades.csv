@@ -1,0 +1,4 @@
+variant,symbol,dir,wager,lev,open_ts,close_ts,entry_px,exit_px,pnl_gross,pnl_net_opt10,pnl_net_pess30,exit_reason
+U4_momo_up_10x,LINKUSDT,up,10.0,10,2026-10-23 04:33:12 UTC,2026-10-23 16:46:52 UTC,12.202098,12.048972,-1.2549,-1.2549,-1.2549,momo_flip
+U4_momo_up_10x,DOTUSDT,up,10.0,10,2026-10-23 04:33:12 UTC,2026-10-23 16:46:52 UTC,1.183591,1.127436,-4.7445,-4.7445,-4.7445,momo_flip
+U7_brk_up_50x,DOTUSDT,up,5.0,50,2026-10-23 04:33:12 UTC,2026-10-23 16:46:52 UTC,1.183591,1.15992,-5.0,-5.0,-5.0,bust
