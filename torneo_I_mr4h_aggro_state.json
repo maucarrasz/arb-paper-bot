@@ -4,17 +4,17 @@
   "positions": [],
   "status": "alive",
   "peak": 500.0,
-  "last_candle": 1792771200000,
+  "last_candle": 1792785600000,
   "trades": 0,
   "wins": 0,
   "losses": 0,
   "born": "2026-10-22 22:37:58 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-23 22:01:33 UTC",
+  "updated": "2026-10-24 00:28:13 UTC",
   "generation": 1,
   "day_open": {
-    "date": "2026-10-23",
+    "date": "2026-10-24",
     "eq": 500.0
   },
   "nota": "muerte 23-oct 14:48 UTC INVALIDADA: ventanas de inactividad pre-recalibracion (error de medicion p90 sin dedup por par). Restaurada 2026-10-23 14:55:00 UTC con snapshot exacto del tick ($500, 0 posiciones, 0 operaciones). Reloj de inactividad sigue desde born, sin reinicio."
