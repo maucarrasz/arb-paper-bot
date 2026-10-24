@@ -83,5 +83,59 @@
     "generation": 2,
     "hypothesis": "mayor cadencia: RSI entrada 25->30",
     "born": "2026-10-24 05:39:55 UTC"
+  },
+  "P_msb11_g2": {
+    "params": {
+      "mode": "msb11",
+      "tf": "1h",
+      "rsi_in": 30,
+      "rsi_out": 55,
+      "stop_atr": 2.0,
+      "risk": 0.0075,
+      "cap": 0.3,
+      "sm_veto": false,
+      "time_stop_h": 48,
+      "sm_analyst": true
+    },
+    "parent": "D_msb11",
+    "generation": 2,
+    "hypothesis": "mayor cadencia: timeframe 4h->1h",
+    "born": "2026-10-24 23:05:12 UTC"
+  },
+  "Q_msb11_g2": {
+    "params": {
+      "mode": "msb11",
+      "tf": "1h",
+      "rsi_in": 30,
+      "rsi_out": 55,
+      "stop_atr": 2.0,
+      "risk": 0.0075,
+      "cap": 0.3,
+      "sm_veto": false,
+      "time_stop_h": 48,
+      "sm_analyst": false
+    },
+    "parent": "G_msb11_nosm",
+    "generation": 2,
+    "hypothesis": "mayor cadencia: timeframe 4h->1h",
+    "born": "2026-10-24 23:05:12 UTC"
+  },
+  "R_mr_g2": {
+    "params": {
+      "mode": "mr",
+      "tf": "1h",
+      "rsi_in": 30,
+      "rsi_out": 55,
+      "stop_atr": 2.0,
+      "risk": 0.0075,
+      "cap": 0.3,
+      "sm_veto": false,
+      "time_stop_h": 24,
+      "sm_analyst": true
+    },
+    "parent": "J_msb11_1h",
+    "generation": 2,
+    "hypothesis": "mayor cadencia: msb11 agotado: cambio a mean reversion",
+    "born": "2026-10-24 23:05:12 UTC"
   }
 }
