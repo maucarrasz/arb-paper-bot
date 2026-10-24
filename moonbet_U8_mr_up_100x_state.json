@@ -1,10 +1,21 @@
 {
   "variant": "U8_mr_up_100x",
-  "cash": 500.0,
-  "bets": [],
+  "cash": 494.95,
+  "bets": [
+    {
+      "symbol": "LTCUSDT",
+      "dir": 1,
+      "wager": 5.0,
+      "lev": 100,
+      "entry_px": 55.777874999999995,
+      "bust_px": 55.22009625,
+      "open_ms": 1792857599999,
+      "open_ts": "2026-10-24 18:02:31 UTC"
+    }
+  ],
   "status": "alive",
   "peak": 500.0,
-  "last_candle": 1792828800000,
+  "last_candle": 1792843200000,
   "bets_n": 0,
   "wins": 0,
   "losses": 0,
@@ -12,10 +23,11 @@
   "born": "2026-10-23 00:22:30 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-24 14:25:48 UTC",
+  "updated": "2026-10-24 18:02:31 UTC",
   "generation": 2,
   "day_open": {
     "date": "2026-10-24",
     "eq": 500.0
-  }
+  },
+  "last_active_ms": 1792857599999
 }

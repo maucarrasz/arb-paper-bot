@@ -1,21 +1,34 @@
 {
   "variant": "B_mr4h_sm",
-  "cash": 500.0,
-  "positions": [],
+  "cash": 416.7695957632746,
+  "positions": [
+    {
+      "symbol": "ADAUSDT",
+      "qty": 408.38183846526704,
+      "entry_px": 0.20360174999999997,
+      "cost": 83.23040423672542,
+      "stop": 0.19441916731196268,
+      "open_ms": 1792857599999,
+      "open_ts": "2026-10-24 18:02:21 UTC",
+      "time_stop_h": 96,
+      "rsi_out": 55
+    }
+  ],
   "status": "alive",
   "peak": 500.0,
-  "last_candle": 1792828800000,
+  "last_candle": 1792843200000,
   "trades": 0,
   "wins": 0,
   "losses": 0,
   "born": "2026-10-22 22:28:59 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-24 14:25:39 UTC",
+  "updated": "2026-10-24 18:02:21 UTC",
   "generation": 1,
   "day_open": {
     "date": "2026-10-24",
     "eq": 500.0
   },
-  "nota": "muerte 23-oct 14:48 UTC INVALIDADA: ventanas de inactividad pre-recalibracion (error de medicion p90 sin dedup por par). Restaurada 2026-10-23 14:55:00 UTC con snapshot exacto del tick ($500, 0 posiciones, 0 operaciones). Reloj de inactividad sigue desde born, sin reinicio."
+  "nota": "muerte 23-oct 14:48 UTC INVALIDADA: ventanas de inactividad pre-recalibracion (error de medicion p90 sin dedup por par). Restaurada 2026-10-23 14:55:00 UTC con snapshot exacto del tick ($500, 0 posiciones, 0 operaciones). Reloj de inactividad sigue desde born, sin reinicio.",
+  "last_active_ms": 1792857599999
 }
