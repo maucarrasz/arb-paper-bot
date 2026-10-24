@@ -1,14 +1,24 @@
 {
-  "cash": 100.0,
-  "positions": [],
+  "cash": 79.80786956544868,
+  "positions": [
+    {
+      "symbol": "LTCUSDT",
+      "qty": 0.35627986459280064,
+      "entry_px": 56.618295,
+      "cost": 20.192130434551316,
+      "stop": 54.51320831243996,
+      "open_ms": 1792828799999,
+      "open_ts": "2026-10-24 10:46:42 UTC"
+    }
+  ],
   "status": "alive",
   "peak_equity": 100.0,
-  "last_candle": 1792800000000,
+  "last_candle": 1792814400000,
   "trades": 0,
   "wins": 0,
   "losses": 0,
   "born": "2026-10-22 22:16:25 UTC",
   "died": null,
   "death_reason": null,
-  "updated": "2026-10-24 05:39:46 UTC"
+  "updated": "2026-10-24 10:46:42 UTC"
 }

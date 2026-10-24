@@ -1,21 +1,34 @@
 {
   "variant": "I_mr4h_aggro",
-  "cash": 500.0,
-  "positions": [],
+  "cash": 249.62487500000003,
+  "positions": [
+    {
+      "symbol": "LTCUSDT",
+      "qty": 4.4177416504682805,
+      "entry_px": 56.618295,
+      "cost": 250.37512499999997,
+      "stop": 54.51320831243996,
+      "open_ms": 1792828799999,
+      "open_ts": "2026-10-24 10:46:50 UTC",
+      "time_stop_h": 96,
+      "rsi_out": 55
+    }
+  ],
   "status": "alive",
   "peak": 500.0,
-  "last_candle": 1792800000000,
+  "last_candle": 1792814400000,
   "trades": 0,
   "wins": 0,
   "losses": 0,
   "born": "2026-10-22 22:37:58 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-24 05:39:55 UTC",
+  "updated": "2026-10-24 10:46:50 UTC",
   "generation": 1,
   "day_open": {
     "date": "2026-10-24",
     "eq": 500.0
   },
-  "nota": "muerte 23-oct 14:48 UTC INVALIDADA: ventanas de inactividad pre-recalibracion (error de medicion p90 sin dedup por par). Restaurada 2026-10-23 14:55:00 UTC con snapshot exacto del tick ($500, 0 posiciones, 0 operaciones). Reloj de inactividad sigue desde born, sin reinicio."
+  "nota": "muerte 23-oct 14:48 UTC INVALIDADA: ventanas de inactividad pre-recalibracion (error de medicion p90 sin dedup por par). Restaurada 2026-10-23 14:55:00 UTC con snapshot exacto del tick ($500, 0 posiciones, 0 operaciones). Reloj de inactividad sigue desde born, sin reinicio.",
+  "last_active_ms": 1792828799999
 }

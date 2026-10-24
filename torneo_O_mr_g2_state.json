@@ -1,0 +1,44 @@
+{
+  "variant": "O_mr_g2",
+  "cash": 199.59494005626132,
+  "positions": [
+    {
+      "symbol": "SOLUSDT",
+      "qty": 1.4789982252021296,
+      "entry_px": 101.47071,
+      "cost": 150.22507499999998,
+      "stop": 100.11965680088908,
+      "open_ms": 1792835999999,
+      "open_ts": "2026-10-24 10:46:50 UTC",
+      "time_stop_h": 24,
+      "rsi_out": 55
+    },
+    {
+      "symbol": "XRPUSDT",
+      "qty": 117.44594102443611,
+      "entry_px": 1.2774383999999999,
+      "cost": 150.17998494373873,
+      "stop": 1.2604491374000155,
+      "open_ms": 1792835999999,
+      "open_ts": "2026-10-24 10:46:50 UTC",
+      "time_stop_h": 24,
+      "rsi_out": 55
+    }
+  ],
+  "status": "alive",
+  "peak": 501.26117259121565,
+  "last_candle": 1792832400000,
+  "trades": 0,
+  "wins": 0,
+  "losses": 0,
+  "born": "2026-10-24 10:46:50 UTC",
+  "died": null,
+  "reason": null,
+  "generation": 2,
+  "last_active_ms": 1792835999999,
+  "day_open": {
+    "date": "2026-10-24",
+    "eq": 501.26
+  },
+  "updated": "2026-10-24 10:46:50 UTC"
+}
