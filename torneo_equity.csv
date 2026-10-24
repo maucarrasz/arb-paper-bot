@@ -166,3 +166,13 @@ ts,variant,equity,status
 2026-10-24 00:28:05 UTC,H_smfollow_mr,499.87,alive
 2026-10-24 00:28:05 UTC,I_mr4h_aggro,500.0,alive
 2026-10-24 00:28:05 UTC,J_msb11_1h,500.0,alive
+2026-10-24 05:39:46 UTC,A_mr4h,500.0,alive
+2026-10-24 05:39:46 UTC,B_mr4h_sm,500.0,alive
+2026-10-24 05:39:46 UTC,C_smfollow,500.1,alive
+2026-10-24 05:39:46 UTC,D_msb11,500.0,alive
+2026-10-24 05:39:46 UTC,E_mr1h,500.51,dead
+2026-10-24 05:39:46 UTC,F_mr4h_deep,500.0,alive
+2026-10-24 05:39:46 UTC,G_msb11_nosm,500.0,alive
+2026-10-24 05:39:46 UTC,H_smfollow_mr,500.1,alive
+2026-10-24 05:39:46 UTC,I_mr4h_aggro,500.0,alive
+2026-10-24 05:39:46 UTC,J_msb11_1h,500.0,alive

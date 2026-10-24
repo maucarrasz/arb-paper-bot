@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-24 00:28:05 UTC",
+  "ts": "2026-10-24 05:39:46 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -43,9 +43,9 @@
         "C_smfollow"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 499.87,
+      "equity_total": 500.1,
       "capital_repuesto": 0.0,
-      "pnl": -0.13
+      "pnl": 0.1
     },
     "D_msb11": {
       "miembros": [
@@ -88,9 +88,9 @@
         "H_smfollow_mr"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 499.87,
+      "equity_total": 500.1,
       "capital_repuesto": 0.0,
-      "pnl": -0.13
+      "pnl": 0.1
     },
     "I_mr4h_aggro": {
       "miembros": [
@@ -149,7 +149,7 @@
       "open": 0
     },
     "C_smfollow": {
-      "equity": 499.87,
+      "equity": 500.1,
       "status": "alive",
       "reason": null,
       "trades": 0,
@@ -164,8 +164,8 @@
     },
     "E_mr1h": {
       "equity": 500.51,
-      "status": "alive",
-      "reason": null,
+      "status": "dead",
+      "reason": "inactividad: 31.0h sin actividad ni posiciones abiertas (ventana familia mr25_1h: 28h = 2x p90 medido)",
       "trades": 1,
       "open": 0
     },
@@ -184,7 +184,7 @@
       "open": 0
     },
     "H_smfollow_mr": {
-      "equity": 499.87,
+      "equity": 500.1,
       "status": "alive",
       "reason": null,
       "trades": 0,
