@@ -1,33 +1,21 @@
 {
   "variant": "O_mr_g2",
-  "cash": 374.7355201876951,
-  "positions": [
-    {
-      "symbol": "DOTUSDT",
-      "qty": 121.81019822842904,
-      "entry_px": 1.0315154999999998,
-      "cost": 125.77475663822776,
-      "stop": 1.0008850813747807,
-      "open_ms": 1792864799999,
-      "open_ts": "2026-10-24 18:02:22 UTC",
-      "time_stop_h": 24,
-      "rsi_out": 55
-    }
-  ],
+  "cash": 500.6200280581471,
+  "positions": [],
   "status": "alive",
   "peak": 502.3926079310887,
-  "last_candle": 1792947600000,
-  "trades": 2,
-  "wins": 1,
+  "last_candle": 1792958400000,
+  "trades": 3,
+  "wins": 2,
   "losses": 1,
   "born": "2026-10-24 10:46:50 UTC",
   "died": null,
   "reason": null,
   "generation": 2,
-  "last_active_ms": 1792889999999,
+  "last_active_ms": 1792961999999,
   "day_open": {
     "date": "2026-10-25",
     "eq": 502.39
   },
-  "updated": "2026-10-25 18:53:46 UTC"
+  "updated": "2026-10-25 21:14:23 UTC"
 }

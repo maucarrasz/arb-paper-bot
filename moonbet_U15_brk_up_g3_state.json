@@ -1,10 +1,21 @@
 {
   "variant": "U15_brk_up_g3",
-  "cash": 500.0,
-  "bets": [],
+  "cash": 494.95,
+  "bets": [
+    {
+      "symbol": "TRXUSDT",
+      "dir": 1,
+      "wager": 5.0,
+      "lev": 50,
+      "entry_px": 0.33126554999999996,
+      "bust_px": 0.32464023899999994,
+      "open_ms": 1792958399999,
+      "open_ts": "2026-10-25 21:14:32 UTC"
+    }
+  ],
   "status": "alive",
   "peak": 500.0,
-  "last_candle": 1792929600000,
+  "last_candle": 1792944000000,
   "bets_n": 0,
   "wins": 0,
   "losses": 0,
@@ -17,5 +28,6 @@
     "date": "2026-10-25",
     "eq": 500.0
   },
-  "updated": "2026-10-25 18:53:56 UTC"
+  "updated": "2026-10-25 21:14:32 UTC",
+  "last_active_ms": 1792958399999
 }

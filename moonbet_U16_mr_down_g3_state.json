@@ -4,7 +4,7 @@
   "bets": [],
   "status": "alive",
   "peak": 500.0,
-  "last_candle": 1792929600000,
+  "last_candle": 1792944000000,
   "bets_n": 0,
   "wins": 0,
   "losses": 0,
@@ -17,5 +17,5 @@
     "date": "2026-10-25",
     "eq": 500.0
   },
-  "updated": "2026-10-25 18:53:56 UTC"
+  "updated": "2026-10-25 21:14:32 UTC"
 }
