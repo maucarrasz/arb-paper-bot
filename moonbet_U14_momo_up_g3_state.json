@@ -1,0 +1,43 @@
+{
+  "variant": "U14_momo_up_g3",
+  "cash": 479.80201999999997,
+  "bets": [
+    {
+      "symbol": "BNBUSDT",
+      "dir": 1,
+      "wager": 10.0,
+      "lev": 10,
+      "entry_px": 740.37,
+      "bust_px": 666.333,
+      "open_ms": 1792886399999,
+      "open_ts": "2026-10-25 03:08:52 UTC"
+    },
+    {
+      "symbol": "XRPUSDT",
+      "dir": 1,
+      "wager": 10.0,
+      "lev": 10,
+      "entry_px": 1.3002498,
+      "bust_px": 1.17022482,
+      "open_ms": 1792886399999,
+      "open_ts": "2026-10-25 03:08:52 UTC"
+    }
+  ],
+  "status": "alive",
+  "peak": 500.0,
+  "last_candle": 1792872000000,
+  "bets_n": 0,
+  "wins": 0,
+  "losses": 0,
+  "busts": 0,
+  "born": "2026-10-25 03:08:52 UTC",
+  "died": null,
+  "reason": null,
+  "generation": 3,
+  "last_active_ms": 1792886399999,
+  "day_open": {
+    "date": "2026-10-25",
+    "eq": 499.7
+  },
+  "updated": "2026-10-25 03:08:52 UTC"
+}

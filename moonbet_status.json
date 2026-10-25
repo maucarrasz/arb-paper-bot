@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-25 01:02:48 UTC",
+  "ts": "2026-10-25 03:08:44 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -56,12 +56,13 @@
     },
     "U4_momo_up_10x": {
       "miembros": [
-        "U4_momo_up_10x"
+        "U4_momo_up_10x",
+        "U14_momo_up_g3"
       ],
-      "capital_inyectado": 500.0,
-      "equity_total": 493.8,
-      "capital_repuesto": 0.0,
-      "pnl": -6.2
+      "capital_inyectado": 1000.0,
+      "equity_total": 993.5,
+      "capital_repuesto": 500.0,
+      "pnl": -6.5
     },
     "U5_sm_10x": {
       "miembros": [
@@ -84,11 +85,12 @@
     },
     "U7_brk_up_50x": {
       "miembros": [
-        "U7_brk_up_50x"
+        "U7_brk_up_50x",
+        "U15_brk_up_g3"
       ],
-      "capital_inyectado": 500.0,
-      "equity_total": 494.95,
-      "capital_repuesto": 0.0,
+      "capital_inyectado": 1000.0,
+      "equity_total": 994.95,
+      "capital_repuesto": 500.0,
       "pnl": -5.05
     },
     "U8_mr_up_100x": {
@@ -154,8 +156,7 @@
       "equity": 493.8,
       "status": "dead",
       "reason": "inactividad: 33.0h sin actividad ni posiciones abiertas (ventana familia momo_4h: 32h = 2x p90 medido)",
-      "bets": 2,
-      "open": 0
+      "bets": 2
     },
     "U5_sm_10x": {
       "equity": 501.05,
@@ -174,8 +175,7 @@
       "equity": 494.95,
       "status": "dead",
       "reason": "inactividad: 33.0h sin actividad ni posiciones abiertas (ventana familia brk_4h: 32h = 2x p90 medido)",
-      "bets": 1,
-      "open": 0
+      "bets": 1
     },
     "U8_mr_up_100x": {
       "equity": 510.21,
@@ -215,6 +215,20 @@
       "status": "alive",
       "reason": null,
       "bets": 2,
+      "open": 0
+    },
+    "U14_momo_up_g3": {
+      "equity": 499.7,
+      "status": "alive",
+      "reason": null,
+      "bets": 0,
+      "open": 2
+    },
+    "U15_brk_up_g3": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "bets": 0,
       "open": 0
     }
   }
