@@ -40,5 +40,32 @@
     "generation": 3,
     "hypothesis": "mayor cadencia: umbral RSI mas frecuente (rsi_in 25->30): entra en RSI<25 -> RSI<30",
     "born": "2026-10-24 05:40:06 UTC"
+  },
+  "U14_momo_up_g3": {
+    "params": {
+      "sig": "momo_up",
+      "lookback": 3,
+      "thr": 0.01,
+      "lev": 10,
+      "wager_pct": 0.02,
+      "tf": "4h"
+    },
+    "parent": "U4_momo_up_10x",
+    "generation": 3,
+    "hypothesis": "mayor cadencia: umbral momentum 1.5%->1.0%",
+    "born": "2026-10-25 01:02:56 UTC"
+  },
+  "U15_brk_up_g3": {
+    "params": {
+      "sig": "brk_up",
+      "lookback": 10,
+      "lev": 50,
+      "wager_pct": 0.01,
+      "tf": "4h"
+    },
+    "parent": "U7_brk_up_50x",
+    "generation": 3,
+    "hypothesis": "mayor cadencia: breakout 20->10 cierres",
+    "born": "2026-10-25 01:02:56 UTC"
   }
 }

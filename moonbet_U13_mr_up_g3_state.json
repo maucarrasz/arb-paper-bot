@@ -1,43 +1,22 @@
 {
   "variant": "U13_mr_up_g3",
-  "cash": 479.80201999999997,
-  "bets": [
-    {
-      "symbol": "SOLUSDT",
-      "dir": 1,
-      "wager": 10.0,
-      "lev": 10,
-      "entry_px": 101.47071,
-      "bust_px": 91.323639,
-      "open_ms": 1792835999999,
-      "open_ts": "2026-10-24 10:46:58 UTC"
-    },
-    {
-      "symbol": "XRPUSDT",
-      "dir": 1,
-      "wager": 10.0,
-      "lev": 10,
-      "entry_px": 1.2774383999999999,
-      "bust_px": 1.14969456,
-      "open_ms": 1792835999999,
-      "open_ts": "2026-10-24 10:46:58 UTC"
-    }
-  ],
+  "cash": 502.5439612338614,
+  "bets": [],
   "status": "alive",
-  "peak": 500.73848251011225,
-  "last_candle": 1792879200000,
-  "bets_n": 0,
-  "wins": 0,
+  "peak": 502.5439612338614,
+  "last_candle": 1792886400000,
+  "bets_n": 2,
+  "wins": 2,
   "losses": 0,
   "busts": 0,
   "born": "2026-10-24 10:46:58 UTC",
   "died": null,
   "reason": null,
   "generation": 3,
-  "last_active_ms": 1792835999999,
+  "last_active_ms": 1792889999999,
   "day_open": {
-    "date": "2026-10-24",
-    "eq": 500.74
+    "date": "2026-10-25",
+    "eq": 502.54
   },
-  "updated": "2026-10-24 23:05:19 UTC"
+  "updated": "2026-10-25 01:02:56 UTC"
 }
