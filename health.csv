@@ -500,3 +500,10 @@ ts,exchange,event,detail
 2026-10-25 09:34:12,kucoin,ws_reconnect_1,backoff 2s
 2026-10-25 09:34:15,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
 2026-10-25 10:36:43,bot,stop,polls=10200
+2026-10-25 10:36:55,bot,start,seconds=20400 interval=2.0
+2026-10-25 10:36:56,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-25 10:36:56,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-25 10:36:56,binance,ws_connected,wss://data-stream.binance.vision:443/ws/btcusdt@bookTicker
+2026-10-25 10:36:56,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-25 10:36:57,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-25 16:16:59,bot,stop,polls=10200
