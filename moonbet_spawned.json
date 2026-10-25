@@ -67,5 +67,19 @@
     "generation": 3,
     "hypothesis": "mayor cadencia: breakout 20->10 cierres",
     "born": "2026-10-25 01:02:56 UTC"
+  },
+  "U16_mr_down_g3": {
+    "params": {
+      "sig": "mr_down",
+      "rsi_in": 40,
+      "rsi_out": 55,
+      "lev": 25,
+      "wager_pct": 0.02,
+      "tf": "4h"
+    },
+    "parent": "U3_mr_down_25x",
+    "generation": 3,
+    "hypothesis": "mayor cadencia: umbral RSI mas frecuente (rsi_in 30->40): entra en RSI>70 -> RSI>60",
+    "born": "2026-10-25 09:10:57 UTC"
   }
 }
