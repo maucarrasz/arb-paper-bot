@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-26 10:57:42 UTC",
+  "ts": "2026-10-26 13:19:28 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -25,27 +25,27 @@
         "A_mr4h"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 498.34,
+      "equity_total": 500.52,
       "capital_repuesto": 0.0,
-      "pnl": -1.66
+      "pnl": 0.52
     },
     "B_mr4h_sm": {
       "miembros": [
         "B_mr4h_sm"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 499.43,
+      "equity_total": 500.53,
       "capital_repuesto": 0.0,
-      "pnl": -0.57
+      "pnl": 0.53
     },
     "C_smfollow": {
       "miembros": [
         "C_smfollow"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 496.21,
+      "equity_total": 497.53,
       "capital_repuesto": 0.0,
-      "pnl": -3.79
+      "pnl": -2.47
     },
     "D_msb11": {
       "miembros": [
@@ -53,9 +53,9 @@
         "P_msb11_g2"
       ],
       "capital_inyectado": 1000.0,
-      "equity_total": 998.89,
+      "equity_total": 1003.11,
       "capital_repuesto": 500.0,
-      "pnl": -1.11
+      "pnl": 3.11
     },
     "E_mr1h": {
       "miembros": [
@@ -72,9 +72,9 @@
         "F_mr4h_deep"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 500.5,
+      "equity_total": 501.03,
       "capital_repuesto": 0.0,
-      "pnl": 0.5
+      "pnl": 1.03
     },
     "G_msb11_nosm": {
       "miembros": [
@@ -91,18 +91,18 @@
         "H_smfollow_mr"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 494.33,
+      "equity_total": 496.42,
       "capital_repuesto": 0.0,
-      "pnl": -5.67
+      "pnl": -3.58
     },
     "I_mr4h_aggro": {
       "miembros": [
         "I_mr4h_aggro"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 495.72,
+      "equity_total": 501.38,
       "capital_repuesto": 0.0,
-      "pnl": -4.28
+      "pnl": 1.38
     },
     "J_msb11_1h": {
       "miembros": [
@@ -111,9 +111,9 @@
         "S_mr_g3"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1500.07,
+      "equity_total": 1502.3,
       "capital_repuesto": 1000.0,
-      "pnl": 0.07
+      "pnl": 2.3
     }
   },
   "incidente_aisladas": {
@@ -140,21 +140,21 @@
   },
   "variants": {
     "A_mr4h": {
-      "equity": 498.34,
+      "equity": 500.52,
       "status": "alive",
       "reason": null,
       "trades": 0,
       "open": 2
     },
     "B_mr4h_sm": {
-      "equity": 499.43,
+      "equity": 500.53,
       "status": "alive",
       "reason": null,
       "trades": 0,
       "open": 1
     },
     "C_smfollow": {
-      "equity": 496.21,
+      "equity": 497.53,
       "status": "alive",
       "reason": null,
       "trades": 1,
@@ -173,7 +173,7 @@
       "trades": 1
     },
     "F_mr4h_deep": {
-      "equity": 500.5,
+      "equity": 501.03,
       "status": "alive",
       "reason": null,
       "trades": 0,
@@ -186,14 +186,14 @@
       "trades": 0
     },
     "H_smfollow_mr": {
-      "equity": 494.33,
+      "equity": 496.42,
       "status": "alive",
       "reason": null,
       "trades": 2,
       "open": 2
     },
     "I_mr4h_aggro": {
-      "equity": 495.72,
+      "equity": 501.38,
       "status": "alive",
       "reason": null,
       "trades": 0,
@@ -237,7 +237,7 @@
       "open": 0
     },
     "P_msb11_g2": {
-      "equity": 498.89,
+      "equity": 503.11,
       "status": "alive",
       "reason": null,
       "trades": 0,
@@ -257,7 +257,7 @@
       "trades": 0
     },
     "S_mr_g3": {
-      "equity": 500.07,
+      "equity": 502.3,
       "status": "alive",
       "reason": null,
       "trades": 0,
