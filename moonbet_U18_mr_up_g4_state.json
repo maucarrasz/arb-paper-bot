@@ -1,0 +1,33 @@
+{
+  "variant": "U18_mr_up_g4",
+  "cash": 489.9,
+  "bets": [
+    {
+      "symbol": "DOTUSDT",
+      "dir": 1,
+      "wager": 10.0,
+      "lev": 10,
+      "entry_px": 1.0085039999999998,
+      "bust_px": 0.9076535999999998,
+      "open_ms": 1792997999999,
+      "open_ts": "2026-10-26 07:18:18 UTC"
+    }
+  ],
+  "status": "alive",
+  "peak": 500.65819233240524,
+  "last_candle": 1792994400000,
+  "bets_n": 0,
+  "wins": 0,
+  "losses": 0,
+  "busts": 0,
+  "born": "2026-10-26 07:18:18 UTC",
+  "died": null,
+  "reason": null,
+  "generation": 4,
+  "last_active_ms": 1792997999999,
+  "day_open": {
+    "date": "2026-10-26",
+    "eq": 500.66
+  },
+  "updated": "2026-10-26 07:18:18 UTC"
+}

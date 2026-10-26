@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-26 05:17:09 UTC",
+  "ts": "2026-10-26 07:18:01 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -107,12 +107,13 @@
     "J_msb11_1h": {
       "miembros": [
         "J_msb11_1h",
-        "R_mr_g2"
+        "R_mr_g2",
+        "S_mr_g3"
       ],
-      "capital_inyectado": 1000.0,
-      "equity_total": 1000.0,
-      "capital_repuesto": 500.0,
-      "pnl": 0.0
+      "capital_inyectado": 1500.0,
+      "equity_total": 1501.11,
+      "capital_repuesto": 1000.0,
+      "pnl": 1.11
     }
   },
   "incidente_aisladas": {
@@ -253,8 +254,14 @@
       "equity": 500.0,
       "status": "dead",
       "reason": "inactividad: 28.2h sin actividad ni posiciones abiertas (ventana familia mr25_1h: 28h = 2x p90 medido)",
+      "trades": 0
+    },
+    "S_mr_g3": {
+      "equity": 501.11,
+      "status": "alive",
+      "reason": null,
       "trades": 0,
-      "open": 0
+      "open": 1
     }
   }
 }

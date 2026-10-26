@@ -1,0 +1,33 @@
+{
+  "variant": "S_mr_g3",
+  "cash": 349.77492500000005,
+  "positions": [
+    {
+      "symbol": "DOTUSDT",
+      "qty": 148.8095238095238,
+      "entry_px": 1.0085039999999998,
+      "cost": 150.22507499999995,
+      "stop": 0.9851458357475745,
+      "open_ms": 1792997999999,
+      "open_ts": "2026-10-26 07:18:10 UTC",
+      "time_stop_h": 24,
+      "rsi_out": 55
+    }
+  ],
+  "status": "alive",
+  "peak": 501.1142107142857,
+  "last_candle": 1792994400000,
+  "trades": 0,
+  "wins": 0,
+  "losses": 0,
+  "born": "2026-10-26 07:18:10 UTC",
+  "died": null,
+  "reason": null,
+  "generation": 3,
+  "last_active_ms": 1792997999999,
+  "day_open": {
+    "date": "2026-10-26",
+    "eq": 501.11
+  },
+  "updated": "2026-10-26 07:18:10 UTC"
+}
