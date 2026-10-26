@@ -534,3 +534,34 @@ ts,exchange,event,detail
 2026-10-26 08:03:15,kucoin,ws_reconnect_1,backoff 2s
 2026-10-26 08:03:18,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
 2026-10-26 09:17:57,bot,stop,polls=10200
+2026-10-26 09:18:10,bot,start,seconds=20400 interval=2.0
+2026-10-26 09:18:11,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-26 09:18:11,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-26 09:18:11,binance,ws_connected,wss://data-stream.binance.vision:443/ws/btcusdt@bookTicker
+2026-10-26 09:18:11,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-26 09:18:11,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-26 10:49:38,kraken,ws_down,ConnectionClosedError
+2026-10-26 10:49:38,kraken,ws_reconnect_1,backoff 2s
+2026-10-26 10:49:42,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-26 11:27:44,kraken,ws_down,ConnectionClosedError
+2026-10-26 11:27:44,kraken,ws_reconnect_1,backoff 2s
+2026-10-26 11:27:47,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-26 11:35:41,kucoin,ws_down,ConnectionClosedError
+2026-10-26 11:35:41,kucoin,ws_reconnect_1,backoff 2s
+2026-10-26 11:35:51,kucoin,ws_down,ReadTimeout
+2026-10-26 11:35:51,kucoin,ws_reconnect_2,backoff 4s
+2026-10-26 11:35:56,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-26 11:54:08,kucoin,ws_down,ConnectionClosedError
+2026-10-26 11:54:08,kucoin,ws_reconnect_1,backoff 2s
+2026-10-26 11:54:18,kucoin,ws_down,ReadTimeout
+2026-10-26 11:54:18,kucoin,ws_reconnect_2,backoff 4s
+2026-10-26 11:54:23,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-26 12:01:53,kucoin,ws_down,ConnectionClosedError
+2026-10-26 12:01:53,kucoin,ws_reconnect_1,backoff 2s
+2026-10-26 12:02:03,kucoin,ws_down,ReadTimeout
+2026-10-26 12:02:03,kucoin,ws_reconnect_2,backoff 4s
+2026-10-26 12:02:08,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-26 14:13:12,kraken,ws_down,ConnectionClosedError
+2026-10-26 14:13:12,kraken,ws_reconnect_1,backoff 2s
+2026-10-26 14:13:15,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-26 14:58:14,bot,stop,polls=10200
