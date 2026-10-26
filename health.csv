@@ -565,3 +565,37 @@ ts,exchange,event,detail
 2026-10-26 14:13:12,kraken,ws_reconnect_1,backoff 2s
 2026-10-26 14:13:15,kraken,ws_connected,wss://ws.kraken.com/v2
 2026-10-26 14:58:14,bot,stop,polls=10200
+2026-10-26 14:58:31,bot,start,seconds=20400 interval=2.0
+2026-10-26 14:58:31,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-26 14:58:31,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-26 14:58:31,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-26 14:58:32,binance,ws_connected,wss://data-stream.binance.vision:443/ws/btcusdt@bookTicker
+2026-10-26 14:58:32,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-26 16:15:30,kraken,ws_down,ConnectionClosedError
+2026-10-26 16:15:30,kraken,ws_reconnect_1,backoff 2s
+2026-10-26 16:15:33,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-26 18:47:09,okx,ws_down,ConnectionClosedError
+2026-10-26 18:47:09,okx,ws_reconnect_1,backoff 2s
+2026-10-26 18:47:12,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-26 18:52:09,kraken,ws_down,ConnectionClosedError
+2026-10-26 18:52:09,kraken,ws_reconnect_1,backoff 2s
+2026-10-26 18:52:12,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-26 19:04:44,okx,ws_down,ConnectionClosedError
+2026-10-26 19:04:44,okx,ws_reconnect_1,backoff 2s
+2026-10-26 19:04:46,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-26 19:15:07,kraken,ws_down,ConnectionClosedError
+2026-10-26 19:15:07,kraken,ws_reconnect_1,backoff 2s
+2026-10-26 19:15:11,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-26 19:26:30,coinbase,ws_down,ConnectionClosedError
+2026-10-26 19:26:30,coinbase,ws_reconnect_1,backoff 2s
+2026-10-26 19:26:32,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-26 20:00:10,kraken,ws_down,ConnectionClosedError
+2026-10-26 20:00:10,kraken,ws_reconnect_1,backoff 2s
+2026-10-26 20:00:13,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-26 20:08:58,coinbase,ws_down,ConnectionClosedError
+2026-10-26 20:08:58,coinbase,ws_reconnect_1,backoff 2s
+2026-10-26 20:09:00,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-26 20:29:11,okx,ws_down,ConnectionClosedError
+2026-10-26 20:29:11,okx,ws_reconnect_1,backoff 2s
+2026-10-26 20:29:14,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-26 20:38:35,bot,stop,polls=10200
