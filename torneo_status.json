@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-26 17:16:12 UTC",
+  "ts": "2026-10-26 18:21:02 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -53,9 +53,9 @@
         "P_msb11_g2"
       ],
       "capital_inyectado": 1000.0,
-      "equity_total": 1004.0,
+      "equity_total": 1003.84,
       "capital_repuesto": 500.0,
-      "pnl": 4.0
+      "pnl": 3.84
     },
     "E_mr1h": {
       "miembros": [
@@ -237,11 +237,11 @@
       "open": 0
     },
     "P_msb11_g2": {
-      "equity": 504.0,
+      "equity": 503.84,
       "status": "alive",
       "reason": null,
-      "trades": 0,
-      "open": 2
+      "trades": 1,
+      "open": 1
     },
     "Q_msb11_g2": {
       "equity": 500.0,
