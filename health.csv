@@ -521,3 +521,16 @@ ts,exchange,event,detail
 2026-10-25 21:57:33,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
 2026-10-25 21:57:34,kraken,ws_connected,wss://ws.kraken.com/v2
 2026-10-26 03:37:37,bot,stop,polls=10200
+2026-10-26 03:37:52,bot,start,seconds=20400 interval=2.0
+2026-10-26 03:37:52,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-26 03:37:53,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-26 03:37:53,binance,ws_connected,wss://data-stream.binance.vision:443/ws/btcusdt@bookTicker
+2026-10-26 03:37:53,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-26 03:37:54,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-26 05:34:27,kraken,ws_down,ConnectionClosedError
+2026-10-26 05:34:27,kraken,ws_reconnect_1,backoff 2s
+2026-10-26 05:34:30,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-26 08:03:15,kucoin,ws_down,ConnectionClosedError
+2026-10-26 08:03:15,kucoin,ws_reconnect_1,backoff 2s
+2026-10-26 08:03:18,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-26 09:17:57,bot,stop,polls=10200
