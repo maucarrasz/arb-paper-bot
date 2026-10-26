@@ -1,6 +1,6 @@
 {
   "variant": "U15_brk_up_g3",
-  "cash": 494.95,
+  "cash": 489.900505,
   "bets": [
     {
       "symbol": "TRXUSDT",
@@ -11,11 +11,21 @@
       "bust_px": 0.32464023899999994,
       "open_ms": 1792958399999,
       "open_ts": "2026-10-25 21:14:32 UTC"
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "dir": 1,
+      "wager": 5.0,
+      "lev": 50,
+      "entry_px": 9.008501999999998,
+      "bust_px": 8.828331959999998,
+      "open_ms": 1793030399999,
+      "open_ts": "2026-10-26 17:16:30 UTC"
     }
   ],
   "status": "alive",
   "peak": 500.0,
-  "last_candle": 1793001600000,
+  "last_candle": 1793016000000,
   "bets_n": 0,
   "wins": 0,
   "losses": 0,
@@ -28,6 +38,6 @@
     "date": "2026-10-26",
     "eq": 499.3
   },
-  "updated": "2026-10-26 13:19:44 UTC",
-  "last_active_ms": 1792958399999
+  "updated": "2026-10-26 17:16:30 UTC",
+  "last_active_ms": 1793030399999
 }
