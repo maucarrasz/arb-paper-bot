@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-26 18:21:10 UTC",
+  "ts": "2026-10-26 20:22:00 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -32,18 +32,18 @@
         "U1_mr_up_5x"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 500.47,
+      "equity_total": 499.59,
       "capital_repuesto": 0.0,
-      "pnl": 0.47
+      "pnl": -0.41
     },
     "U2_mr_up_25x": {
       "miembros": [
         "U2_mr_up_25x"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 503.13,
+      "equity_total": 498.73,
       "capital_repuesto": 0.0,
-      "pnl": 3.13
+      "pnl": -1.27
     },
     "U3_mr_down_25x": {
       "miembros": [
@@ -61,18 +61,18 @@
         "U14_momo_up_g3"
       ],
       "capital_inyectado": 1000.0,
-      "equity_total": 991.74,
+      "equity_total": 990.41,
       "capital_repuesto": 500.0,
-      "pnl": -8.26
+      "pnl": -9.59
     },
     "U5_sm_10x": {
       "miembros": [
         "U5_sm_10x"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 502.66,
+      "equity_total": 502.85,
       "capital_repuesto": 0.0,
-      "pnl": 2.66
+      "pnl": 2.85
     },
     "U6_mr_up_10x_1h": {
       "miembros": [
@@ -81,9 +81,9 @@
         "U18_mr_up_g4"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1503.82,
+      "equity_total": 1502.48,
       "capital_repuesto": 1000.0,
-      "pnl": 3.82
+      "pnl": 2.48
     },
     "U7_brk_up_50x": {
       "miembros": [
@@ -91,18 +91,18 @@
         "U15_brk_up_g3"
       ],
       "capital_inyectado": 1000.0,
-      "equity_total": 994.53,
+      "equity_total": 991.72,
       "capital_repuesto": 500.0,
-      "pnl": -5.47
+      "pnl": -8.28
     },
     "U8_mr_up_100x": {
       "miembros": [
         "U8_mr_up_100x"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 509.57,
+      "equity_total": 505.05,
       "capital_repuesto": 0.0,
-      "pnl": 9.57
+      "pnl": 5.05
     },
     "U9_mr_down_100x": {
       "miembros": [
@@ -120,9 +120,9 @@
         "U10_sm_3x_big"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 501.65,
+      "equity_total": 501.79,
       "capital_repuesto": 0.0,
-      "pnl": 1.65
+      "pnl": 1.79
     }
   },
   "incidente_aisladas": {
@@ -135,14 +135,14 @@
   "nota": "Simulacion propia con fees optimistas; NO replica exacta de Moon. Moon.com descartado por ToS (Peru/US).",
   "variants": {
     "U1_mr_up_5x": {
-      "equity": 500.47,
+      "equity": 499.59,
       "status": "alive",
       "reason": null,
       "bets": 0,
       "open": 2
     },
     "U2_mr_up_25x": {
-      "equity": 503.13,
+      "equity": 498.73,
       "status": "alive",
       "reason": null,
       "bets": 0,
@@ -161,7 +161,7 @@
       "bets": 2
     },
     "U5_sm_10x": {
-      "equity": 502.66,
+      "equity": 502.85,
       "status": "alive",
       "reason": null,
       "bets": 0,
@@ -180,7 +180,7 @@
       "bets": 1
     },
     "U8_mr_up_100x": {
-      "equity": 509.57,
+      "equity": 505.05,
       "status": "alive",
       "reason": null,
       "bets": 0,
@@ -193,7 +193,7 @@
       "bets": 0
     },
     "U10_sm_3x_big": {
-      "equity": 501.65,
+      "equity": 501.79,
       "status": "alive",
       "reason": null,
       "bets": 0,
@@ -218,14 +218,14 @@
       "bets": 2
     },
     "U14_momo_up_g3": {
-      "equity": 497.94,
+      "equity": 496.61,
       "status": "alive",
       "reason": null,
-      "bets": 3,
+      "bets": 5,
       "open": 2
     },
     "U15_brk_up_g3": {
-      "equity": 499.58,
+      "equity": 496.77,
       "status": "alive",
       "reason": null,
       "bets": 0,
@@ -246,7 +246,7 @@
       "open": 0
     },
     "U18_mr_up_g4": {
-      "equity": 501.28,
+      "equity": 499.94,
       "status": "alive",
       "reason": null,
       "bets": 0,
