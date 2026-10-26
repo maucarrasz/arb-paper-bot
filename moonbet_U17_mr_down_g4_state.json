@@ -1,0 +1,21 @@
+{
+  "variant": "U17_mr_down_g4",
+  "cash": 500.0,
+  "bets": [],
+  "status": "alive",
+  "peak": 500.0,
+  "last_candle": 1792972800000,
+  "bets_n": 0,
+  "wins": 0,
+  "losses": 0,
+  "busts": 0,
+  "born": "2026-10-26 04:36:14 UTC",
+  "died": null,
+  "reason": null,
+  "generation": 4,
+  "day_open": {
+    "date": "2026-10-26",
+    "eq": 500.0
+  },
+  "updated": "2026-10-26 04:36:14 UTC"
+}
