@@ -2,21 +2,21 @@
   "variant": "U13_mr_up_g3",
   "cash": 502.5439612338614,
   "bets": [],
-  "status": "alive",
+  "status": "dead",
   "peak": 502.5439612338614,
-  "last_candle": 1792983600000,
+  "last_candle": 1792987200000,
   "bets_n": 2,
   "wins": 2,
   "losses": 0,
   "busts": 0,
   "born": "2026-10-24 10:46:58 UTC",
-  "died": null,
-  "reason": null,
+  "died": "2026-10-26 05:17:27 UTC",
+  "reason": "inactividad: 28.3h sin actividad ni posiciones abiertas (ventana familia mr25_1h: 28h = 2x p90 medido)",
   "generation": 3,
   "last_active_ms": 1792889999999,
   "day_open": {
     "date": "2026-10-26",
     "eq": 502.54
   },
-  "updated": "2026-10-26 04:36:14 UTC"
+  "updated": "2026-10-26 05:17:27 UTC"
 }
