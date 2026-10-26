@@ -4,7 +4,7 @@
   "positions": [],
   "status": "alive",
   "peak": 502.3926079310887,
-  "last_candle": 1792969200000,
+  "last_candle": 1792980000000,
   "trades": 3,
   "wins": 2,
   "losses": 1,
@@ -17,5 +17,5 @@
     "date": "2026-10-26",
     "eq": 500.62
   },
-  "updated": "2026-10-26 00:15:19 UTC"
+  "updated": "2026-10-26 03:16:30 UTC"
 }

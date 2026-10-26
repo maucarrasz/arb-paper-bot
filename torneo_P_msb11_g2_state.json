@@ -1,10 +1,35 @@
 {
   "variant": "P_msb11_g2",
-  "cash": 500.0,
-  "positions": [],
+  "cash": 199.59494005626132,
+  "positions": [
+    {
+      "symbol": "ADAUSDT",
+      "qty": 742.9420505200594,
+      "entry_px": 0.20200094999999998,
+      "cost": 150.22507499999998,
+      "stop": 0.1981945674991525,
+      "open_ms": 1792983599999,
+      "open_ts": "2026-10-26 03:16:30 UTC",
+      "time_stop_h": 48,
+      "rsi_out": 55,
+      "contexto": "TORO 2 vs OSO 0: RSI 35 neutral; regimen alcista BTC>SMA200d; smart money net long $590,584; mixto-neutral"
+    },
+    {
+      "symbol": "DOTUSDT",
+      "qty": 147.44835545722717,
+      "entry_px": 1.0175085,
+      "cost": 150.17998494373873,
+      "stop": 0.9955307626563865,
+      "open_ms": 1792983599999,
+      "open_ts": "2026-10-26 03:16:30 UTC",
+      "time_stop_h": 48,
+      "rsi_out": 55,
+      "contexto": "TORO 2 vs OSO 0: RSI 37 neutral; regimen alcista BTC>SMA200d; smart money net long $146,271; mixto-neutral"
+    }
+  ],
   "status": "alive",
-  "peak": 500.0,
-  "last_candle": 1792969200000,
+  "peak": 503.02806453794415,
+  "last_candle": 1792980000000,
   "trades": 0,
   "wins": 0,
   "losses": 0,
@@ -16,5 +41,6 @@
     "date": "2026-10-26",
     "eq": 500.0
   },
-  "updated": "2026-10-26 00:15:19 UTC"
+  "updated": "2026-10-26 03:16:30 UTC",
+  "last_active_ms": 1792983599999
 }

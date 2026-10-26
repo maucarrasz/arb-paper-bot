@@ -2,7 +2,7 @@
   "variant": "U12_mr_down_g3",
   "cash": 500.0,
   "bets": [],
-  "status": "alive",
+  "status": "dead",
   "peak": 500.0,
   "last_candle": 1792958400000,
   "bets_n": 0,
@@ -10,12 +10,12 @@
   "losses": 0,
   "busts": 0,
   "born": "2026-10-23 18:47:49 UTC",
-  "died": null,
-  "reason": null,
+  "died": "2026-10-26 03:16:39 UTC",
+  "reason": "inactividad: 56.5h sin actividad ni posiciones abiertas (ventana familia mrdn30_4h: 56h = 2x p90 medido)",
   "generation": 3,
   "day_open": {
     "date": "2026-10-26",
     "eq": 500.0
   },
-  "updated": "2026-10-26 00:15:27 UTC"
+  "updated": "2026-10-26 03:16:39 UTC"
 }

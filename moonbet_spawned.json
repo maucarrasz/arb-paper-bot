@@ -81,5 +81,19 @@
     "generation": 3,
     "hypothesis": "mayor cadencia: umbral RSI mas frecuente (rsi_in 30->40): entra en RSI>70 -> RSI>60",
     "born": "2026-10-25 09:10:57 UTC"
+  },
+  "U17_mr_down_g4": {
+    "params": {
+      "sig": "mr_down",
+      "rsi_in": 40,
+      "rsi_out": 55,
+      "lev": 100,
+      "wager_pct": 0.01,
+      "tf": "4h"
+    },
+    "parent": "U12_mr_down_g3",
+    "generation": 4,
+    "hypothesis": "mayor cadencia: umbral RSI mas frecuente (rsi_in 30->40): entra en RSI>70 -> RSI>60",
+    "born": "2026-10-26 03:16:39 UTC"
   }
 }

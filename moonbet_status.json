@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-26 00:15:19 UTC",
+  "ts": "2026-10-26 03:16:30 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -205,8 +205,8 @@
     },
     "U12_mr_down_g3": {
       "equity": 500.0,
-      "status": "alive",
-      "reason": null,
+      "status": "dead",
+      "reason": "inactividad: 56.5h sin actividad ni posiciones abiertas (ventana familia mrdn30_4h: 56h = 2x p90 medido)",
       "bets": 0,
       "open": 0
     },
