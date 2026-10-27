@@ -2,20 +2,20 @@
   "variant": "O_mr_g2",
   "cash": 500.6200280581471,
   "positions": [],
-  "status": "alive",
+  "status": "dead",
   "peak": 502.3926079310887,
-  "last_candle": 1793048400000,
+  "last_candle": 1793059200000,
   "trades": 3,
   "wins": 2,
   "losses": 1,
   "born": "2026-10-24 10:46:50 UTC",
-  "died": null,
-  "reason": null,
+  "died": "2026-10-27 01:23:30 UTC",
+  "reason": "inactividad: 28.4h sin actividad ni posiciones abiertas (ventana familia mr25_1h: 28h = 2x p90 medido)",
   "generation": 2,
   "last_active_ms": 1792961999999,
   "day_open": {
-    "date": "2026-10-26",
+    "date": "2026-10-27",
     "eq": 500.62
   },
-  "updated": "2026-10-26 22:35:22 UTC"
+  "updated": "2026-10-27 01:23:30 UTC"
 }

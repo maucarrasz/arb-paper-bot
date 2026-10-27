@@ -1,16 +1,7 @@
 {
   "variant": "C_smfollow",
-  "cash": 263.27132643519224,
+  "cash": 264.5531100526667,
   "positions": [
-    {
-      "symbol": "TRXUSDT",
-      "qty": 456.8991775814804,
-      "entry_px": 0.32846414999999995,
-      "cost": 150.22507499999998,
-      "stop": 0.3260530841609804,
-      "open_ms": 1792699199999,
-      "open_ts": "2026-10-22 22:28:59 UTC"
-    },
     {
       "symbol": "ADAUSDT",
       "qty": 405.02746464343454,
@@ -21,22 +12,33 @@
       "open_ts": "2026-10-24 18:02:21 UTC",
       "time_stop_h": 96,
       "rsi_out": 55
+    },
+    {
+      "symbol": "TRXUSDT",
+      "qty": 451.6462751775808,
+      "entry_px": 0.32966475,
+      "cost": 149.0407482512432,
+      "stop": 0.3275176141445229,
+      "open_ms": 1793059199999,
+      "open_ts": "2026-10-27 01:23:30 UTC",
+      "time_stop_h": 96,
+      "rsi_out": 55
     }
   ],
   "status": "alive",
   "peak": 502.4559338524715,
-  "last_candle": 1793030400000,
-  "trades": 1,
-  "wins": 0,
+  "last_candle": 1793044800000,
+  "trades": 2,
+  "wins": 1,
   "losses": 1,
   "born": "2026-10-22 22:28:59 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-26 22:35:22 UTC",
+  "updated": "2026-10-27 01:23:30 UTC",
   "generation": 1,
   "day_open": {
-    "date": "2026-10-26",
-    "eq": 496.94
+    "date": "2026-10-27",
+    "eq": 497.09
   },
-  "last_active_ms": 1792857599999
+  "last_active_ms": 1793059199999
 }
