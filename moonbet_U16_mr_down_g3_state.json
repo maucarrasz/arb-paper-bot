@@ -1,10 +1,21 @@
 {
   "variant": "U16_mr_down_g3",
-  "cash": 500.0,
-  "bets": [],
+  "cash": 489.9,
+  "bets": [
+    {
+      "symbol": "BNBUSDT",
+      "dir": -1,
+      "wager": 10.0,
+      "lev": 25,
+      "entry_px": 749.72495,
+      "bust_px": 779.7139480000001,
+      "open_ms": 1793116799999,
+      "open_ts": "2026-10-27 16:00:22 UTC"
+    }
+  ],
   "status": "alive",
   "peak": 500.0,
-  "last_candle": 1793088000000,
+  "last_candle": 1793102400000,
   "bets_n": 0,
   "wins": 0,
   "losses": 0,
@@ -17,5 +28,6 @@
     "date": "2026-10-27",
     "eq": 500.0
   },
-  "updated": "2026-10-27 15:33:04 UTC"
+  "updated": "2026-10-27 16:00:22 UTC",
+  "last_active_ms": 1793116799999
 }
