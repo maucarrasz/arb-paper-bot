@@ -1,42 +1,43 @@
 {
   "variant": "U10_sm_3x_big",
-  "cash": 449.512625,
+  "cash": 450.92435429039716,
   "bets": [
     {
       "symbol": "ETHUSDT",
       "dir": -1,
-      "wager": 25.0,
+      "wager": 25.08,
       "lev": 3,
-      "entry_px": 2387.94543,
-      "bust_px": 3183.92724,
-      "open_ms": 1792713599999,
-      "open_ts": "2026-10-23 00:22:30 UTC"
+      "entry_px": 2313.72256,
+      "bust_px": 3084.9634133333334,
+      "open_ms": 1793073599999,
+      "open_ts": "2026-10-27 04:24:40 UTC"
     },
     {
       "symbol": "TRXUSDT",
       "dir": 1,
-      "wager": 24.99,
+      "wager": 25.07,
       "lev": 3,
-      "entry_px": 0.3287643,
-      "bust_px": 0.21917620000000004,
-      "open_ms": 1792713599999,
-      "open_ts": "2026-10-23 00:22:30 UTC"
+      "entry_px": 0.32926455,
+      "bust_px": 0.21950970000000003,
+      "open_ms": 1793073599999,
+      "open_ts": "2026-10-27 04:24:40 UTC"
     }
   ],
   "status": "alive",
   "peak": 502.19560064969863,
-  "last_candle": 1793044800000,
-  "bets_n": 0,
-  "wins": 0,
+  "last_candle": 1793059200000,
+  "bets_n": 2,
+  "wins": 2,
   "losses": 0,
   "busts": 0,
   "born": "2026-10-23 00:22:30 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-27 01:59:14 UTC",
+  "updated": "2026-10-27 04:24:40 UTC",
   "generation": 2,
   "day_open": {
     "date": "2026-10-27",
     "eq": 501.45
-  }
+  },
+  "last_active_ms": 1793073599999
 }

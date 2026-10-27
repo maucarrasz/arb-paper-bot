@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-27 01:59:04 UTC",
+  "ts": "2026-10-27 04:24:32 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -32,18 +32,18 @@
         "U1_mr_up_5x"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 500.21,
+      "equity_total": 498.93,
       "capital_repuesto": 0.0,
-      "pnl": 0.21
+      "pnl": -1.07
     },
     "U2_mr_up_25x": {
       "miembros": [
         "U2_mr_up_25x"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 501.84,
+      "equity_total": 495.42,
       "capital_repuesto": 0.0,
-      "pnl": 1.84
+      "pnl": -4.58
     },
     "U3_mr_down_25x": {
       "miembros": [
@@ -61,18 +61,18 @@
         "U14_momo_up_g3"
       ],
       "capital_inyectado": 1000.0,
-      "equity_total": 992.19,
+      "equity_total": 990.37,
       "capital_repuesto": 500.0,
-      "pnl": -7.81
+      "pnl": -9.63
     },
     "U5_sm_10x": {
       "miembros": [
         "U5_sm_10x"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 502.39,
+      "equity_total": 502.26,
       "capital_repuesto": 0.0,
-      "pnl": 2.39
+      "pnl": 2.26
     },
     "U6_mr_up_10x_1h": {
       "miembros": [
@@ -81,9 +81,9 @@
         "U18_mr_up_g4"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1502.6,
+      "equity_total": 1500.44,
       "capital_repuesto": 1000.0,
-      "pnl": 2.6
+      "pnl": 0.44
     },
     "U7_brk_up_50x": {
       "miembros": [
@@ -91,18 +91,18 @@
         "U15_brk_up_g3"
       ],
       "capital_inyectado": 1000.0,
-      "equity_total": 992.67,
+      "equity_total": 988.22,
       "capital_repuesto": 500.0,
-      "pnl": -7.33
+      "pnl": -11.78
     },
     "U8_mr_up_100x": {
       "miembros": [
         "U8_mr_up_100x"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 508.28,
+      "equity_total": 505.45,
       "capital_repuesto": 0.0,
-      "pnl": 8.28
+      "pnl": 5.45
     },
     "U9_mr_down_100x": {
       "miembros": [
@@ -120,9 +120,9 @@
         "U10_sm_3x_big"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 501.45,
+      "equity_total": 501.0,
       "capital_repuesto": 0.0,
-      "pnl": 1.45
+      "pnl": 1.0
     }
   },
   "incidente_aisladas": {
@@ -135,14 +135,14 @@
   "nota": "Simulacion propia con fees optimistas; NO replica exacta de Moon. Moon.com descartado por ToS (Peru/US).",
   "variants": {
     "U1_mr_up_5x": {
-      "equity": 500.21,
+      "equity": 498.93,
       "status": "alive",
       "reason": null,
       "bets": 0,
       "open": 2
     },
     "U2_mr_up_25x": {
-      "equity": 501.84,
+      "equity": 495.42,
       "status": "alive",
       "reason": null,
       "bets": 0,
@@ -161,10 +161,10 @@
       "bets": 2
     },
     "U5_sm_10x": {
-      "equity": 502.39,
+      "equity": 502.26,
       "status": "alive",
       "reason": null,
-      "bets": 0,
+      "bets": 2,
       "open": 2
     },
     "U6_mr_up_10x_1h": {
@@ -180,7 +180,7 @@
       "bets": 1
     },
     "U8_mr_up_100x": {
-      "equity": 508.28,
+      "equity": 505.45,
       "status": "alive",
       "reason": null,
       "bets": 0,
@@ -193,10 +193,10 @@
       "bets": 0
     },
     "U10_sm_3x_big": {
-      "equity": 501.45,
+      "equity": 501.0,
       "status": "alive",
       "reason": null,
-      "bets": 0,
+      "bets": 2,
       "open": 2
     },
     "U11_mr_down_g3": {
@@ -218,18 +218,18 @@
       "bets": 2
     },
     "U14_momo_up_g3": {
-      "equity": 498.39,
+      "equity": 496.57,
       "status": "alive",
       "reason": null,
-      "bets": 5,
-      "open": 2
+      "bets": 6,
+      "open": 1
     },
     "U15_brk_up_g3": {
-      "equity": 497.72,
+      "equity": 493.27,
       "status": "alive",
       "reason": null,
-      "bets": 0,
-      "open": 2
+      "bets": 1,
+      "open": 1
     },
     "U16_mr_down_g3": {
       "equity": 500.0,
@@ -246,7 +246,7 @@
       "open": 0
     },
     "U18_mr_up_g4": {
-      "equity": 500.06,
+      "equity": 497.9,
       "status": "alive",
       "reason": null,
       "bets": 0,
