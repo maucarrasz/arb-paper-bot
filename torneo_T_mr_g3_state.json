@@ -1,18 +1,7 @@
 {
   "variant": "T_mr_g3",
-  "cash": 199.5949400562613,
+  "cash": 199.05149184192373,
   "positions": [
-    {
-      "symbol": "TRXUSDT",
-      "qty": 455.23520485584214,
-      "entry_px": 0.32966475,
-      "cost": 150.22507499999998,
-      "stop": 0.32863917409888294,
-      "open_ms": 1793062799999,
-      "open_ts": "2026-10-27 01:59:04 UTC",
-      "time_stop_h": 24,
-      "rsi_out": 55
-    },
     {
       "symbol": "AVAXUSDT",
       "qty": 17.048087482946798,
@@ -23,22 +12,33 @@
       "open_ts": "2026-10-27 04:24:32 UTC",
       "time_stop_h": 24,
       "rsi_out": 55
+    },
+    {
+      "symbol": "SOLUSDT",
+      "qty": 1.5030381909970336,
+      "entry_px": 99.64979999999998,
+      "cost": 149.92723258034135,
+      "stop": 98.17717296787771,
+      "open_ms": 1793084399999,
+      "open_ts": "2026-10-27 07:25:31 UTC",
+      "time_stop_h": 24,
+      "rsi_out": 55
     }
   ],
   "status": "alive",
   "peak": 500.0,
-  "last_candle": 1793070000000,
-  "trades": 0,
+  "last_candle": 1793080800000,
+  "trades": 1,
   "wins": 0,
-  "losses": 0,
+  "losses": 1,
   "born": "2026-10-27 01:59:04 UTC",
   "died": null,
   "reason": null,
   "generation": 3,
-  "last_active_ms": 1793073599999,
+  "last_active_ms": 1793084399999,
   "day_open": {
     "date": "2026-10-27",
     "eq": 499.77
   },
-  "updated": "2026-10-27 04:24:32 UTC"
+  "updated": "2026-10-27 07:25:31 UTC"
 }
