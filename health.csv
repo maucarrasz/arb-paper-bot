@@ -615,3 +615,25 @@ ts,exchange,event,detail
 2026-10-27 01:50:28,kraken,ws_reconnect_1,backoff 2s
 2026-10-27 01:50:31,kraken,ws_connected,wss://ws.kraken.com/v2
 2026-10-27 02:18:55,bot,stop,polls=10200
+2026-10-27 02:19:06,bot,start,seconds=20400 interval=2.0
+2026-10-27 02:19:06,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-27 02:19:07,binance,ws_connected,wss://data-stream.binance.vision:443/ws/btcusdt@bookTicker
+2026-10-27 02:19:07,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-27 02:19:07,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-27 02:19:07,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-27 06:45:26,coinbase,ws_down,ConnectionClosedError
+2026-10-27 06:45:26,coinbase,ws_reconnect_1,backoff 2s
+2026-10-27 06:45:28,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-27 06:52:32,kraken,ws_down,ConnectionClosedError
+2026-10-27 06:52:32,kraken,ws_reconnect_1,backoff 2s
+2026-10-27 06:52:35,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-27 07:01:04,okx,ws_down,ConnectionClosedError
+2026-10-27 07:01:04,okx,ws_reconnect_1,backoff 2s
+2026-10-27 07:01:06,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-27 07:07:55,coinbase,ws_down,ConnectionClosedError
+2026-10-27 07:07:55,coinbase,ws_reconnect_1,backoff 2s
+2026-10-27 07:07:57,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-27 07:25:33,kraken,ws_down,ConnectionClosedError
+2026-10-27 07:25:33,kraken,ws_reconnect_1,backoff 2s
+2026-10-27 07:25:36,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-27 07:59:10,bot,stop,polls=10200
