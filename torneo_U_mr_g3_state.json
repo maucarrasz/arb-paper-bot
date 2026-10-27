@@ -1,0 +1,20 @@
+{
+  "variant": "U_mr_g3",
+  "cash": 500.0,
+  "positions": [],
+  "status": "alive",
+  "peak": 500.0,
+  "last_candle": 1793059200000,
+  "trades": 0,
+  "wins": 0,
+  "losses": 0,
+  "born": "2026-10-27 01:59:04 UTC",
+  "died": null,
+  "reason": null,
+  "generation": 3,
+  "day_open": {
+    "date": "2026-10-27",
+    "eq": 500.0
+  },
+  "updated": "2026-10-27 01:59:04 UTC"
+}
