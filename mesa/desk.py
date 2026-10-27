@@ -169,16 +169,31 @@ def run():
         reto100.step(ts_ms)
     except Exception as e:
         print(f"[desk] reto100 error: {e}")
-    # 6) Torneo evolutivo de variantes (paper USD 500 c/u, meta USD 1000)
-    try:
-        torneo.step(ts_ms)
-    except Exception as e:
-        print(f"[desk] torneo error: {e}")
-    # 7) Torneo GEN2: apuestas up/down apalancadas estilo Moon (paper)
-    try:
-        moonbet.step(ts_ms)
-    except Exception as e:
-        print(f"[desk] moonbet error: {e}")
+    # 6-7) Torneos GEN1/GEN2: si el loop en vivo en segundos (mesa_live.py,
+    # corridas encadenadas) esta sano (heartbeat < 15 min), el se encarga;
+    # este paso horario queda como respaldo cuando no hay vivo.
+    def _live_fresco():
+        try:
+            if not os.path.exists("mesa_live_state.json"):
+                return False
+            d = json.load(open("mesa_live_state.json"))
+            ts = time.mktime(time.strptime(d["ts"][:19], "%Y-%m-%d %H:%M:%S"))
+            return time.time() - ts < 900
+        except Exception:
+            return False
+    if _live_fresco():
+        print("[desk] mesa live activa: torneo/moonbet delegados al loop en segundos")
+    else:
+        # 6) Torneo evolutivo de variantes (paper USD 500 c/u, meta USD 1000)
+        try:
+            torneo.step(ts_ms)
+        except Exception as e:
+            print(f"[desk] torneo error: {e}")
+        # 7) Torneo GEN2: apuestas up/down apalancadas estilo Moon (paper)
+        try:
+            moonbet.step(ts_ms)
+        except Exception as e:
+            print(f"[desk] moonbet error: {e}")
     # Escenar archivos del reto/torneo para que el commit del workflow los incluya
     import glob
     import subprocess
