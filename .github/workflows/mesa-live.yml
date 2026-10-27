@@ -1,0 +1,43 @@
+name: mesa-live
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: mesalive24x7
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - name: Verificar fin del torneo (30-oct 00:22 UTC)
+        id: fin
+        run: |
+          FIN=$(date -u -d '2026-10-30 00:30:00' +%s); AHORA=$(date -u +%s)
+          if [ "$AHORA" -ge "$FIN" ]; then echo 'expired=true' >> "$GITHUB_OUTPUT"; else echo 'expired=false' >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/checkout@v4
+        if: steps.fin.outputs.expired != 'true'
+      - uses: actions/setup-python@v5
+        if: steps.fin.outputs.expired != 'true'
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --quiet requests
+        if: steps.fin.outputs.expired != 'true'
+      - name: Config git
+        if: steps.fin.outputs.expired != 'true'
+        run: git config user.name "mesa-live[actions]" && git config user.email "actions@users.noreply.github.com"
+      - name: Correr mesa live ~5h40m (poll 5s, hasta cierre torneo)
+        if: steps.fin.outputs.expired != 'true'
+        run: |
+          FIN=$(date -u -d '2026-10-30 00:22:30' +%s); AHORA=$(date -u +%s); S=$((FIN-AHORA)); if [ $S -gt 20400 ]; then S=20400; fi; if [ $S -lt 0 ]; then S=0; fi; echo "segundos de corrida: $S"; timeout $((S+300)) python mesa_live.py --seconds $S --poll 5 || true
+      - name: Push final de la corrida
+        if: always() && steps.fin.outputs.expired != 'true'
+        run: git add -A && (git commit -m "mesa live sync $(date -u +'%Y-%m-%d %H:%M UTC')" || echo "sin cambios") && git pull --rebase --autostash || true && git push
+      - name: Encadenar siguiente corrida
+        if: always() && steps.fin.outputs.expired != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          C=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/mesa-live.yml/runs?status=queued" --jq .total_count); P=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/mesa-live.yml/runs?status=in_progress" --jq .total_count); echo "queued=$C in_progress=$P"; if [ $((C+P)) -le 1 ]; then gh api -X POST "repos/$GITHUB_REPOSITORY/actions/workflows/mesa-live.yml/dispatches" -f ref=main && echo "siguiente corrida encadenada"; else echo "ya hay otra corrida, no encadeno"; fi
