@@ -1,33 +1,21 @@
 {
   "variant": "T_mr_g3",
-  "cash": 351.1548041883675,
-  "positions": [
-    {
-      "symbol": "AVAXUSDT",
-      "qty": 17.048087482946798,
-      "entry_px": 8.800398,
-      "cost": 150.17998494373876,
-      "stop": 8.630670677050587,
-      "open_ms": 1793073599999,
-      "open_ts": "2026-10-27 04:24:32 UTC",
-      "time_stop_h": 24,
-      "rsi_out": 55
-    }
-  ],
+  "cash": 502.9106045408224,
+  "positions": [],
   "status": "alive",
-  "peak": 502.78049426169633,
-  "last_candle": 1793131200000,
-  "trades": 3,
-  "wins": 2,
+  "peak": 502.9106045408224,
+  "last_candle": 1793134800000,
+  "trades": 4,
+  "wins": 3,
   "losses": 1,
   "born": "2026-10-27 01:59:04 UTC",
   "died": null,
   "reason": null,
   "generation": 3,
-  "last_active_ms": 1793127599999,
+  "last_active_ms": 1793138399999,
   "day_open": {
     "date": "2026-10-27",
     "eq": 499.77
   },
-  "updated": "2026-10-27 21:13:18 UTC"
+  "updated": "2026-10-27 22:00:18 UTC"
 }
