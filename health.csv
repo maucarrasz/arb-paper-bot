@@ -637,3 +637,37 @@ ts,exchange,event,detail
 2026-10-27 07:25:33,kraken,ws_reconnect_1,backoff 2s
 2026-10-27 07:25:36,kraken,ws_connected,wss://ws.kraken.com/v2
 2026-10-27 07:59:10,bot,stop,polls=10200
+2026-10-27 07:59:22,bot,start,seconds=20400 interval=2.0
+2026-10-27 07:59:22,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-27 07:59:23,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-27 07:59:23,binance,ws_connected,wss://data-stream.binance.vision:443/ws/btcusdt@bookTicker
+2026-10-27 07:59:23,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-27 07:59:23,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-27 08:45:29,kraken,ws_down,ConnectionClosedError
+2026-10-27 08:45:29,kraken,ws_reconnect_1,backoff 2s
+2026-10-27 08:45:32,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-27 08:59:23,coinbase,ws_down,ConnectionClosedError
+2026-10-27 08:59:23,coinbase,ws_reconnect_1,backoff 2s
+2026-10-27 08:59:25,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-27 09:27:18,coinbase,ws_down,ConnectionClosedError
+2026-10-27 09:27:18,coinbase,ws_reconnect_1,backoff 2s
+2026-10-27 09:27:21,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-27 09:33:37,okx,ws_down,ConnectionClosedError
+2026-10-27 09:33:37,okx,ws_reconnect_1,backoff 2s
+2026-10-27 09:33:39,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-27 09:36:04,kraken,ws_down,ConnectionClosedError
+2026-10-27 09:36:04,kraken,ws_reconnect_1,backoff 2s
+2026-10-27 09:36:08,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-27 09:46:17,coinbase,ws_down,ConnectionClosedError
+2026-10-27 09:46:17,coinbase,ws_reconnect_1,backoff 2s
+2026-10-27 09:46:19,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-27 11:13:02,coinbase,ws_down,ConnectionClosedError
+2026-10-27 11:13:02,coinbase,ws_reconnect_1,backoff 2s
+2026-10-27 11:13:04,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-27 11:41:11,kucoin,ws_down,ConnectionClosedError
+2026-10-27 11:41:11,kucoin,ws_reconnect_1,backoff 2s
+2026-10-27 11:41:14,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-27 11:57:00,kucoin,ws_down,ConnectionClosedError
+2026-10-27 11:57:00,kucoin,ws_reconnect_1,backoff 2s
+2026-10-27 11:57:03,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-27 13:39:26,bot,stop,polls=10200
