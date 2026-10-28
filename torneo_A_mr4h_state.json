@@ -1,34 +1,22 @@
 {
   "variant": "A_mr4h",
-  "cash": 410.90091126633524,
-  "positions": [
-    {
-      "symbol": "AVAXUSDT",
-      "qty": 10.157463956522205,
-      "entry_px": 8.9274615,
-      "cost": 90.77104877789914,
-      "stop": 8.558349331095899,
-      "open_ms": 1792843199999,
-      "open_ts": "2026-10-24 14:25:39 UTC",
-      "time_stop_h": 96,
-      "rsi_out": 55
-    }
-  ],
+  "cash": 501.08564567356336,
+  "positions": [],
   "status": "alive",
   "peak": 502.5402020051878,
-  "last_candle": 1793174400000,
-  "trades": 1,
+  "last_candle": 1793188800000,
+  "trades": 2,
   "wins": 1,
-  "losses": 0,
+  "losses": 1,
   "born": "2026-10-22 22:28:59 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-28 15:00:16 UTC",
+  "updated": "2026-10-28 16:00:18 UTC",
   "generation": 1,
   "day_open": {
     "date": "2026-10-28",
     "eq": 501.2
   },
   "nota": "muerte 23-oct 14:48 UTC INVALIDADA: ventanas de inactividad pre-recalibracion (error de medicion p90 sin dedup por par). Restaurada 2026-10-23 14:55:00 UTC con snapshot exacto del tick ($500, 0 posiciones, 0 operaciones). Reloj de inactividad sigue desde born, sin reinicio.",
-  "last_active_ms": 1793174399999
+  "last_active_ms": 1793203199999
 }

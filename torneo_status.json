@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-28 15:00:07 UTC",
+  "ts": "2026-10-28 16:00:08 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -25,27 +25,27 @@
         "A_mr4h"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 502.21,
+      "equity_total": 501.09,
       "capital_repuesto": 0.0,
-      "pnl": 2.21
+      "pnl": 1.09
     },
     "B_mr4h_sm": {
       "miembros": [
         "B_mr4h_sm"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 503.12,
+      "equity_total": 500.5,
       "capital_repuesto": 0.0,
-      "pnl": 3.12
+      "pnl": 0.5
     },
     "C_smfollow": {
       "miembros": [
         "C_smfollow"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 497.43,
+      "equity_total": 495.52,
       "capital_repuesto": 0.0,
-      "pnl": -2.57
+      "pnl": -4.48
     },
     "D_msb11": {
       "miembros": [
@@ -65,9 +65,9 @@
         "T_mr_g3"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1506.57,
+      "equity_total": 1503.89,
       "capital_repuesto": 1000.0,
-      "pnl": 6.57
+      "pnl": 3.89
     },
     "F_mr4h_deep": {
       "miembros": [
@@ -94,18 +94,18 @@
         "H_smfollow_mr"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 495.1,
+      "equity_total": 493.65,
       "capital_repuesto": 0.0,
-      "pnl": -4.9
+      "pnl": -6.35
     },
     "I_mr4h_aggro": {
       "miembros": [
         "I_mr4h_aggro"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 505.57,
+      "equity_total": 502.58,
       "capital_repuesto": 0.0,
-      "pnl": 5.57
+      "pnl": 2.58
     },
     "J_msb11_1h": {
       "miembros": [
@@ -114,9 +114,9 @@
         "S_mr_g3"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1499.85,
+      "equity_total": 1497.2,
       "capital_repuesto": 1000.0,
-      "pnl": -0.15
+      "pnl": -2.8
     }
   },
   "incidente_aisladas": {
@@ -143,21 +143,21 @@
   },
   "variants": {
     "A_mr4h": {
-      "equity": 502.21,
+      "equity": 501.09,
       "status": "alive",
       "reason": null,
-      "trades": 1,
-      "open": 1
+      "trades": 2,
+      "open": 0
     },
     "B_mr4h_sm": {
-      "equity": 503.12,
+      "equity": 500.5,
       "status": "alive",
       "reason": null,
       "trades": 0,
       "open": 2
     },
     "C_smfollow": {
-      "equity": 497.43,
+      "equity": 495.52,
       "status": "alive",
       "reason": null,
       "trades": 3,
@@ -189,18 +189,18 @@
       "trades": 0
     },
     "H_smfollow_mr": {
-      "equity": 495.1,
+      "equity": 493.65,
       "status": "alive",
       "reason": null,
       "trades": 4,
       "open": 1
     },
     "I_mr4h_aggro": {
-      "equity": 505.57,
+      "equity": 502.58,
       "status": "alive",
       "reason": null,
-      "trades": 1,
-      "open": 1
+      "trades": 2,
+      "open": 0
     },
     "J_msb11_1h": {
       "equity": 500.0,
@@ -257,14 +257,14 @@
       "trades": 0
     },
     "S_mr_g3": {
-      "equity": 499.85,
+      "equity": 497.2,
       "status": "alive",
       "reason": null,
       "trades": 4,
       "open": 1
     },
     "T_mr_g3": {
-      "equity": 505.44,
+      "equity": 502.76,
       "status": "alive",
       "reason": null,
       "trades": 4,

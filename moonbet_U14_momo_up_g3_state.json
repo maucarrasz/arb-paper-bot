@@ -1,43 +1,33 @@
 {
   "variant": "U14_momo_up_g3",
-  "cash": 476.0938275373257,
+  "cash": 484.28897334763593,
   "bets": [
     {
-      "symbol": "ETHUSDT",
+      "symbol": "LTCUSDT",
       "dir": 1,
-      "wager": 9.93,
+      "wager": 9.89,
       "lev": 10,
-      "entry_px": 2348.3535899999997,
-      "bust_px": 2113.518231,
-      "open_ms": 1793116799999,
-      "open_ts": "2026-10-27 16:00:22 UTC"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "dir": 1,
-      "wager": 9.92,
-      "lev": 10,
-      "entry_px": 102.081015,
-      "bust_px": 91.8729135,
-      "open_ms": 1793159999999,
-      "open_ts": "2026-10-28 04:00:20 UTC"
+      "entry_px": 58.44921,
+      "bust_px": 52.604289,
+      "open_ms": 1793203199999,
+      "open_ts": "2026-10-28 16:00:26 UTC"
     }
   ],
   "status": "alive",
   "peak": 501.1799254172846,
-  "last_candle": 1793174400000,
-  "bets_n": 8,
+  "last_candle": 1793188800000,
+  "bets_n": 10,
   "wins": 2,
-  "losses": 6,
+  "losses": 8,
   "busts": 0,
   "born": "2026-10-25 03:08:52 UTC",
   "died": null,
   "reason": null,
   "generation": 3,
-  "last_active_ms": 1793159999999,
+  "last_active_ms": 1793203199999,
   "day_open": {
     "date": "2026-10-28",
     "eq": 495.86
   },
-  "updated": "2026-10-28 15:00:25 UTC"
+  "updated": "2026-10-28 16:00:26 UTC"
 }
