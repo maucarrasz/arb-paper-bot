@@ -1,7 +1,6 @@
 {
-  "ts": "2026-10-28 02:53:09 UTC",
+  "ts": "2026-10-28 02:53:41 UTC",
   "mode": "live",
   "poll_s": 5,
-  "note": "loop continuo torneo GEN1/GEN2 en segundos (paper)",
-  "fin": "corrida terminada por tiempo"
+  "note": "loop continuo torneo GEN1/GEN2 en segundos (paper)"
 }
