@@ -1,0 +1,20 @@
+{
+  "variant": "W_mr_g4",
+  "cash": 500.0,
+  "positions": [],
+  "status": "alive",
+  "peak": 500.0,
+  "last_candle": 1793224800000,
+  "trades": 0,
+  "wins": 0,
+  "losses": 0,
+  "born": "2026-10-28 23:00:15 UTC",
+  "died": null,
+  "reason": null,
+  "generation": 4,
+  "day_open": {
+    "date": "2026-10-28",
+    "eq": 500.0
+  },
+  "updated": "2026-10-28 23:00:15 UTC"
+}

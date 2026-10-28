@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-28 22:00:19 UTC",
+  "ts": "2026-10-28 23:00:04 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -82,11 +82,12 @@
       "miembros": [
         "G_msb11_nosm",
         "Q_msb11_g2",
-        "U_mr_g3"
+        "U_mr_g3",
+        "W_mr_g4"
       ],
-      "capital_inyectado": 1500.0,
-      "equity_total": 1500.1,
-      "capital_repuesto": 1000.0,
+      "capital_inyectado": 2000.0,
+      "equity_total": 2000.1,
+      "capital_repuesto": 1500.0,
       "pnl": 0.1
     },
     "H_smfollow_mr": {
@@ -272,12 +273,18 @@
     },
     "U_mr_g3": {
       "equity": 500.1,
-      "status": "alive",
-      "reason": null,
-      "trades": 1,
-      "open": 0
+      "status": "dead",
+      "reason": "inactividad: 28.0h sin actividad ni posiciones abiertas (ventana familia mr25_1h: 28h = 2x p90 medido)",
+      "trades": 1
     },
     "V_mr_g3": {
+      "equity": 500.0,
+      "status": "alive",
+      "reason": null,
+      "trades": 0,
+      "open": 0
+    },
+    "W_mr_g4": {
       "equity": 500.0,
       "status": "alive",
       "reason": null,
