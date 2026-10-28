@@ -809,3 +809,13 @@ ts,variant,equity,status
 2026-10-28 08:33:54 UTC,U16_mr_down_g3,501.21,alive
 2026-10-28 08:33:54 UTC,U17_mr_down_g4,499.63,alive
 2026-10-28 08:33:54 UTC,U18_mr_up_g4,499.53,alive
+2026-10-28 09:00:16 UTC,U1_mr_up_5x,501.08,alive
+2026-10-28 09:00:16 UTC,U2_mr_up_25x,506.17,alive
+2026-10-28 09:00:16 UTC,U5_sm_10x,500.88,alive
+2026-10-28 09:00:16 UTC,U8_mr_up_100x,515.22,alive
+2026-10-28 09:00:16 UTC,U10_sm_3x_big,499.96,alive
+2026-10-28 09:00:16 UTC,U14_momo_up_g3,496.66,alive
+2026-10-28 09:00:16 UTC,U15_brk_up_g3,496.27,alive
+2026-10-28 09:00:16 UTC,U16_mr_down_g3,501.21,alive
+2026-10-28 09:00:16 UTC,U17_mr_down_g4,499.63,alive
+2026-10-28 09:00:16 UTC,U18_mr_up_g4,499.53,alive
