@@ -1,18 +1,7 @@
 {
   "variant": "B_mr4h_sm",
-  "cash": 345.4474621401199,
+  "cash": 429.89651935609686,
   "positions": [
-    {
-      "symbol": "ADAUSDT",
-      "qty": 408.38183846526704,
-      "entry_px": 0.20360174999999997,
-      "cost": 83.23040423672542,
-      "stop": 0.19441916731196268,
-      "open_ms": 1792857599999,
-      "open_ts": "2026-10-24 18:02:21 UTC",
-      "time_stop_h": 96,
-      "rsi_out": 55
-    },
     {
       "symbol": "DOTUSDT",
       "qty": 71.86203340349431,
@@ -26,20 +15,20 @@
     }
   ],
   "status": "alive",
-  "peak": 503.1184240386083,
-  "last_candle": 1793188800000,
-  "trades": 0,
-  "wins": 0,
+  "peak": 503.8425517282925,
+  "last_candle": 1793203200000,
+  "trades": 1,
+  "wins": 1,
   "losses": 0,
   "born": "2026-10-22 22:28:59 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-28 19:54:32 UTC",
+  "updated": "2026-10-28 20:00:15 UTC",
   "generation": 1,
   "day_open": {
     "date": "2026-10-28",
     "eq": 501.58
   },
   "nota": "muerte 23-oct 14:48 UTC INVALIDADA: ventanas de inactividad pre-recalibracion (error de medicion p90 sin dedup por par). Restaurada 2026-10-23 14:55:00 UTC con snapshot exacto del tick ($500, 0 posiciones, 0 operaciones). Reloj de inactividad sigue desde born, sin reinicio.",
-  "last_active_ms": 1793073599999
+  "last_active_ms": 1793217599999
 }

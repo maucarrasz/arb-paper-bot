@@ -1,18 +1,7 @@
 {
   "variant": "T_mr_g3",
-  "cash": 200.7568239339672,
+  "cash": 354.5221404901479,
   "positions": [
-    {
-      "symbol": "ADAUSDT",
-      "qty": 743.5839396857897,
-      "entry_px": 0.20300144999999997,
-      "cost": 151.09956657088074,
-      "stop": 0.19952250604517144,
-      "open_ms": 1793192399999,
-      "open_ts": "2026-10-28 13:00:24 UTC",
-      "time_stop_h": 24,
-      "rsi_out": 55
-    },
     {
       "symbol": "TRXUSDT",
       "qty": 457.33140320455084,
@@ -27,18 +16,18 @@
   ],
   "status": "alive",
   "peak": 505.43547990902584,
-  "last_candle": 1793210400000,
-  "trades": 4,
-  "wins": 3,
+  "last_candle": 1793214000000,
+  "trades": 5,
+  "wins": 4,
   "losses": 1,
   "born": "2026-10-27 01:59:04 UTC",
   "died": null,
   "reason": null,
   "generation": 3,
-  "last_active_ms": 1793206799999,
+  "last_active_ms": 1793217599999,
   "day_open": {
     "date": "2026-10-28",
     "eq": 502.91
   },
-  "updated": "2026-10-28 19:54:32 UTC"
+  "updated": "2026-10-28 20:00:15 UTC"
 }
