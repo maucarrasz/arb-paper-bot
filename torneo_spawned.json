@@ -190,5 +190,23 @@
     "generation": 3,
     "hypothesis": "mayor cadencia: msb11 agotado: cambio a mean reversion",
     "born": "2026-10-27 01:23:30 UTC"
+  },
+  "V_mr_g3": {
+    "params": {
+      "mode": "mr",
+      "tf": "1h",
+      "rsi_in": 30,
+      "rsi_out": 55,
+      "stop_atr": 2.0,
+      "risk": 0.0075,
+      "cap": 0.3,
+      "sm_veto": false,
+      "time_stop_h": 24,
+      "sm_analyst": true
+    },
+    "parent": "P_msb11_g2",
+    "generation": 3,
+    "hypothesis": "mayor cadencia: msb11 agotado: cambio a mean reversion",
+    "born": "2026-10-28 03:00:00 UTC"
   }
 }

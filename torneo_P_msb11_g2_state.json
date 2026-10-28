@@ -2,20 +2,20 @@
   "variant": "P_msb11_g2",
   "cash": 499.42586979297226,
   "positions": [],
-  "status": "alive",
+  "status": "dead",
   "peak": 503.9995894768542,
   "last_candle": 1793149200000,
   "trades": 2,
   "wins": 1,
   "losses": 1,
   "born": "2026-10-25 01:02:48 UTC",
-  "died": null,
-  "reason": null,
+  "died": "2026-10-28 03:00:00 UTC",
+  "reason": "inactividad: 48.0h sin actividad ni posiciones abiertas (ventana familia sm: 48h = 2x p90 medido)",
   "generation": 2,
   "day_open": {
     "date": "2026-10-28",
     "eq": 499.43
   },
-  "updated": "2026-10-28 02:53:32 UTC",
+  "updated": "2026-10-28 03:00:10 UTC",
   "last_active_ms": 1792983599999
 }

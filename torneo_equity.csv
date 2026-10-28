@@ -736,3 +736,13 @@ ts,variant,equity,status
 2026-10-28 02:53:24 UTC,S_mr_g3,497.35,alive
 2026-10-28 02:53:24 UTC,T_mr_g3,502.91,alive
 2026-10-28 02:53:24 UTC,U_mr_g3,500.1,alive
+2026-10-28 03:00:01 UTC,A_mr4h,501.2,alive
+2026-10-28 03:00:01 UTC,B_mr4h_sm,501.58,alive
+2026-10-28 03:00:01 UTC,C_smfollow,496.91,alive
+2026-10-28 03:00:01 UTC,F_mr4h_deep,501.6,alive
+2026-10-28 03:00:01 UTC,H_smfollow_mr,494.86,alive
+2026-10-28 03:00:01 UTC,I_mr4h_aggro,503.03,alive
+2026-10-28 03:00:01 UTC,S_mr_g3,497.35,alive
+2026-10-28 03:00:01 UTC,T_mr_g3,502.91,alive
+2026-10-28 03:00:01 UTC,U_mr_g3,500.1,alive
+2026-10-28 03:00:01 UTC,V_mr_g3,500.0,alive
