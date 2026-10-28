@@ -3,16 +3,6 @@
   "cash": 484.9020098995,
   "bets": [
     {
-      "symbol": "BNBUSDT",
-      "dir": -1,
-      "wager": 5.0,
-      "lev": 100,
-      "entry_px": 749.72495,
-      "bust_px": 757.2221995,
-      "open_ms": 1793116799999,
-      "open_ts": "2026-10-27 16:00:22 UTC"
-    },
-    {
       "symbol": "XRPUSDT",
       "dir": -1,
       "wager": 4.95,
@@ -26,10 +16,10 @@
   "status": "alive",
   "peak": 502.52240320413466,
   "last_candle": 1793160000000,
-  "bets_n": 1,
+  "bets_n": 2,
   "wins": 0,
-  "losses": 1,
-  "busts": 1,
+  "losses": 2,
+  "busts": 2,
   "born": "2026-10-26 04:36:14 UTC",
   "died": null,
   "reason": null,
@@ -38,6 +28,6 @@
     "date": "2026-10-28",
     "eq": 502.52
   },
-  "updated": "2026-10-28 10:00:27 UTC",
-  "last_active_ms": 1793159999999
+  "updated": "2026-10-28 10:25:05 UTC",
+  "last_active_ms": 1793183105509
 }
