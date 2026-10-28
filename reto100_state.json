@@ -1,24 +1,14 @@
 {
-  "cash": 82.19624516290563,
-  "positions": [
-    {
-      "symbol": "AVAXUSDT",
-      "qty": 2.0296953192262026,
-      "entry_px": 8.9274615,
-      "cost": 18.138146845941254,
-      "stop": 8.558349331095899,
-      "open_ms": 1792843199999,
-      "open_ts": "2026-10-24 14:25:30 UTC"
-    }
-  ],
+  "cash": 100.21723288932257,
+  "positions": [],
   "status": "alive",
   "peak_equity": 100.5078667453934,
-  "last_candle": 1793174400000,
-  "trades": 1,
+  "last_candle": 1793188800000,
+  "trades": 2,
   "wins": 1,
-  "losses": 0,
+  "losses": 1,
   "born": "2026-10-22 22:16:25 UTC",
   "died": null,
   "death_reason": null,
-  "updated": "2026-10-28 15:36:12 UTC"
+  "updated": "2026-10-28 17:37:35 UTC"
 }

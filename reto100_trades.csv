@@ -1,2 +1,3 @@
 symbol,open_ts,close_ts,entry_px,exit_px,qty,pnl_usd,exit_reason
 LTCUSDT,2026-10-24 10:46:42 UTC,2026-10-28 09:34:03 UTC,56.618295,57.67115,0.35628,0.3344,rsi_salida
+AVAXUSDT,2026-10-24 14:25:30 UTC,2026-10-28 17:37:35 UTC,8.927461,8.887554,2.029695,-0.1172,tiempo
