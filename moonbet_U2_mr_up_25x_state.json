@@ -1,17 +1,7 @@
 {
   "variant": "U2_mr_up_25x",
-  "cash": 479.80201999999997,
+  "cash": 493.98604523424626,
   "bets": [
-    {
-      "symbol": "LTCUSDT",
-      "dir": 1,
-      "wager": 10.0,
-      "lev": 25,
-      "entry_px": 56.618295,
-      "bust_px": 54.3535632,
-      "open_ms": 1792828799999,
-      "open_ts": "2026-10-24 10:46:58 UTC"
-    },
     {
       "symbol": "AVAXUSDT",
       "dir": 1,
@@ -24,20 +14,20 @@
     }
   ],
   "status": "alive",
-  "peak": 506.16449835485133,
-  "last_candle": 1793145600000,
-  "bets_n": 0,
-  "wins": 0,
+  "peak": 506.167086563856,
+  "last_candle": 1793160000000,
+  "bets_n": 1,
+  "wins": 1,
   "losses": 0,
   "busts": 0,
   "born": "2026-10-23 00:22:30 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-28 07:00:28 UTC",
+  "updated": "2026-10-28 08:00:28 UTC",
   "generation": 2,
   "day_open": {
     "date": "2026-10-28",
     "eq": 503.0
   },
-  "last_active_ms": 1792843199999
+  "last_active_ms": 1793174399999
 }
