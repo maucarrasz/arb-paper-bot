@@ -1,15 +1,6 @@
 {
-  "cash": 61.66972271950743,
+  "cash": 82.19624516290563,
   "positions": [
-    {
-      "symbol": "LTCUSDT",
-      "qty": 0.35627986459280064,
-      "entry_px": 56.618295,
-      "cost": 20.192130434551316,
-      "stop": 54.51320831243996,
-      "open_ms": 1792828799999,
-      "open_ts": "2026-10-24 10:46:42 UTC"
-    },
     {
       "symbol": "AVAXUSDT",
       "qty": 2.0296953192262026,
@@ -22,12 +13,12 @@
   ],
   "status": "alive",
   "peak_equity": 100.5078667453934,
-  "last_candle": 1793145600000,
-  "trades": 0,
-  "wins": 0,
+  "last_candle": 1793160000000,
+  "trades": 1,
+  "wins": 1,
   "losses": 0,
   "born": "2026-10-22 22:16:25 UTC",
   "died": null,
   "death_reason": null,
-  "updated": "2026-10-28 05:24:09 UTC"
+  "updated": "2026-10-28 09:34:03 UTC"
 }
