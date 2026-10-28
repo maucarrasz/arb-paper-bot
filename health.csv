@@ -931,3 +931,9 @@ ts,exchange,event,detail
 2026-10-28 02:37:33,binance,ws_connected,wss://data-stream.binance.vision:443/ws/btcusdt@bookTicker
 2026-10-28 02:37:33,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
 2026-10-28 02:37:33,kraken,ws_connected,wss://ws.kraken.com/v2
+2026-10-28 02:42:45,bot,start,seconds=0 interval=2.0
+2026-10-28 02:42:45,coinbase,ws_connected,wss://ws-feed.exchange.coinbase.com
+2026-10-28 02:42:45,okx,ws_connected,wss://ws.okx.com:8443/ws/v5/public
+2026-10-28 02:42:45,binance,ws_connected,wss://data-stream.binance.vision:443/ws/btcusdt@bookTicker
+2026-10-28 02:42:45,kucoin,ws_connected,wss://ws-api-spot.kucoin.com/
+2026-10-28 02:42:46,kraken,ws_connected,wss://ws.kraken.com/v2
