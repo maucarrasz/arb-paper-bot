@@ -11,25 +11,15 @@
       "bust_px": 757.2221995,
       "open_ms": 1793116799999,
       "open_ts": "2026-10-27 16:00:22 UTC"
-    },
-    {
-      "symbol": "XRPUSDT",
-      "dir": -1,
-      "wager": 5.0,
-      "lev": 100,
-      "entry_px": 1.33063435,
-      "bust_px": 1.3439406935,
-      "open_ms": 1793145599999,
-      "open_ts": "2026-10-28 00:00:29 UTC"
     }
   ],
   "status": "alive",
   "peak": 502.52240320413466,
   "last_candle": 1793131200000,
-  "bets_n": 0,
+  "bets_n": 1,
   "wins": 0,
-  "losses": 0,
-  "busts": 0,
+  "losses": 1,
+  "busts": 1,
   "born": "2026-10-26 04:36:14 UTC",
   "died": null,
   "reason": null,
@@ -38,6 +28,6 @@
     "date": "2026-10-28",
     "eq": 502.52
   },
-  "updated": "2026-10-28 02:00:37 UTC",
-  "last_active_ms": 1793145599999
+  "updated": "2026-10-28 02:18:24 UTC",
+  "last_active_ms": 1793153904496
 }
