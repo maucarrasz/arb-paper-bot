@@ -15,15 +15,15 @@
     }
   ],
   "status": "alive",
-  "peak": 501.5984375213186,
-  "last_candle": 1793131200000,
+  "peak": 501.99330066839593,
+  "last_candle": 1793145600000,
   "trades": 0,
   "wins": 0,
   "losses": 0,
   "born": "2026-10-22 22:37:58 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-28 03:00:10 UTC",
+  "updated": "2026-10-28 04:00:12 UTC",
   "generation": 1,
   "day_open": {
     "date": "2026-10-28",
