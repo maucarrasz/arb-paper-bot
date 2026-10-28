@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-28 16:00:29 UTC",
+  "ts": "2026-10-28 17:00:10 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -65,9 +65,9 @@
         "T_mr_g3"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1503.89,
+      "equity_total": 1504.26,
       "capital_repuesto": 1000.0,
-      "pnl": 3.89
+      "pnl": 4.26
     },
     "F_mr4h_deep": {
       "miembros": [
@@ -114,9 +114,9 @@
         "S_mr_g3"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1497.2,
+      "equity_total": 1497.56,
       "capital_repuesto": 1000.0,
-      "pnl": -2.8
+      "pnl": -2.44
     }
   },
   "incidente_aisladas": {
@@ -257,18 +257,18 @@
       "trades": 0
     },
     "S_mr_g3": {
-      "equity": 497.2,
+      "equity": 497.56,
       "status": "alive",
       "reason": null,
       "trades": 4,
-      "open": 1
+      "open": 2
     },
     "T_mr_g3": {
-      "equity": 502.76,
+      "equity": 503.13,
       "status": "alive",
       "reason": null,
       "trades": 4,
-      "open": 1
+      "open": 2
     },
     "U_mr_g3": {
       "equity": 500.1,

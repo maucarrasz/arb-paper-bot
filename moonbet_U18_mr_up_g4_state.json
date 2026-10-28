@@ -1,6 +1,6 @@
 {
   "variant": "U18_mr_up_g4",
-  "cash": 489.44275814236426,
+  "cash": 479.3542164278885,
   "bets": [
     {
       "symbol": "ADAUSDT",
@@ -11,11 +11,21 @@
       "bust_px": 0.18270130499999998,
       "open_ms": 1793192399999,
       "open_ts": "2026-10-28 13:00:33 UTC"
+    },
+    {
+      "symbol": "TRXUSDT",
+      "dir": 1,
+      "wager": 9.99,
+      "lev": 10,
+      "entry_px": 0.32996489999999995,
+      "bust_px": 0.29696840999999996,
+      "open_ms": 1793206799999,
+      "open_ts": "2026-10-28 17:00:28 UTC"
     }
   ],
   "status": "alive",
   "peak": 501.37212108231597,
-  "last_candle": 1793199600000,
+  "last_candle": 1793203200000,
   "bets_n": 2,
   "wins": 0,
   "losses": 2,
@@ -24,10 +34,10 @@
   "died": null,
   "reason": null,
   "generation": 4,
-  "last_active_ms": 1793192399999,
+  "last_active_ms": 1793206799999,
   "day_open": {
     "date": "2026-10-28",
     "eq": 499.09
   },
-  "updated": "2026-10-28 16:00:46 UTC"
+  "updated": "2026-10-28 17:00:28 UTC"
 }
