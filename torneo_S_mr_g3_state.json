@@ -1,10 +1,22 @@
 {
   "variant": "S_mr_g3",
-  "cash": 497.34808592619106,
-  "positions": [],
+  "cash": 347.9197789074541,
+  "positions": [
+    {
+      "symbol": "ADAUSDT",
+      "qty": 735.3594173378873,
+      "entry_px": 0.20300144999999997,
+      "cost": 149.42830701873697,
+      "stop": 0.19952250604517144,
+      "open_ms": 1793192399999,
+      "open_ts": "2026-10-28 13:00:24 UTC",
+      "time_stop_h": 24,
+      "rsi_out": 55
+    }
+  ],
   "status": "alive",
   "peak": 502.3046869047619,
-  "last_candle": 1793185200000,
+  "last_candle": 1793188800000,
   "trades": 4,
   "wins": 2,
   "losses": 2,
@@ -12,10 +24,10 @@
   "died": null,
   "reason": null,
   "generation": 3,
-  "last_active_ms": 1793127599999,
+  "last_active_ms": 1793192399999,
   "day_open": {
     "date": "2026-10-28",
     "eq": 497.35
   },
-  "updated": "2026-10-28 12:00:42 UTC"
+  "updated": "2026-10-28 13:00:24 UTC"
 }
