@@ -986,3 +986,13 @@ ts,variant,equity,status
 2026-10-28 20:00:05 UTC,T_mr_g3,505.3,alive
 2026-10-28 20:00:05 UTC,U_mr_g3,500.1,alive
 2026-10-28 20:00:05 UTC,V_mr_g3,500.0,alive
+2026-10-28 20:00:28 UTC,A_mr4h,501.09,alive
+2026-10-28 20:00:28 UTC,B_mr4h_sm,503.84,alive
+2026-10-28 20:00:28 UTC,C_smfollow,496.27,alive
+2026-10-28 20:00:28 UTC,F_mr4h_deep,502.07,alive
+2026-10-28 20:00:28 UTC,H_smfollow_mr,495.18,alive
+2026-10-28 20:00:28 UTC,I_mr4h_aggro,502.58,alive
+2026-10-28 20:00:28 UTC,S_mr_g3,499.72,alive
+2026-10-28 20:00:28 UTC,T_mr_g3,505.3,alive
+2026-10-28 20:00:28 UTC,U_mr_g3,500.1,alive
+2026-10-28 20:00:28 UTC,V_mr_g3,500.0,alive
