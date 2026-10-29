@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-29 22:00:13 UTC",
+  "ts": "2026-10-29 23:00:16 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -43,9 +43,9 @@
         "C_smfollow"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 489.42,
+      "equity_total": 494.21,
       "capital_repuesto": 0.0,
-      "pnl": -10.58
+      "pnl": -5.79
     },
     "D_msb11": {
       "miembros": [
@@ -152,17 +152,15 @@
     },
     "B_mr4h_sm": {
       "equity": 497.3,
-      "status": "alive",
-      "reason": null,
-      "trades": 2,
-      "open": 0
+      "status": "dead",
+      "reason": "7d torneo: no rentable al cierre (eq $497.30 <= $500)",
+      "trades": 2
     },
     "C_smfollow": {
-      "equity": 489.42,
-      "status": "alive",
-      "reason": null,
-      "trades": 6,
-      "open": 1
+      "equity": 494.21,
+      "status": "dead",
+      "reason": "7d torneo: no rentable al cierre (eq $494.44 <= $500)",
+      "trades": 7
     },
     "D_msb11": {
       "equity": 500.0,
@@ -191,10 +189,9 @@
     },
     "H_smfollow_mr": {
       "equity": 487.37,
-      "status": "alive",
-      "reason": null,
-      "trades": 7,
-      "open": 0
+      "status": "dead",
+      "reason": "7d torneo: no rentable al cierre (eq $487.37 <= $500)",
+      "trades": 7
     },
     "I_mr4h_aggro": {
       "equity": 502.58,
