@@ -155,7 +155,7 @@ def death_reason(b, eq, ts_ms, family, open_n, close_ms, start):
         return ("inactividad",
                 f"inactividad: {silent_h:.1f}h sin actividad ni posiciones "
                 f"abiertas (ventana familia {family}: {win}h = 2x p90 medido)")
-    if ts_ms >= close_ms:
+    if ts_ms >= close_ms and not b.get("cierre_evaluado"):
         activity = b.get("bets_n", b.get("trades", 0)) + open_n
         if activity == 0:
             return ("cierre_torneo", "7d torneo: sin actividad al cierre")
