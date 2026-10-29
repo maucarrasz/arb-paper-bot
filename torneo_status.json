@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-29 23:26:14 UTC",
+  "ts": "2026-10-29 23:55:33 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -54,9 +54,9 @@
         "V_mr_g3"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1510.94,
+      "equity_total": 1498.9,
       "capital_repuesto": 1000.0,
-      "pnl": 10.94
+      "pnl": -1.1
     },
     "E_mr1h": {
       "miembros": [
@@ -86,9 +86,9 @@
         "W_mr_g4"
       ],
       "capital_inyectado": 2000.0,
-      "equity_total": 2009.77,
+      "equity_total": 1999.62,
       "capital_repuesto": 1500.0,
-      "pnl": 9.77
+      "pnl": -0.38
     },
     "H_smfollow_mr": {
       "miembros": [
@@ -115,9 +115,9 @@
         "S_mr_g3"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1509.47,
+      "equity_total": 1499.32,
       "capital_repuesto": 1000.0,
-      "pnl": 9.47
+      "pnl": -0.68
     }
   },
   "incidente_aisladas": {
@@ -255,11 +255,10 @@
       "trades": 0
     },
     "S_mr_g3": {
-      "equity": 509.47,
-      "status": "alive",
-      "reason": null,
-      "trades": 9,
-      "open": 2
+      "equity": 499.32,
+      "status": "dead",
+      "reason": "7d torneo: no rentable al cierre (eq $499.77 <= $500)",
+      "trades": 11
     },
     "T_mr_g3": {
       "equity": 515.16,
@@ -275,18 +274,16 @@
       "trades": 1
     },
     "V_mr_g3": {
-      "equity": 511.51,
-      "status": "alive",
-      "reason": null,
-      "trades": 2,
-      "open": 2
+      "equity": 499.47,
+      "status": "dead",
+      "reason": "7d torneo: no rentable al cierre (eq $499.92 <= $500)",
+      "trades": 4
     },
     "W_mr_g4": {
-      "equity": 509.67,
-      "status": "alive",
-      "reason": null,
-      "trades": 4,
-      "open": 2
+      "equity": 499.52,
+      "status": "dead",
+      "reason": "7d torneo: no rentable al cierre (eq $499.97 <= $500)",
+      "trades": 6
     }
   }
 }
