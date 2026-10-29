@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-29 15:00:17 UTC",
+  "ts": "2026-10-29 16:00:17 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -51,9 +51,9 @@
         "U16_mr_down_g3"
       ],
       "capital_inyectado": 1000.0,
-      "equity_total": 1009.51,
+      "equity_total": 1006.19,
       "capital_repuesto": 500.0,
-      "pnl": 9.51
+      "pnl": 6.19
     },
     "U4_momo_up_10x": {
       "miembros": [
@@ -61,18 +61,18 @@
         "U14_momo_up_g3"
       ],
       "capital_inyectado": 1000.0,
-      "equity_total": 986.26,
+      "equity_total": 985.97,
       "capital_repuesto": 500.0,
-      "pnl": -13.74
+      "pnl": -14.03
     },
     "U5_sm_10x": {
       "miembros": [
         "U5_sm_10x"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 502.5,
+      "equity_total": 500.57,
       "capital_repuesto": 0.0,
-      "pnl": 2.5
+      "pnl": 0.57
     },
     "U6_mr_up_10x_1h": {
       "miembros": [
@@ -91,9 +91,9 @@
         "U15_brk_up_g3"
       ],
       "capital_inyectado": 1000.0,
-      "equity_total": 988.7,
+      "equity_total": 993.21,
       "capital_repuesto": 500.0,
-      "pnl": -11.3
+      "pnl": -6.79
     },
     "U8_mr_up_100x": {
       "miembros": [
@@ -111,18 +111,18 @@
         "U17_mr_down_g4"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1517.04,
+      "equity_total": 1510.77,
       "capital_repuesto": 1000.0,
-      "pnl": 17.04
+      "pnl": 10.77
     },
     "U10_sm_3x_big": {
       "miembros": [
         "U10_sm_3x_big"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 501.18,
+      "equity_total": 499.73,
       "capital_repuesto": 0.0,
-      "pnl": 1.18
+      "pnl": -0.27
     }
   },
   "incidente_aisladas": {
@@ -161,7 +161,7 @@
       "bets": 2
     },
     "U5_sm_10x": {
-      "equity": 502.5,
+      "equity": 500.57,
       "status": "alive",
       "reason": null,
       "bets": 2,
@@ -193,7 +193,7 @@
       "bets": 0
     },
     "U10_sm_3x_big": {
-      "equity": 501.18,
+      "equity": 499.73,
       "status": "alive",
       "reason": null,
       "bets": 2,
@@ -218,32 +218,32 @@
       "bets": 2
     },
     "U14_momo_up_g3": {
-      "equity": 492.46,
+      "equity": 492.17,
       "status": "alive",
       "reason": null,
       "bets": 12,
-      "open": 0
+      "open": 2
     },
     "U15_brk_up_g3": {
-      "equity": 493.75,
+      "equity": 498.26,
       "status": "alive",
       "reason": null,
       "bets": 1,
       "open": 2
     },
     "U16_mr_down_g3": {
-      "equity": 509.51,
+      "equity": 506.19,
       "status": "alive",
       "reason": null,
       "bets": 1,
-      "open": 1
+      "open": 2
     },
     "U17_mr_down_g4": {
-      "equity": 517.04,
+      "equity": 510.77,
       "status": "alive",
       "reason": null,
       "bets": 3,
-      "open": 1
+      "open": 2
     },
     "U18_mr_up_g4": {
       "equity": 503.82,

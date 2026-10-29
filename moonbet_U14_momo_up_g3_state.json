@@ -1,10 +1,31 @@
 {
   "variant": "U14_momo_up_g3",
-  "cash": 492.45943078411517,
-  "bets": [],
+  "cash": 472.5660429265741,
+  "bets": [
+    {
+      "symbol": "BTCUSDT",
+      "dir": 1,
+      "wager": 9.85,
+      "lev": 10,
+      "entry_px": 81818.62887,
+      "bust_px": 73636.765983,
+      "open_ms": 1793289599999,
+      "open_ts": "2026-10-29 16:00:25 UTC"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "dir": 1,
+      "wager": 9.85,
+      "lev": 10,
+      "entry_px": 2370.24453,
+      "bust_px": 2133.220077,
+      "open_ms": 1793289599999,
+      "open_ts": "2026-10-29 16:00:25 UTC"
+    }
+  ],
   "status": "alive",
   "peak": 501.1799254172846,
-  "last_candle": 1793260800000,
+  "last_candle": 1793275200000,
   "bets_n": 12,
   "wins": 3,
   "losses": 9,
@@ -13,10 +34,10 @@
   "died": null,
   "reason": null,
   "generation": 3,
-  "last_active_ms": 1793246399999,
+  "last_active_ms": 1793289599999,
   "day_open": {
     "date": "2026-10-29",
     "eq": 495.76
   },
-  "updated": "2026-10-29 15:00:25 UTC"
+  "updated": "2026-10-29 16:00:25 UTC"
 }

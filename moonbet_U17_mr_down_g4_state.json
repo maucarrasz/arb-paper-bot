@@ -1,6 +1,6 @@
 {
   "variant": "U17_mr_down_g4",
-  "cash": 500.1662627033651,
+  "cash": 495.0650934500611,
   "bets": [
     {
       "symbol": "BNBUSDT",
@@ -11,11 +11,21 @@
       "bust_px": 768.0843657,
       "open_ms": 1793188799999,
       "open_ts": "2026-10-28 12:00:30 UTC"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "dir": -1,
+      "wager": 5.05,
+      "lev": 100,
+      "entry_px": 0.080629665,
+      "bust_px": 0.08143596165,
+      "open_ms": 1793289599999,
+      "open_ts": "2026-10-29 16:00:25 UTC"
     }
   ],
   "status": "alive",
   "peak": 517.035092280207,
-  "last_candle": 1793260800000,
+  "last_candle": 1793275200000,
   "bets_n": 3,
   "wins": 1,
   "losses": 2,
@@ -28,6 +38,6 @@
     "date": "2026-10-29",
     "eq": 493.68
   },
-  "updated": "2026-10-29 15:00:25 UTC",
-  "last_active_ms": 1793246399999
+  "updated": "2026-10-29 16:00:25 UTC",
+  "last_active_ms": 1793289599999
 }

@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-29 15:00:08 UTC",
+  "ts": "2026-10-29 16:00:08 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -34,18 +34,18 @@
         "B_mr4h_sm"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 500.61,
+      "equity_total": 503.05,
       "capital_repuesto": 0.0,
-      "pnl": 0.61
+      "pnl": 3.05
     },
     "C_smfollow": {
       "miembros": [
         "C_smfollow"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 494.71,
+      "equity_total": 496.9,
       "capital_repuesto": 0.0,
-      "pnl": -5.29
+      "pnl": -3.1
     },
     "D_msb11": {
       "miembros": [
@@ -54,9 +54,9 @@
         "V_mr_g3"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1503.15,
+      "equity_total": 1505.32,
       "capital_repuesto": 1000.0,
-      "pnl": 3.15
+      "pnl": 5.32
     },
     "E_mr1h": {
       "miembros": [
@@ -95,9 +95,9 @@
         "H_smfollow_mr"
       ],
       "capital_inyectado": 500.0,
-      "equity_total": 496.48,
+      "equity_total": 501.24,
       "capital_repuesto": 0.0,
-      "pnl": -3.52
+      "pnl": 1.24
     },
     "I_mr4h_aggro": {
       "miembros": [
@@ -151,14 +151,14 @@
       "open": 0
     },
     "B_mr4h_sm": {
-      "equity": 500.61,
+      "equity": 503.05,
       "status": "alive",
       "reason": null,
       "trades": 1,
       "open": 1
     },
     "C_smfollow": {
-      "equity": 494.71,
+      "equity": 496.9,
       "status": "alive",
       "reason": null,
       "trades": 5,
@@ -190,7 +190,7 @@
       "trades": 0
     },
     "H_smfollow_mr": {
-      "equity": 496.48,
+      "equity": 501.24,
       "status": "alive",
       "reason": null,
       "trades": 5,
@@ -278,7 +278,7 @@
       "trades": 1
     },
     "V_mr_g3": {
-      "equity": 503.72,
+      "equity": 505.89,
       "status": "alive",
       "reason": null,
       "trades": 1,
