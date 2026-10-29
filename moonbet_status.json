@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-29 20:00:36 UTC",
+  "ts": "2026-10-29 21:00:19 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -81,9 +81,9 @@
         "U18_mr_up_g4"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1505.88,
+      "equity_total": 1508.02,
       "capital_repuesto": 1000.0,
-      "pnl": 5.88
+      "pnl": 8.02
     },
     "U7_brk_up_50x": {
       "miembros": [
@@ -91,9 +91,9 @@
         "U15_brk_up_g3"
       ],
       "capital_inyectado": 1000.0,
-      "equity_total": 990.71,
+      "equity_total": 985.08,
       "capital_repuesto": 500.0,
-      "pnl": -9.29
+      "pnl": -14.92
     },
     "U8_mr_up_100x": {
       "miembros": [
@@ -225,11 +225,11 @@
       "open": 2
     },
     "U15_brk_up_g3": {
-      "equity": 495.76,
+      "equity": 490.13,
       "status": "alive",
       "reason": null,
-      "bets": 1,
-      "open": 2
+      "bets": 2,
+      "open": 1
     },
     "U16_mr_down_g3": {
       "equity": 511.74,
@@ -246,11 +246,11 @@
       "open": 1
     },
     "U18_mr_up_g4": {
-      "equity": 503.34,
+      "equity": 505.48,
       "status": "alive",
       "reason": null,
       "bets": 6,
-      "open": 1
+      "open": 2
     }
   }
 }

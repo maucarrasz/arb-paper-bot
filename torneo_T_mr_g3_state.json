@@ -1,10 +1,33 @@
 {
   "variant": "T_mr_g3",
-  "cash": 506.4576287989542,
-  "positions": [],
+  "cash": 202.17276012232702,
+  "positions": [
+    {
+      "symbol": "BTCUSDT",
+      "qty": 0.00192686688870739,
+      "entry_px": 78891.415995,
+      "cost": 152.16527054129006,
+      "stop": 77656.97115115654,
+      "open_ms": 1793307599999,
+      "open_ts": "2026-10-29 21:00:19 UTC",
+      "time_stop_h": 24,
+      "rsi_out": 55
+    },
+    {
+      "symbol": "ETHUSDT",
+      "qty": 0.06727181456166893,
+      "entry_px": 2259.00894,
+      "cost": 152.11959813533713,
+      "stop": 2209.6267071179304,
+      "open_ms": 1793307599999,
+      "open_ts": "2026-10-29 21:00:19 UTC",
+      "time_stop_h": 24,
+      "rsi_out": 55
+    }
+  ],
   "status": "alive",
-  "peak": 512.1430463299176,
-  "last_candle": 1793300400000,
+  "peak": 515.1641582663694,
+  "last_candle": 1793304000000,
   "trades": 9,
   "wins": 7,
   "losses": 2,
@@ -12,10 +35,10 @@
   "died": null,
   "reason": null,
   "generation": 3,
-  "last_active_ms": 1793305993277,
+  "last_active_ms": 1793307599999,
   "day_open": {
     "date": "2026-10-29",
     "eq": 505.35
   },
-  "updated": "2026-10-29 20:47:08 UTC"
+  "updated": "2026-10-29 21:00:19 UTC"
 }

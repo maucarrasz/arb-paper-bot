@@ -1,6 +1,6 @@
 {
   "variant": "U18_mr_up_g4",
-  "cash": 493.6380587166226,
+  "cash": 483.4629539305468,
   "bets": [
     {
       "symbol": "XRPUSDT",
@@ -11,11 +11,21 @@
       "bust_px": 1.158428925,
       "open_ms": 1793300399999,
       "open_ts": "2026-10-29 19:00:38 UTC"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "dir": 1,
+      "wager": 10.07,
+      "lev": 10,
+      "entry_px": 78891.415995,
+      "bust_px": 71002.2743955,
+      "open_ms": 1793307599999,
+      "open_ts": "2026-10-29 21:00:30 UTC"
     }
   ],
   "status": "alive",
-  "peak": 505.343136857692,
-  "last_candle": 1793300400000,
+  "peak": 505.482112236081,
+  "last_candle": 1793304000000,
   "bets_n": 6,
   "wins": 4,
   "losses": 2,
@@ -24,10 +34,10 @@
   "died": null,
   "reason": null,
   "generation": 4,
-  "last_active_ms": 1793300399999,
+  "last_active_ms": 1793307599999,
   "day_open": {
     "date": "2026-10-29",
     "eq": 501.05
   },
-  "updated": "2026-10-29 20:43:38 UTC"
+  "updated": "2026-10-29 21:00:30 UTC"
 }
