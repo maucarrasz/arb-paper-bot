@@ -1,33 +1,21 @@
 {
   "variant": "H_smfollow_mr",
-  "cash": 407.25477702802135,
-  "positions": [
-    {
-      "symbol": "ADAUSDT",
-      "qty": 424.8674268880405,
-      "entry_px": 0.19759875,
-      "cost": 84.03722574126198,
-      "stop": 0.1888575280676964,
-      "open_ms": 1793246399999,
-      "open_ts": "2026-10-29 04:00:19 UTC",
-      "time_stop_h": 96,
-      "rsi_out": 55
-    }
-  ],
+  "cash": 487.37387002828757,
+  "positions": [],
   "status": "alive",
   "peak": 502.4559338524715,
   "last_candle": 1793289600000,
-  "trades": 6,
+  "trades": 7,
   "wins": 3,
-  "losses": 3,
+  "losses": 4,
   "born": "2026-10-22 22:37:58 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-29 20:42:23 UTC",
+  "updated": "2026-10-29 20:47:08 UTC",
   "generation": 1,
   "day_open": {
     "date": "2026-10-29",
     "eq": 495.18
   },
-  "last_active_ms": 1793306543291
+  "last_active_ms": 1793306828299
 }
