@@ -1,6 +1,6 @@
 {
   "variant": "H_smfollow_mr",
-  "cash": 411.14417029008905,
+  "cash": 338.36474983691744,
   "positions": [
     {
       "symbol": "ADAUSDT",
@@ -12,22 +12,33 @@
       "open_ts": "2026-10-29 04:00:19 UTC",
       "time_stop_h": 96,
       "rsi_out": 55
+    },
+    {
+      "symbol": "DOTUSDT",
+      "qty": 73.85201072170437,
+      "entry_px": 0.9844919999999999,
+      "cost": 72.7794204531716,
+      "stop": 0.9342126537180938,
+      "open_ms": 1793275199999,
+      "open_ts": "2026-10-29 12:00:23 UTC",
+      "time_stop_h": 96,
+      "rsi_out": 55
     }
   ],
   "status": "alive",
   "peak": 502.4559338524715,
-  "last_candle": 1793246400000,
+  "last_candle": 1793260800000,
   "trades": 5,
   "wins": 3,
   "losses": 2,
   "born": "2026-10-22 22:37:58 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-29 11:00:20 UTC",
+  "updated": "2026-10-29 12:00:23 UTC",
   "generation": 1,
   "day_open": {
     "date": "2026-10-29",
     "eq": 495.18
   },
-  "last_active_ms": 1793246399999
+  "last_active_ms": 1793275199999
 }
