@@ -1,17 +1,7 @@
 {
   "variant": "U18_mr_up_g4",
-  "cash": 480.99132185263596,
+  "cash": 481.17331416438685,
   "bets": [
-    {
-      "symbol": "TRXUSDT",
-      "dir": 1,
-      "wager": 9.99,
-      "lev": 10,
-      "entry_px": 0.32996489999999995,
-      "bust_px": 0.29696840999999996,
-      "open_ms": 1793206799999,
-      "open_ts": "2026-10-28 17:00:28 UTC"
-    },
     {
       "symbol": "BTCUSDT",
       "dir": 1,
@@ -21,23 +11,33 @@
       "bust_px": 72053.61280199999,
       "open_ms": 1793239199999,
       "open_ts": "2026-10-29 02:00:39 UTC"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "dir": 1,
+      "wager": 10.03,
+      "lev": 10,
+      "entry_px": 100.21007999999999,
+      "bust_px": 90.189072,
+      "open_ms": 1793249999999,
+      "open_ts": "2026-10-29 05:00:32 UTC"
     }
   ],
   "status": "alive",
   "peak": 502.39763025804945,
-  "last_candle": 1793242800000,
-  "bets_n": 3,
-  "wins": 1,
+  "last_candle": 1793246400000,
+  "bets_n": 4,
+  "wins": 2,
   "losses": 2,
   "busts": 0,
   "born": "2026-10-26 07:18:18 UTC",
   "died": null,
   "reason": null,
   "generation": 4,
-  "last_active_ms": 1793239199999,
+  "last_active_ms": 1793249999999,
   "day_open": {
     "date": "2026-10-29",
     "eq": 501.05
   },
-  "updated": "2026-10-29 04:00:49 UTC"
+  "updated": "2026-10-29 05:00:32 UTC"
 }

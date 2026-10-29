@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-29 04:00:40 UTC",
+  "ts": "2026-10-29 05:00:22 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -81,9 +81,9 @@
         "U18_mr_up_g4"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1503.52,
+      "equity_total": 1502.99,
       "capital_repuesto": 1000.0,
-      "pnl": 3.52
+      "pnl": 2.99
     },
     "U7_brk_up_50x": {
       "miembros": [
@@ -246,10 +246,10 @@
       "open": 1
     },
     "U18_mr_up_g4": {
-      "equity": 500.98,
+      "equity": 500.45,
       "status": "alive",
       "reason": null,
-      "bets": 3,
+      "bets": 4,
       "open": 2
     }
   }
