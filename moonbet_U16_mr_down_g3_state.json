@@ -1,6 +1,6 @@
 {
   "variant": "U16_mr_down_g3",
-  "cash": 479.80201999999997,
+  "cash": 496.546992801882,
   "bets": [
     {
       "symbol": "BNBUSDT",
@@ -11,23 +11,13 @@
       "bust_px": 779.7139480000001,
       "open_ms": 1793116799999,
       "open_ts": "2026-10-27 16:00:22 UTC"
-    },
-    {
-      "symbol": "XRPUSDT",
-      "dir": -1,
-      "wager": 10.0,
-      "lev": 25,
-      "entry_px": 1.33063435,
-      "bust_px": 1.383859724,
-      "open_ms": 1793145599999,
-      "open_ts": "2026-10-28 00:00:29 UTC"
     }
   ],
   "status": "alive",
-  "peak": 502.9750756196196,
-  "last_candle": 1793217600000,
-  "bets_n": 0,
-  "wins": 0,
+  "peak": 507.3827843144894,
+  "last_candle": 1793232000000,
+  "bets_n": 1,
+  "wins": 1,
   "losses": 0,
   "busts": 0,
   "born": "2026-10-25 11:11:17 UTC",
@@ -38,6 +28,6 @@
     "date": "2026-10-29",
     "eq": 497.21
   },
-  "updated": "2026-10-29 03:00:23 UTC",
-  "last_active_ms": 1793145599999
+  "updated": "2026-10-29 04:00:28 UTC",
+  "last_active_ms": 1793246399999
 }
