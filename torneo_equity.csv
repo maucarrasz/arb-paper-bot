@@ -1076,3 +1076,13 @@ ts,variant,equity,status
 2026-10-29 02:00:19 UTC,T_mr_g3,507.63,alive
 2026-10-29 02:00:19 UTC,V_mr_g3,505.75,alive
 2026-10-29 02:00:19 UTC,W_mr_g4,502.21,alive
+2026-10-29 03:00:04 UTC,A_mr4h,501.09,alive
+2026-10-29 03:00:04 UTC,B_mr4h_sm,502.62,alive
+2026-10-29 03:00:04 UTC,C_smfollow,492.5,alive
+2026-10-29 03:00:04 UTC,F_mr4h_deep,502.07,alive
+2026-10-29 03:00:04 UTC,H_smfollow_mr,495.18,alive
+2026-10-29 03:00:04 UTC,I_mr4h_aggro,502.58,alive
+2026-10-29 03:00:04 UTC,S_mr_g3,502.02,alive
+2026-10-29 03:00:04 UTC,T_mr_g3,507.63,alive
+2026-10-29 03:00:04 UTC,V_mr_g3,505.75,alive
+2026-10-29 03:00:04 UTC,W_mr_g4,502.21,alive
