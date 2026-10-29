@@ -1,29 +1,17 @@
 {
   "variant": "C_smfollow",
-  "cash": 339.5136778284019,
-  "positions": [
-    {
-      "symbol": "TRXUSDT",
-      "qty": 452.07223143242624,
-      "entry_px": 0.32846414999999995,
-      "cost": 148.63801075729117,
-      "stop": 0.32629826476338597,
-      "open_ms": 1793102399999,
-      "open_ts": "2026-10-27 14:20:50 UTC",
-      "time_stop_h": 96,
-      "rsi_out": 55
-    }
-  ],
-  "status": "alive",
+  "cash": 494.2065212723034,
+  "positions": [],
+  "status": "dead",
   "peak": 502.4559338524715,
   "last_candle": 1793289600000,
-  "trades": 6,
-  "wins": 2,
+  "trades": 7,
+  "wins": 3,
   "losses": 4,
   "born": "2026-10-22 22:28:59 UTC",
-  "died": null,
-  "reason": null,
-  "updated": "2026-10-29 22:00:23 UTC",
+  "died": "2026-10-29 22:29:00 UTC",
+  "reason": "7d torneo: no rentable al cierre (eq $494.44 <= $500)",
+  "updated": "2026-10-29 22:29:00 UTC",
   "generation": 1,
   "day_open": {
     "date": "2026-10-29",
