@@ -1,10 +1,22 @@
 {
   "variant": "W_mr_g4",
-  "cash": 504.1207656722552,
-  "positions": [],
+  "cash": 352.6576060079113,
+  "positions": [
+    {
+      "symbol": "XRPUSDT",
+      "qty": 117.55633867211546,
+      "entry_px": 1.28714325,
+      "cost": 151.4631596643439,
+      "stop": 1.264248298106601,
+      "open_ms": 1793300399999,
+      "open_ts": "2026-10-29 19:00:28 UTC",
+      "time_stop_h": 24,
+      "rsi_out": 55
+    }
+  ],
   "status": "alive",
-  "peak": 504.1207656722552,
-  "last_candle": 1793293200000,
+  "peak": 506.67992093611696,
+  "last_candle": 1793296800000,
   "trades": 3,
   "wins": 3,
   "losses": 0,
@@ -16,6 +28,6 @@
     "date": "2026-10-29",
     "eq": 500.0
   },
-  "updated": "2026-10-29 18:00:26 UTC",
-  "last_active_ms": 1793285999999
+  "updated": "2026-10-29 19:00:28 UTC",
+  "last_active_ms": 1793300399999
 }
