@@ -11,25 +11,15 @@
       "bust_px": 0.32464023899999994,
       "open_ms": 1792958399999,
       "open_ts": "2026-10-25 21:14:32 UTC"
-    },
-    {
-      "symbol": "BTCUSDT",
-      "dir": 1,
-      "wager": 4.95,
-      "lev": 50,
-      "entry_px": 80602.551135,
-      "bust_px": 78990.5001123,
-      "open_ms": 1793116799999,
-      "open_ts": "2026-10-27 16:00:22 UTC"
     }
   ],
   "status": "alive",
   "peak": 500.0,
   "last_candle": 1793289600000,
-  "bets_n": 1,
+  "bets_n": 2,
   "wins": 0,
-  "losses": 1,
-  "busts": 1,
+  "losses": 2,
+  "busts": 2,
   "born": "2026-10-25 03:08:52 UTC",
   "died": null,
   "reason": null,
@@ -38,6 +28,6 @@
     "date": "2026-10-29",
     "eq": 495.79
   },
-  "updated": "2026-10-29 20:00:45 UTC",
-  "last_active_ms": 1793116799999
+  "updated": "2026-10-29 20:43:38 UTC",
+  "last_active_ms": 1793306618294
 }
