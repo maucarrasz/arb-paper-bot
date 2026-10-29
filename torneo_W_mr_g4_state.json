@@ -1,6 +1,6 @@
 {
   "variant": "W_mr_g4",
-  "cash": 349.77492500000005,
+  "cash": 199.59494005626132,
   "positions": [
     {
       "symbol": "TRXUSDT",
@@ -12,11 +12,22 @@
       "open_ts": "2026-10-29 01:00:23 UTC",
       "time_stop_h": 24,
       "rsi_out": 55
+    },
+    {
+      "symbol": "BTCUSDT",
+      "qty": 0.0018739790308769507,
+      "entry_px": 80059.56977999999,
+      "cost": 150.17998494373873,
+      "stop": 79207.25927957597,
+      "open_ms": 1793239199999,
+      "open_ts": "2026-10-29 02:00:29 UTC",
+      "time_stop_h": 24,
+      "rsi_out": 55
     }
   ],
   "status": "alive",
-  "peak": 500.0,
-  "last_candle": 1793232000000,
+  "peak": 502.21310271687776,
+  "last_candle": 1793235600000,
   "trades": 0,
   "wins": 0,
   "losses": 0,
@@ -28,6 +39,6 @@
     "date": "2026-10-29",
     "eq": 500.0
   },
-  "updated": "2026-10-29 01:48:58 UTC",
-  "last_active_ms": 1793235599999
+  "updated": "2026-10-29 02:00:29 UTC",
+  "last_active_ms": 1793239199999
 }

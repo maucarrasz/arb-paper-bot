@@ -1,6 +1,6 @@
 {
   "variant": "S_mr_g3",
-  "cash": 350.600894869217,
+  "cash": 200.42535906349408,
   "positions": [
     {
       "symbol": "TRXUSDT",
@@ -12,11 +12,22 @@
       "open_ts": "2026-10-28 17:00:20 UTC",
       "time_stop_h": 24,
       "rsi_out": 55
+    },
+    {
+      "symbol": "BTCUSDT",
+      "qty": 0.0018739235135498563,
+      "entry_px": 80059.56977999999,
+      "cost": 150.1755358057229,
+      "stop": 79207.25927957597,
+      "open_ms": 1793239199999,
+      "open_ts": "2026-10-29 02:00:29 UTC",
+      "time_stop_h": 24,
+      "rsi_out": 55
     }
   ],
   "status": "alive",
   "peak": 502.3046869047619,
-  "last_candle": 1793232000000,
+  "last_candle": 1793235600000,
   "trades": 5,
   "wins": 3,
   "losses": 2,
@@ -24,10 +35,10 @@
   "died": null,
   "reason": null,
   "generation": 3,
-  "last_active_ms": 1793217599999,
+  "last_active_ms": 1793239199999,
   "day_open": {
     "date": "2026-10-29",
     "eq": 499.76
   },
-  "updated": "2026-10-29 01:48:58 UTC"
+  "updated": "2026-10-29 02:00:29 UTC"
 }
