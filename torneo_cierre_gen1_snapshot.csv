@@ -1,24 +1,24 @@
-variant,estado_al_cierre,equity_al_cierre_usd,fuente_del_valor,posiciones_abiertas_al_cierre,notas
-A_mr4h,alive,501.09,exacto (0 posiciones; ultimo tick 22:00:13 UTC),0,
-B_mr4h_sm,dead_cierre,497.30,observado en barrido 22:29:00 UTC (0 posiciones; == tick 22:00:13),0,no rentable al cierre (eq<=500)
-C_smfollow,dead_cierre,494.44,observado en barrido 22:29:00 UTC (MtM con TRX abierto; tick 22:00:13 era 489.42),1,no rentable al cierre (eq<=500)
-D_msb11,dead_previa,500.00,eq_final en muerte 2026-10-24 23:05 UTC (inactividad 48h),0,antes del cierre
-E_mr1h,dead_previa,500.51,eq_final en muerte 2026-10-24 05:39 UTC (inactividad 28h),0,antes del cierre
-F_mr4h_deep,alive,502.07,exacto (0 posiciones; ultimo tick 22:00:13 UTC),0,
-G_msb11_nosm,dead_previa,500.00,eq_final en muerte 2026-10-24 23:05 UTC (inactividad 48h),0,antes del cierre
-H_smfollow_mr,dead_cierre,487.37,observado en barrido 22:29:00 UTC (0 posiciones; == tick 22:00:13),0,no rentable al cierre (eq<=500)
-I_mr4h_aggro,alive,502.58,exacto (0 posiciones; ultimo tick 22:00:13 UTC),0,
-J_msb11_1h,dead_previa,500.00,eq_final en muerte 2026-10-24 23:05 UTC (inactividad 48h),0,antes del cierre
-K_mr_g2,aislada,498.98,estado actual (aislada 2026-10-23 14:55 UTC; fuera de competencia),0,no comparable (incidente regla 23-oct)
-L_mr_g2,aislada,500.00,estado actual (aislada 2026-10-23 14:55 UTC; fuera de competencia),0,no comparable (incidente regla 23-oct)
-M_mr_g2,aislada,500.00,estado actual (aislada 2026-10-23 14:55 UTC; fuera de competencia),0,no comparable (incidente regla 23-oct)
-N_mr_g2,aislada,497.29,estado actual (aislada 2026-10-23 14:55 UTC; fuera de competencia),0,no comparable (incidente regla 23-oct)
-O_mr_g2,dead_previa,500.62,eq_final en muerte 2026-10-27 01:23 UTC (inactividad 28h),0,antes del cierre
-P_msb11_g2,dead_previa,499.43,eq_final en muerte 2026-10-28 03:00 UTC (inactividad 48h),0,antes del cierre
-Q_msb11_g2,dead_previa,500.00,eq_final en muerte 2026-10-27 01:23 UTC (inactividad 48h),0,antes del cierre
-R_mr_g2,dead_previa,500.00,eq_final en muerte 2026-10-26 05:17 UTC (inactividad 28h),0,antes del cierre
-S_mr_g3,alive,509.47,ultimo tick 22:00:13 UTC (28m46s antes del corte; MtM con 2 posiciones),2,"murio post-cierre 23:42:19 UTC eq 499.77 (motor re-evalua cierre por tick); su valor al cierre es estimado por ultimo tick, no observado"
-T_mr_g3,alive,515.16,ultimo tick 22:00:13 UTC (28m46s antes del corte; MtM con 2 posiciones),2,"sigue viva post-cierre; valor al cierre estimado por ultimo tick, no observado"
-U_mr_g3,dead_previa,500.10,eq_final en muerte 2026-10-28 23:00 UTC (inactividad 28h),0,antes del cierre
-V_mr_g3,alive,511.51,ultimo tick 22:00:13 UTC (28m46s antes del corte; MtM con 2 posiciones),2,"murio post-cierre 23:46:29 UTC eq 499.92 (motor re-evalua cierre por tick); su valor al cierre es estimado por ultimo tick, no observado"
-W_mr_g4,alive,509.67,ultimo tick 22:00:13 UTC (28m46s antes del corte; MtM con 2 posiciones),2,"murio post-cierre 23:42:19 UTC eq 499.97 (motor re-evalua cierre por tick); su valor al cierre es estimado por ultimo tick, no observado"
+variant,estado_al_corte,eq_ultima_obs_pre_corte,ts_ultima_obs_pre_corte,pos_abiertas_en_esa_obs,eq_observada_post_corte,ts_obs_post_corte,evento_post_corte,notas
+A_mr4h,alive,501.09,2026-10-29 22:00:13 UTC,0,501.09,2026-10-29 23:26:14 UTC,tick de vela,"equity al corte exacta: 0 posiciones y 0 trades entre 22:00:13 y 22:28:59 (equity=cash, sin fees sin trades)"
+B_mr4h_sm,alive,497.30,2026-10-29 22:00:13 UTC,0,497.30,2026-10-29 22:29:00 UTC,muerte en barrido post-corte (no rentable: eq<=500),"observada 22:29:00 (1s post-corte), no al instante exacto del corte; 0 posiciones: igual al tick pre-corte"
+C_smfollow,alive,489.42,2026-10-29 22:00:13 UTC,1,494.44,2026-10-29 22:29:00 UTC,muerte en barrido post-corte (no rentable: eq<=500),"con TRX abierto: 494.44 es MtM observado 1s post-corte; equity exacta al corte no observada; ticks usan cierre de vela 4h 20:00"
+D_msb11,dead,500.00,2026-10-24 23:05:05 UTC,0,,,muerte previa al corte (inactividad 48h),eq_final en muerte
+E_mr1h,dead,500.51,2026-10-24 05:39:46 UTC,0,,,muerte previa al corte (inactividad 28h),eq_final en muerte
+F_mr4h_deep,alive,502.07,2026-10-29 22:00:13 UTC,0,502.07,2026-10-29 23:26:14 UTC,tick de vela,"equity al corte exacta: 0 posiciones y 0 trades entre 22:00:13 y 22:28:59"
+G_msb11_nosm,dead,500.00,2026-10-24 23:05:05 UTC,0,,,muerte previa al corte (inactividad 48h),eq_final en muerte
+H_smfollow_mr,alive,487.37,2026-10-29 22:00:13 UTC,0,487.37,2026-10-29 22:29:00 UTC,muerte en barrido post-corte (no rentable: eq<=500),"observada 22:29:00 (1s post-corte); 0 posiciones: igual al tick pre-corte"
+I_mr4h_aggro,alive,502.58,2026-10-29 22:00:13 UTC,0,502.58,2026-10-29 23:26:14 UTC,tick de vela,"equity al corte exacta: 0 posiciones y 0 trades entre 22:00:13 y 22:28:59"
+J_msb11_1h,dead,500.00,2026-10-24 23:05:05 UTC,0,,,muerte previa al corte (inactividad 48h),eq_final en muerte
+K_mr_g2,aislada,499.87,2026-10-23 14:54:16 UTC,0,498.98,2026-10-29 23:26:14 UTC,estado actual,"fuera de competencia (incidente regla 23-oct); variacion 499.87->498.98 por cierre de posicion heredada, no auditada por no ser comparable"
+L_mr_g2,aislada,500.00,2026-10-23 14:54:16 UTC,0,500.00,2026-10-29 23:26:14 UTC,estado actual,fuera de competencia
+M_mr_g2,aislada,500.00,2026-10-23 14:54:16 UTC,0,500.00,2026-10-29 23:26:14 UTC,estado actual,fuera de competencia
+N_mr_g2,aislada,499.65,2026-10-23 14:54:16 UTC,0,497.29,2026-10-29 23:26:14 UTC,estado actual,"fuera de competencia; variacion por posicion heredada, no auditada"
+O_mr_g2,dead,500.62,2026-10-27 01:23:22 UTC,0,,,muerte previa al corte (inactividad 28h),eq_final en muerte
+P_msb11_g2,dead,499.43,2026-10-28 02:53:24 UTC,0,,,muerte previa al corte (inactividad 48h),eq_final en muerte
+Q_msb11_g2,dead,500.00,2026-10-27 01:23:22 UTC,0,,,muerte previa al corte (inactividad 48h),eq_final en muerte
+R_mr_g2,dead,500.00,2026-10-26 05:17:09 UTC,0,,,muerte previa al corte (inactividad 28h),eq_final en muerte
+S_mr_g3,alive,509.47,2026-10-29 22:00:13 UTC,2,499.77,2026-10-29 23:42:19 UTC,muerte post-corte por re-evaluacion por tick (defecto del motor),"equity al corte NO observada: ultimo dato 28m46s antes con marks de vela 4h 20:00 y 2 pos abiertas; no es estimacion al corte"
+T_mr_g3,alive,515.16,2026-10-29 22:00:13 UTC,2,515.16,2026-10-29 23:26:14 UTC,tick de vela,"sigue viva; equity al corte NO observada: ultimo dato 28m46s antes, marks vela 4h 20:00, 2 pos abiertas (BTC/ETH 21:00:19)"
+U_mr_g3,dead,500.10,2026-10-28 22:00:19 UTC,0,,,muerte previa al corte (inactividad 28h),eq_final en muerte (muerte registrada 23:00:01)
+V_mr_g3,alive,511.51,2026-10-29 22:00:13 UTC,2,499.92,2026-10-29 23:46:29 UTC,muerte post-corte por re-evaluacion por tick (defecto del motor),"equity al corte NO observada: ultimo dato 28m46s antes, 2 pos abiertas"
+W_mr_g4,alive,509.67,2026-10-29 22:00:13 UTC,2,499.97,2026-10-29 23:42:19 UTC,muerte post-corte por re-evaluacion por tick (defecto del motor),"equity al corte NO observada: ultimo dato 28m46s antes, 2 pos abiertas"
