@@ -249,6 +249,8 @@ def check_survival(b, eq, ts_ms, marks):
     hit = evo.death_reason(b, eq, ts_ms, fam, len(b["bets"]),
                            evo.ms_of(CLOSE_ISO), START)
     if hit is None:
+        if ts_ms >= evo.ms_of(CLOSE_ISO) and not b.get("cierre_evaluado"):
+            b["cierre_evaluado"] = now_iso()
         return
     kind, text = hit
     for bet in list(b["bets"]):
@@ -309,7 +311,7 @@ def step(ts_ms):
         if newest > b.get("last_candle", 0):
             b["last_candle"] = newest
             manage_bets(b, kx)
-            if equity_of(b, marks) >= evo.floor(START):
+            if equity_of(b, marks) >= evo.floor(START) and ts_ms < evo.ms_of(CLOSE_ISO):
                 entries(b, kx, net, reg)
         eq = equity_of(b, marks)
         b["peak"] = max(b.get("peak", START), eq)
