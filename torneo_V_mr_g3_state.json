@@ -1,25 +1,13 @@
 {
   "variant": "V_mr_g3",
-  "cash": 353.60180325000505,
-  "positions": [
-    {
-      "symbol": "XRPUSDT",
-      "qty": 116.23515812727696,
-      "entry_px": 1.29074505,
-      "cost": 150.17998494373873,
-      "stop": 1.270006963044732,
-      "open_ms": 1793246399999,
-      "open_ts": "2026-10-29 04:00:19 UTC",
-      "time_stop_h": 24,
-      "rsi_out": 55
-    }
-  ],
+  "cash": 500.999908041724,
+  "positions": [],
   "status": "alive",
   "peak": 505.89310742836335,
   "last_candle": 1793300400000,
-  "trades": 1,
+  "trades": 2,
   "wins": 1,
-  "losses": 0,
+  "losses": 1,
   "born": "2026-10-28 03:00:10 UTC",
   "died": null,
   "reason": null,
@@ -28,6 +16,6 @@
     "date": "2026-10-29",
     "eq": 500.0
   },
-  "updated": "2026-10-29 20:00:36 UTC",
-  "last_active_ms": 1793285999999
+  "updated": "2026-10-29 20:05:38 UTC",
+  "last_active_ms": 1793304338231
 }
