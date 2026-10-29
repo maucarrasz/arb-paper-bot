@@ -1,44 +1,21 @@
 {
   "variant": "S_mr_g3",
-  "cash": 199.93659780759785,
-  "positions": [
-    {
-      "symbol": "BTCUSDT",
-      "qty": 0.0019055544867823252,
-      "entry_px": 78891.415995,
-      "cost": 150.48222360960102,
-      "stop": 77656.97115115654,
-      "open_ms": 1793307599999,
-      "open_ts": "2026-10-29 21:00:19 UTC",
-      "time_stop_h": 24,
-      "rsi_out": 55
-    },
-    {
-      "symbol": "ETHUSDT",
-      "qty": 0.06652774450754675,
-      "entry_px": 2259.00894,
-      "cost": 150.4370563701846,
-      "stop": 2209.6267071179304,
-      "open_ms": 1793307599999,
-      "open_ts": "2026-10-29 21:00:19 UTC",
-      "time_stop_h": 24,
-      "rsi_out": 55
-    }
-  ],
-  "status": "alive",
+  "cash": 499.3249494243705,
+  "positions": [],
+  "status": "dead",
   "peak": 509.4661073720878,
   "last_candle": 1793311200000,
-  "trades": 9,
+  "trades": 11,
   "wins": 6,
-  "losses": 3,
+  "losses": 5,
   "born": "2026-10-26 07:18:10 UTC",
-  "died": null,
-  "reason": null,
+  "died": "2026-10-29 23:42:19 UTC",
+  "reason": "7d torneo: no rentable al cierre (eq $499.77 <= $500)",
   "generation": 3,
   "last_active_ms": 1793307599999,
   "day_open": {
     "date": "2026-10-29",
     "eq": 499.76
   },
-  "updated": "2026-10-29 23:26:22 UTC"
+  "updated": "2026-10-29 23:42:19 UTC"
 }
