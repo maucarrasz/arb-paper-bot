@@ -136,8 +136,9 @@ def live_pass(mod, live_fn, marks, ts_ms):
         eq = mod.equity_of(b, marks)
         b["peak"] = max(b.get("peak", mod.START), eq)
         antes = b["status"]
+        marc = b.get("cierre_evaluado")
         mod.check_survival(b, eq, ts_ms, marks)
-        if b["status"] != antes:
+        if b["status"] != antes or b.get("cierre_evaluado") != marc:
             dirty = True
         if dirty:
             mod.save_book(b)
