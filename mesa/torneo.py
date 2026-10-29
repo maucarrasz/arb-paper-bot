@@ -272,6 +272,8 @@ def check_survival(b, eq, ts_ms, marks):
     hit = evo.death_reason(b, eq, ts_ms, fam, len(b["positions"]),
                            evo.ms_of(CLOSE_ISO), START)
     if hit is None:
+        if ts_ms >= evo.ms_of(CLOSE_ISO) and not b.get("cierre_evaluado"):
+            b["cierre_evaluado"] = now_iso()
         return
     kind, text = hit
     for p in list(b["positions"]):
@@ -347,7 +349,7 @@ def step(ts_ms):
                 extra = smfollow_flip_exit(net) if p["mode"] == "smfollow" else None
                 manage_exits(b, kx, ts_ms, extra_exit=extra)
             eq0 = equity_of(b, marks)
-            if reg and eq0 >= evo.floor(START):
+            if reg and eq0 >= evo.floor(START) and ts_ms < evo.ms_of(CLOSE_ISO):
                 if p["mode"] == "mr":
                     entries_mr(b, kx, net, p)
                 elif p["mode"] == "smfollow":
