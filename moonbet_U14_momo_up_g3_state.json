@@ -1,6 +1,6 @@
 {
   "variant": "U14_momo_up_g3",
-  "cash": 474.3065580860137,
+  "cash": 484.6470103014431,
   "bets": [
     {
       "symbol": "LTCUSDT",
@@ -11,33 +11,23 @@
       "bust_px": 52.604289,
       "open_ms": 1793203199999,
       "open_ts": "2026-10-28 16:00:26 UTC"
-    },
-    {
-      "symbol": "BNBUSDT",
-      "dir": 1,
-      "wager": 9.88,
-      "lev": 10,
-      "entry_px": 755.5575899999999,
-      "bust_px": 680.0018309999999,
-      "open_ms": 1793217599999,
-      "open_ts": "2026-10-28 20:00:25 UTC"
     }
   ],
   "status": "alive",
   "peak": 501.1799254172846,
-  "last_candle": 1793203200000,
-  "bets_n": 10,
-  "wins": 2,
+  "last_candle": 1793217600000,
+  "bets_n": 11,
+  "wins": 3,
   "losses": 8,
   "busts": 0,
   "born": "2026-10-25 03:08:52 UTC",
   "died": null,
   "reason": null,
   "generation": 3,
-  "last_active_ms": 1793217599999,
+  "last_active_ms": 1793231999999,
   "day_open": {
-    "date": "2026-10-28",
-    "eq": 495.86
+    "date": "2026-10-29",
+    "eq": 495.76
   },
-  "updated": "2026-10-28 23:00:24 UTC"
+  "updated": "2026-10-29 00:00:28 UTC"
 }
