@@ -11,25 +11,15 @@
       "bust_px": 768.0843657,
       "open_ms": 1793188799999,
       "open_ts": "2026-10-28 12:00:30 UTC"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "dir": -1,
-      "wager": 5.05,
-      "lev": 100,
-      "entry_px": 0.080629665,
-      "bust_px": 0.08143596165,
-      "open_ms": 1793289599999,
-      "open_ts": "2026-10-29 16:00:25 UTC"
     }
   ],
   "status": "alive",
   "peak": 517.035092280207,
-  "last_candle": 1793275200000,
-  "bets_n": 3,
+  "last_candle": 1793289600000,
+  "bets_n": 4,
   "wins": 1,
-  "losses": 2,
-  "busts": 2,
+  "losses": 3,
+  "busts": 3,
   "born": "2026-10-26 04:36:14 UTC",
   "died": null,
   "reason": null,
@@ -38,6 +28,6 @@
     "date": "2026-10-29",
     "eq": 493.68
   },
-  "updated": "2026-10-29 19:00:38 UTC",
-  "last_active_ms": 1793289599999
+  "updated": "2026-10-29 20:00:23 UTC",
+  "last_active_ms": 1793303999999
 }
