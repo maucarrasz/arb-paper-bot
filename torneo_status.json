@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-29 00:00:31 UTC",
+  "ts": "2026-10-29 01:00:13 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -86,9 +86,9 @@
         "W_mr_g4"
       ],
       "capital_inyectado": 2000.0,
-      "equity_total": 2000.1,
+      "equity_total": 2000.06,
       "capital_repuesto": 1500.0,
-      "pnl": 0.1
+      "pnl": 0.06
     },
     "H_smfollow_mr": {
       "miembros": [
@@ -285,11 +285,11 @@
       "open": 0
     },
     "W_mr_g4": {
-      "equity": 500.0,
+      "equity": 499.96,
       "status": "alive",
       "reason": null,
       "trades": 0,
-      "open": 0
+      "open": 1
     }
   }
 }
