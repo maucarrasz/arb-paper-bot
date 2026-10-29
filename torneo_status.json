@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-29 14:00:06 UTC",
+  "ts": "2026-10-29 15:00:08 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -54,9 +54,9 @@
         "V_mr_g3"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1501.34,
+      "equity_total": 1503.15,
       "capital_repuesto": 1000.0,
-      "pnl": 1.34
+      "pnl": 3.15
     },
     "E_mr1h": {
       "miembros": [
@@ -65,9 +65,9 @@
         "T_mr_g3"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1507.1,
+      "equity_total": 1510.69,
       "capital_repuesto": 1000.0,
-      "pnl": 7.1
+      "pnl": 10.69
     },
     "F_mr4h_deep": {
       "miembros": [
@@ -86,9 +86,9 @@
         "W_mr_g4"
       ],
       "capital_inyectado": 2000.0,
-      "equity_total": 2000.68,
+      "equity_total": 2004.22,
       "capital_repuesto": 1500.0,
-      "pnl": 0.68
+      "pnl": 4.22
     },
     "H_smfollow_mr": {
       "miembros": [
@@ -115,9 +115,9 @@
         "S_mr_g3"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1500.38,
+      "equity_total": 1503.92,
       "capital_repuesto": 1000.0,
-      "pnl": 0.38
+      "pnl": 3.92
     }
   },
   "incidente_aisladas": {
@@ -258,18 +258,18 @@
       "trades": 0
     },
     "S_mr_g3": {
-      "equity": 500.38,
+      "equity": 503.92,
       "status": "alive",
       "reason": null,
-      "trades": 6,
-      "open": 2
+      "trades": 8,
+      "open": 0
     },
     "T_mr_g3": {
-      "equity": 505.97,
+      "equity": 509.56,
       "status": "alive",
       "reason": null,
-      "trades": 6,
-      "open": 2
+      "trades": 8,
+      "open": 0
     },
     "U_mr_g3": {
       "equity": 500.1,
@@ -278,18 +278,18 @@
       "trades": 1
     },
     "V_mr_g3": {
-      "equity": 501.91,
-      "status": "alive",
-      "reason": null,
-      "trades": 0,
-      "open": 2
-    },
-    "W_mr_g4": {
-      "equity": 500.58,
+      "equity": 503.72,
       "status": "alive",
       "reason": null,
       "trades": 1,
-      "open": 2
+      "open": 1
+    },
+    "W_mr_g4": {
+      "equity": 504.12,
+      "status": "alive",
+      "reason": null,
+      "trades": 3,
+      "open": 0
     }
   }
 }
