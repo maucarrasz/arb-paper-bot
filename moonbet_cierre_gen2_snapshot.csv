@@ -1,0 +1,19 @@
+variant,estado_al_corte,eq_ultima_obs_pre_corte,ts_ultima_obs_pre_corte,apuestas_abiertas_en_esa_obs,eq_observada_post_corte,ts_obs_post_corte,evento_post_corte,notas
+U1_mr_up_5x,alive,500.42,2026-10-30 00:00:42 UTC,0,500.42,2026-10-30 00:22:58 UTC,tick de vela,"equity al corte exacta: 0 apuestas abiertas y 0 cierres entre 00:00:42 y 00:22:30"
+U2_mr_up_25x,alive,502.87,2026-10-30 00:00:42 UTC,0,502.87,2026-10-30 00:22:58 UTC,tick de vela,"equity al corte exacta: 0 apuestas abiertas y 0 cierres en la ventana"
+U3_mr_down_25x,dead,500.00,2026-10-25 09:10:49 UTC,0,,,muerte previa al corte (inactividad 56.8h),eq_final en muerte 25-oct 09:10:57
+U4_momo_up_10x,dead,493.80,2026-10-25 01:02:48 UTC,0,,,muerte previa al corte (inactividad 33.0h),eq_final en muerte 25-oct 01:02:56
+U5_sm_10x,alive,511.08,2026-10-30 00:00:42 UTC,2,511.08,2026-10-30 00:22:58 UTC,tick de vela,"equity al corte NO observada: ultimo dato 21m48s antes, marks vela 4h 00:00, 2 apuestas abiertas"
+U6_mr_up_10x_1h,dead,500.00,2026-10-24 05:39:55 UTC,0,,,muerte previa al corte (inactividad 29.3h),eq_final en muerte 24-oct 05:40:06
+U7_brk_up_50x,dead,494.95,2026-10-25 01:02:48 UTC,0,,,muerte previa al corte (inactividad 33.0h),eq_final en muerte 25-oct 01:02:56
+U8_mr_up_100x,alive,515.22,2026-10-30 00:00:42 UTC,0,515.22,2026-10-30 00:22:58 UTC,tick de vela,"equity al corte exacta: 0 apuestas abiertas y 0 cierres en la ventana"
+U9_mr_down_100x,dead,500.00,2026-10-23 16:46:45 UTC,0,,,muerte previa al corte (inactividad 16.4h),"eq_final en muerte 23-oct 16:46:52 (primera muerte 14:48 invalidada y revertida por error de regla, incidente 23-oct)"
+U10_sm_3x_big,alive,507.60,2026-10-30 00:00:42 UTC,2,507.60,2026-10-30 00:22:58 UTC,tick de vela,"equity al corte NO observada: ultimo dato 21m48s antes, 2 apuestas abiertas"
+U11_mr_down_g3,aislada,500.00,2026-10-23 14:54:24 UTC,0,500.00,2026-10-30 00:22:58 UTC,estado actual,fuera de competencia (incidente regla 23-oct)
+U12_mr_down_g3,dead,500.00,2026-10-26 03:16:30 UTC,0,,,muerte previa al corte (inactividad 56.5h),eq_final en muerte 26-oct 03:16:39
+U13_mr_up_g3,dead,502.54,2026-10-26 05:17:18 UTC,0,,,muerte previa al corte (inactividad 28.3h),eq_final en muerte 26-oct 05:17:27
+U14_momo_up_g3,alive,482.55,2026-10-30 00:00:42 UTC,0,482.55,2026-10-30 00:23:08 UTC,muerte en barrido post-corte (no rentable: eq<=500),"observada 00:23:08 (38s post-corte), no al instante exacto del corte; 0 apuestas abiertas: igual al tick pre-corte"
+U15_brk_up_g3,alive,503.96,2026-10-30 00:00:42 UTC,1,503.96,2026-10-30 00:22:58 UTC,tick de vela,"equity al corte NO observada: ultimo dato 21m48s antes, 1 apuesta abierta"
+U16_mr_down_g3,alive,536.53,2026-10-30 00:00:42 UTC,1,536.53,2026-10-30 00:22:58 UTC,tick de vela,"equity al corte NO observada: ultimo dato 21m48s antes, 1 apuesta abierta; maxima del torneo GEN2"
+U17_mr_down_g4,alive,535.41,2026-10-30 00:00:42 UTC,1,530.32,2026-10-30 00:22:58 UTC,tick de vela,"bust TRXUSDT 00:04:24 UTC (pre-corte) redujo cash; tras el bust 0 apuestas abiertas -> equity al corte exacta = 530.32"
+U18_mr_up_g4,alive,498.59,2026-10-30 00:00:42 UTC,0,498.59,2026-10-30 00:23:08 UTC,muerte en barrido post-corte (no rentable: eq<=500),"observada 00:23:08 (38s post-corte); 0 apuestas abiertas: igual al tick pre-corte"
