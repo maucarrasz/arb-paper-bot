@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-30 00:22:58 UTC",
+  "ts": "2026-10-30 00:23:30 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -61,9 +61,9 @@
         "U14_momo_up_g3"
       ],
       "capital_inyectado": 1000.0,
-      "equity_total": 976.35,
+      "equity_total": 976.3,
       "capital_repuesto": 500.0,
-      "pnl": -23.65
+      "pnl": -23.7
     },
     "U5_sm_10x": {
       "miembros": [
@@ -81,9 +81,9 @@
         "U18_mr_up_g4"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1501.13,
+      "equity_total": 1501.03,
       "capital_repuesto": 1000.0,
-      "pnl": 1.13
+      "pnl": 1.03
     },
     "U7_brk_up_50x": {
       "miembros": [
@@ -218,11 +218,10 @@
       "bets": 2
     },
     "U14_momo_up_g3": {
-      "equity": 482.55,
+      "equity": 482.5,
       "status": "dead",
       "reason": "7d torneo: no rentable al cierre (eq $482.55 <= $500)",
-      "bets": 15,
-      "open": 0
+      "bets": 15
     },
     "U15_brk_up_g3": {
       "equity": 503.96,
@@ -246,11 +245,10 @@
       "open": 0
     },
     "U18_mr_up_g4": {
-      "equity": 498.59,
+      "equity": 498.49,
       "status": "dead",
       "reason": "7d torneo: no rentable al cierre (eq $498.59 <= $500)",
-      "bets": 8,
-      "open": 0
+      "bets": 8
     }
   }
 }
