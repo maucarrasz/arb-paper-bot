@@ -1535,3 +1535,11 @@ ts,variant,equity,status
 2026-10-30 07:50:08 UTC,U15_brk_up_g3,500.67,alive
 2026-10-30 07:50:08 UTC,U16_mr_down_g3,539.7,alive
 2026-10-30 07:50:08 UTC,U17_mr_down_g4,530.32,alive
+2026-10-30 08:29:50 UTC,U1_mr_up_5x,500.42,alive
+2026-10-30 08:29:50 UTC,U2_mr_up_25x,502.87,alive
+2026-10-30 08:29:50 UTC,U5_sm_10x,507.4,alive
+2026-10-30 08:29:50 UTC,U8_mr_up_100x,515.22,alive
+2026-10-30 08:29:50 UTC,U10_sm_3x_big,504.85,alive
+2026-10-30 08:29:50 UTC,U15_brk_up_g3,499.05,alive
+2026-10-30 08:29:50 UTC,U16_mr_down_g3,547.32,alive
+2026-10-30 08:29:50 UTC,U17_mr_down_g4,530.32,alive
