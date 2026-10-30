@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-29 23:55:33 UTC",
+  "ts": "2026-10-30 00:00:11 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -65,9 +65,9 @@
         "T_mr_g3"
       ],
       "capital_inyectado": 1500.0,
-      "equity_total": 1516.29,
+      "equity_total": 1505.15,
       "capital_repuesto": 1000.0,
-      "pnl": 16.29
+      "pnl": 5.15
     },
     "F_mr4h_deep": {
       "miembros": [
@@ -261,7 +261,7 @@
       "trades": 11
     },
     "T_mr_g3": {
-      "equity": 515.16,
+      "equity": 504.02,
       "status": "alive",
       "reason": null,
       "trades": 9,

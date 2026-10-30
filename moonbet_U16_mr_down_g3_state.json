@@ -1,33 +1,23 @@
 {
   "variant": "U16_mr_down_g3",
-  "cash": 486.314743547284,
+  "cash": 525.9267050687549,
   "bets": [
     {
-      "symbol": "BNBUSDT",
+      "symbol": "TRXUSDT",
       "dir": -1,
-      "wager": 10.0,
+      "wager": 10.74,
       "lev": 25,
-      "entry_px": 749.72495,
-      "bust_px": 779.7139480000001,
-      "open_ms": 1793116799999,
-      "open_ts": "2026-10-27 16:00:22 UTC"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "dir": -1,
-      "wager": 10.13,
-      "lev": 25,
-      "entry_px": 0.080629665,
-      "bust_px": 0.0838548516,
-      "open_ms": 1793289599999,
-      "open_ts": "2026-10-29 16:00:25 UTC"
+      "entry_px": 0.35222380000000003,
+      "bust_px": 0.366312752,
+      "open_ms": 1793318399999,
+      "open_ts": "2026-10-30 00:00:31 UTC"
     }
   ],
   "status": "alive",
   "peak": 538.4229229205415,
-  "last_candle": 1793289600000,
-  "bets_n": 1,
-  "wins": 1,
+  "last_candle": 1793304000000,
+  "bets_n": 3,
+  "wins": 3,
   "losses": 0,
   "busts": 0,
   "born": "2026-10-25 11:11:17 UTC",
@@ -35,9 +25,9 @@
   "reason": null,
   "generation": 3,
   "day_open": {
-    "date": "2026-10-29",
-    "eq": 497.21
+    "date": "2026-10-30",
+    "eq": 536.53
   },
-  "updated": "2026-10-29 23:55:51 UTC",
-  "last_active_ms": 1793289599999
+  "updated": "2026-10-30 00:00:31 UTC",
+  "last_active_ms": 1793318399999
 }

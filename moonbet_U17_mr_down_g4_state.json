@@ -1,23 +1,23 @@
 {
   "variant": "U17_mr_down_g4",
-  "cash": 495.0650934500611,
+  "cash": 530.3167048179494,
   "bets": [
     {
-      "symbol": "BNBUSDT",
+      "symbol": "TRXUSDT",
       "dir": -1,
-      "wager": 4.9,
+      "wager": 5.36,
       "lev": 100,
-      "entry_px": 760.4795700000001,
-      "bust_px": 768.0843657,
-      "open_ms": 1793188799999,
-      "open_ts": "2026-10-28 12:00:30 UTC"
+      "entry_px": 0.35222380000000003,
+      "bust_px": 0.35574603800000004,
+      "open_ms": 1793318399999,
+      "open_ts": "2026-10-30 00:00:31 UTC"
     }
   ],
   "status": "alive",
   "peak": 540.4648669942735,
-  "last_candle": 1793289600000,
-  "bets_n": 4,
-  "wins": 1,
+  "last_candle": 1793304000000,
+  "bets_n": 5,
+  "wins": 2,
   "losses": 3,
   "busts": 3,
   "born": "2026-10-26 04:36:14 UTC",
@@ -25,9 +25,9 @@
   "reason": null,
   "generation": 4,
   "day_open": {
-    "date": "2026-10-29",
-    "eq": 493.68
+    "date": "2026-10-30",
+    "eq": 535.41
   },
-  "updated": "2026-10-29 23:55:51 UTC",
-  "last_active_ms": 1793303999999
+  "updated": "2026-10-30 00:00:31 UTC",
+  "last_active_ms": 1793318399999
 }
