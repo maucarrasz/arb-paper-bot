@@ -1,43 +1,22 @@
 {
   "variant": "U18_mr_up_g4",
-  "cash": 483.4629539305468,
-  "bets": [
-    {
-      "symbol": "XRPUSDT",
-      "dir": 1,
-      "wager": 10.08,
-      "lev": 10,
-      "entry_px": 1.28714325,
-      "bust_px": 1.158428925,
-      "open_ms": 1793300399999,
-      "open_ts": "2026-10-29 19:00:38 UTC"
-    },
-    {
-      "symbol": "BTCUSDT",
-      "dir": 1,
-      "wager": 10.07,
-      "lev": 10,
-      "entry_px": 78891.415995,
-      "bust_px": 71002.2743955,
-      "open_ms": 1793307599999,
-      "open_ts": "2026-10-29 21:00:30 UTC"
-    }
-  ],
-  "status": "alive",
+  "cash": 498.49447755898655,
+  "bets": [],
+  "status": "dead",
   "peak": 505.482112236081,
   "last_candle": 1793314800000,
-  "bets_n": 6,
+  "bets_n": 8,
   "wins": 4,
-  "losses": 2,
+  "losses": 4,
   "busts": 0,
   "born": "2026-10-26 07:18:18 UTC",
-  "died": null,
-  "reason": null,
+  "died": "2026-10-30 00:23:08 UTC",
+  "reason": "7d torneo: no rentable al cierre (eq $498.59 <= $500)",
   "generation": 4,
   "last_active_ms": 1793307599999,
   "day_open": {
     "date": "2026-10-30",
     "eq": 498.59
   },
-  "updated": "2026-10-30 00:04:24 UTC"
+  "updated": "2026-10-30 00:23:08 UTC"
 }

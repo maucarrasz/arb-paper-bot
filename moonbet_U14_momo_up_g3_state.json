@@ -1,33 +1,22 @@
 {
   "variant": "U14_momo_up_g3",
-  "cash": 472.9479124519801,
-  "bets": [
-    {
-      "symbol": "TRXUSDT",
-      "dir": 1,
-      "wager": 9.65,
-      "lev": 10,
-      "entry_px": 0.35257619999999995,
-      "bust_px": 0.31731857999999996,
-      "open_ms": 1793318399999,
-      "open_ts": "2026-10-30 00:00:31 UTC"
-    }
-  ],
-  "status": "alive",
+  "cash": 482.50146067786716,
+  "bets": [],
+  "status": "dead",
   "peak": 501.1799254172846,
   "last_candle": 1793304000000,
-  "bets_n": 14,
+  "bets_n": 15,
   "wins": 3,
-  "losses": 11,
+  "losses": 12,
   "busts": 0,
   "born": "2026-10-25 03:08:52 UTC",
-  "died": null,
-  "reason": null,
+  "died": "2026-10-30 00:23:08 UTC",
+  "reason": "7d torneo: no rentable al cierre (eq $482.55 <= $500)",
   "generation": 3,
   "last_active_ms": 1793318399999,
   "day_open": {
     "date": "2026-10-30",
     "eq": 482.55
   },
-  "updated": "2026-10-30 00:00:52 UTC"
+  "updated": "2026-10-30 00:23:08 UTC"
 }
