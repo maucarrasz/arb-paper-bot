@@ -1497,3 +1497,6 @@ ts,variant,equity,status
 2026-10-31 06:54:05 UTC,A_mr4h,501.09,alive
 2026-10-31 06:54:05 UTC,F_mr4h_deep,502.07,alive
 2026-10-31 06:54:05 UTC,I_mr4h_aggro,502.58,alive
+2026-10-31 11:59:51 UTC,A_mr4h,501.09,dead
+2026-10-31 11:59:51 UTC,F_mr4h_deep,502.07,alive
+2026-10-31 11:59:51 UTC,I_mr4h_aggro,502.58,dead

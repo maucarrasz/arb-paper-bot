@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-31 06:54:05 UTC",
+  "ts": "2026-10-31 11:59:51 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -145,8 +145,8 @@
   "variants": {
     "A_mr4h": {
       "equity": 501.09,
-      "status": "alive",
-      "reason": null,
+      "status": "dead",
+      "reason": "inactividad: 68.0h sin actividad ni posiciones abiertas (ventana familia mr30_4h: 64h = 2x p90 medido)",
       "trades": 2,
       "open": 0
     },
@@ -195,8 +195,8 @@
     },
     "I_mr4h_aggro": {
       "equity": 502.58,
-      "status": "alive",
-      "reason": null,
+      "status": "dead",
+      "reason": "inactividad: 68.0h sin actividad ni posiciones abiertas (ventana familia mr30_4h: 64h = 2x p90 medido)",
       "trades": 2,
       "open": 0
     },
