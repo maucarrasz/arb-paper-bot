@@ -3,11 +3,11 @@
   "positions": [],
   "consec_losses": {},
   "cooldown_until": {},
-  "day": "2026-10-30",
+  "day": "2026-10-31",
   "day_start_equity": 10000.0,
   "day_pnl": 0.0,
   "guard_until": 0,
   "peak_equity": 10000.0,
   "mode": "v2",
-  "updated": "2026-10-30 20:39:30 UTC"
+  "updated": "2026-10-31 00:39:59 UTC"
 }
