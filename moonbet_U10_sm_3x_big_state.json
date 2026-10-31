@@ -4,7 +4,7 @@
   "bets": [],
   "status": "alive",
   "peak": 507.60382518406294,
-  "last_candle": 1793419200000,
+  "last_candle": 1793433600000,
   "bets_n": 4,
   "wins": 3,
   "losses": 1,
@@ -12,7 +12,7 @@
   "born": "2026-10-23 00:22:30 UTC",
   "died": null,
   "reason": null,
-  "updated": "2026-10-31 12:00:09 UTC",
+  "updated": "2026-10-31 13:33:47 UTC",
   "generation": 2,
   "day_open": {
     "date": "2026-10-31",

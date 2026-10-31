@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-31 11:59:51 UTC",
+  "ts": "2026-10-31 13:33:32 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -147,8 +147,7 @@
       "equity": 501.09,
       "status": "dead",
       "reason": "inactividad: 68.0h sin actividad ni posiciones abiertas (ventana familia mr30_4h: 64h = 2x p90 medido)",
-      "trades": 2,
-      "open": 0
+      "trades": 2
     },
     "B_mr4h_sm": {
       "equity": 497.3,
@@ -197,8 +196,7 @@
       "equity": 502.58,
       "status": "dead",
       "reason": "inactividad: 68.0h sin actividad ni posiciones abiertas (ventana familia mr30_4h: 64h = 2x p90 medido)",
-      "trades": 2,
-      "open": 0
+      "trades": 2
     },
     "J_msb11_1h": {
       "equity": 500.0,
