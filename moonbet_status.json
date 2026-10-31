@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-31 13:33:40 UTC",
+  "ts": "2026-10-31 16:01:11 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -223,8 +223,8 @@
     },
     "U15_brk_up_g3": {
       "equity": 499.05,
-      "status": "alive",
-      "reason": null,
+      "status": "dead",
+      "reason": "inactividad: 32.0h sin actividad ni posiciones abiertas (ventana familia brk_4h: 32h = 2x p90 medido)",
       "bets": 4,
       "open": 0
     },

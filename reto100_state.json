@@ -1,14 +1,24 @@
 {
-  "cash": 100.21723288932257,
-  "positions": [],
+  "cash": 82.32633369085494,
+  "positions": [
+    {
+      "symbol": "TRXUSDT",
+      "qty": 57.22003243187933,
+      "entry_px": 0.31235609999999997,
+      "cost": 17.890899198467636,
+      "stop": 0.299220328929532,
+      "open_ms": 1793462399999,
+      "open_ts": "2026-10-31 16:01:04 UTC"
+    }
+  ],
   "status": "alive",
   "peak_equity": 100.5078667453934,
-  "last_candle": 1793433600000,
+  "last_candle": 1793448000000,
   "trades": 2,
   "wins": 1,
   "losses": 1,
   "born": "2026-10-22 22:16:25 UTC",
   "died": null,
   "death_reason": null,
-  "updated": "2026-10-31 13:33:32 UTC"
+  "updated": "2026-10-31 16:01:04 UTC"
 }
