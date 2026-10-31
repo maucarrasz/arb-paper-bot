@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-31 16:01:11 UTC",
+  "ts": "2026-10-31 18:02:14 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -225,8 +225,7 @@
       "equity": 499.05,
       "status": "dead",
       "reason": "inactividad: 32.0h sin actividad ni posiciones abiertas (ventana familia brk_4h: 32h = 2x p90 medido)",
-      "bets": 4,
-      "open": 0
+      "bets": 4
     },
     "U16_mr_down_g3": {
       "equity": 553.72,
