@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-01 04:05:22 UTC",
+  "ts": "2026-11-01 08:07:07 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -235,8 +235,8 @@
     },
     "U17_mr_down_g4": {
       "equity": 530.32,
-      "status": "alive",
-      "reason": null,
+      "status": "dead",
+      "reason": "inactividad: 56.0h sin actividad ni posiciones abiertas (ventana familia mrdn30_4h: 56h = 2x p90 medido)",
       "bets": 6,
       "open": 0
     },

@@ -1671,3 +1671,7 @@ ts,variant,equity,status
 2026-11-01 04:05:22 UTC,U10_sm_3x_big,501.13,alive
 2026-11-01 04:05:22 UTC,U16_mr_down_g3,553.72,alive
 2026-11-01 04:05:22 UTC,U17_mr_down_g4,530.32,alive
+2026-11-01 08:07:07 UTC,U5_sm_10x,502.44,alive
+2026-11-01 08:07:07 UTC,U10_sm_3x_big,501.13,alive
+2026-11-01 08:07:07 UTC,U16_mr_down_g3,553.72,alive
+2026-11-01 08:07:07 UTC,U17_mr_down_g4,530.32,dead
