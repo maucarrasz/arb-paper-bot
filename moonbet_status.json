@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-31 22:24:55 UTC",
+  "ts": "2026-11-01 01:04:42 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -179,8 +179,8 @@
     },
     "U8_mr_up_100x": {
       "equity": 515.22,
-      "status": "alive",
-      "reason": null,
+      "status": "dead",
+      "reason": "inactividad: 89.1h sin actividad ni posiciones abiertas (ventana familia mr25_4h: 88h = 2x p90 medido)",
       "bets": 1,
       "open": 0
     },

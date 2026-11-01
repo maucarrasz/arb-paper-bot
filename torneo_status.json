@@ -1,5 +1,5 @@
 {
-  "ts": "2026-10-31 22:24:48 UTC",
+  "ts": "2026-11-01 01:04:34 UTC",
   "generation": 1,
   "start": 500.0,
   "target": 1000.0,
@@ -175,8 +175,8 @@
     },
     "F_mr4h_deep": {
       "equity": 502.07,
-      "status": "alive",
-      "reason": null,
+      "status": "dead",
+      "reason": "inactividad: 89.1h sin actividad ni posiciones abiertas (ventana familia mr25_4h: 88h = 2x p90 medido)",
       "trades": 1,
       "open": 0
     },
