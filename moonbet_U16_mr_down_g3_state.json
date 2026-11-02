@@ -2,22 +2,22 @@
   "variant": "U16_mr_down_g3",
   "cash": 553.7225296041781,
   "bets": [],
-  "status": "alive",
+  "status": "dead",
   "peak": 553.7225296041781,
-  "last_candle": 1793577600000,
+  "last_candle": 1793606400000,
   "bets_n": 4,
   "wins": 4,
   "losses": 0,
   "busts": 0,
   "born": "2026-10-25 11:11:17 UTC",
-  "died": null,
-  "reason": null,
+  "died": "2026-11-02 12:16:40 UTC",
+  "reason": "inactividad: 60.3h sin actividad ni posiciones abiertas (ventana familia mrdn30_4h: 56h = 2x p90 medido)",
   "generation": 3,
   "day_open": {
     "date": "2026-11-02",
     "eq": 553.72
   },
-  "updated": "2026-11-02 07:34:36 UTC",
+  "updated": "2026-11-02 12:16:40 UTC",
   "last_active_ms": 1793404799999,
   "cierre_evaluado": "2026-10-30 00:23:08 UTC"
 }

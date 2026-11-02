@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-02 07:34:30 UTC",
+  "ts": "2026-11-02 12:16:34 UTC",
   "generation": 2,
   "mechanics": "moon-style leveraged up/down bets",
   "fees": {
@@ -160,8 +160,8 @@
     },
     "U5_sm_10x": {
       "equity": 502.44,
-      "status": "alive",
-      "reason": null,
+      "status": "dead",
+      "reason": "inactividad: 52.3h sin actividad ni posiciones abiertas (ventana familia sm: 48h = 2x p90 medido)",
       "bets": 4,
       "open": 0
     },
@@ -191,8 +191,8 @@
     },
     "U10_sm_3x_big": {
       "equity": 501.13,
-      "status": "alive",
-      "reason": null,
+      "status": "dead",
+      "reason": "inactividad: 52.3h sin actividad ni posiciones abiertas (ventana familia sm: 48h = 2x p90 medido)",
       "bets": 4,
       "open": 0
     },
@@ -228,8 +228,8 @@
     },
     "U16_mr_down_g3": {
       "equity": 553.72,
-      "status": "alive",
-      "reason": null,
+      "status": "dead",
+      "reason": "inactividad: 60.3h sin actividad ni posiciones abiertas (ventana familia mrdn30_4h: 56h = 2x p90 medido)",
       "bets": 4,
       "open": 0
     },
