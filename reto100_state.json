@@ -1,24 +1,14 @@
 {
-  "cash": 80.93799134933431,
-  "positions": [
-    {
-      "symbol": "SOLUSDT",
-      "qty": 0.21583594560875224,
-      "entry_px": 91.815885,
-      "cost": 19.836985529240327,
-      "stop": 88.32366956846816,
-      "open_ms": 1793649599999,
-      "open_ts": "2026-11-02 20:18:58 UTC"
-    }
-  ],
+  "cash": 101.77803072145807,
+  "positions": [],
   "status": "alive",
-  "peak_equity": 101.17261125015483,
-  "last_candle": 1793779200000,
-  "trades": 3,
-  "wins": 2,
+  "peak_equity": 101.77803072145807,
+  "last_candle": 1793793600000,
+  "trades": 4,
+  "wins": 3,
   "losses": 1,
   "born": "2026-10-22 22:16:25 UTC",
   "died": null,
   "death_reason": null,
-  "updated": "2026-11-04 14:18:13 UTC"
+  "updated": "2026-11-04 17:34:08 UTC"
 }
