@@ -1,14 +1,24 @@
 {
-  "cash": 101.77803072145807,
-  "positions": [],
+  "cash": 84.25150622091647,
+  "positions": [
+    {
+      "symbol": "XRPUSDT",
+      "qty": 14.756948606442666,
+      "entry_px": 1.1864929499999999,
+      "cost": 17.5265245005416,
+      "stop": 1.13476577721052,
+      "open_ms": 1793951999999,
+      "open_ts": "2026-11-06 08:47:18 UTC"
+    }
+  ],
   "status": "alive",
   "peak_equity": 101.77803072145807,
-  "last_candle": 1793923200000,
+  "last_candle": 1793937600000,
   "trades": 4,
   "wins": 3,
   "losses": 1,
   "born": "2026-10-22 22:16:25 UTC",
   "died": null,
   "death_reason": null,
-  "updated": "2026-11-06 06:24:07 UTC"
+  "updated": "2026-11-06 08:47:18 UTC"
 }
