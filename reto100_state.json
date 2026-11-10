@@ -22,12 +22,12 @@
   ],
   "status": "alive",
   "peak_equity": 101.93180634629542,
-  "last_candle": 1794254400000,
+  "last_candle": 1794268800000,
   "trades": 5,
   "wins": 3,
   "losses": 2,
   "born": "2026-10-22 22:16:25 UTC",
   "died": null,
   "death_reason": null,
-  "updated": "2026-11-10 01:58:37 UTC"
+  "updated": "2026-11-10 04:19:55 UTC"
 }
