@@ -1,33 +1,14 @@
 {
-  "cash": 60.91620133053095,
-  "positions": [
-    {
-      "symbol": "ETHUSDT",
-      "qty": 0.009940049223183043,
-      "entry_px": 2025.23211,
-      "cost": 20.151037768632623,
-      "stop": 1950.2632130272423,
-      "open_ms": 1794326399999,
-      "open_ts": "2026-11-10 17:24:21 UTC"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "qty": 0.2219273995137373,
-      "entry_px": 82.34115,
-      "cost": 18.29203104976304,
-      "stop": 78.98434010282807,
-      "open_ms": 1794326399999,
-      "open_ts": "2026-11-10 17:24:21 UTC"
-    }
-  ],
+  "cash": 97.77534957245939,
+  "positions": [],
   "status": "alive",
   "peak_equity": 101.93180634629542,
-  "last_candle": 1794513600000,
-  "trades": 7,
+  "last_candle": 1794528000000,
+  "trades": 9,
   "wins": 3,
-  "losses": 4,
+  "losses": 6,
   "born": "2026-10-22 22:16:25 UTC",
   "died": null,
   "death_reason": null,
-  "updated": "2026-11-13 00:06:31 UTC"
+  "updated": "2026-11-13 04:44:44 UTC"
 }
