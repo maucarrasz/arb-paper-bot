@@ -3,12 +3,12 @@
   "positions": [],
   "status": "alive",
   "peak_equity": 101.93180634629542,
-  "last_candle": 1795838400000,
+  "last_candle": 1795852800000,
   "trades": 9,
   "wins": 3,
   "losses": 6,
   "born": "2026-10-22 22:16:25 UTC",
   "died": null,
   "death_reason": null,
-  "updated": "2026-11-28 10:09:48 UTC"
+  "updated": "2026-11-28 12:45:40 UTC"
 }
